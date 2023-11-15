@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>x | k-onlの狗窝</title>
+    <title>markdown语法 | k-onlの狗窝</title>
     <meta name="author" content="k-onl" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -142,21 +142,103 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>x</h1>
+        <h1>markdown语法</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/14
+            2023/11/15
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        
+        <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>使用 # 号可表示 1-6 级标题，一级标题对应一个 # 号，二级标题对应两个 # 号，以此类推。</p>
+<p>#代表一级标题</p>
+<p>##代表二级标题</p>
+<p>依此类推</p>
+<h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><p><em>斜体文本</em>(<em>斜体文本</em>)</p>
+<p>斜体</p>
+<p><strong>粗体文本</strong>（__粗体文本__）</p>
+<p>粗体</p>
+<p><em><strong>斜粗体文本</strong></em>（___斜粗体文本___）</p>
+<p>斜粗体</p>
+<p>##分割线</p>
+<p> 你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<p>（***）</p>
+<p>（* * *）</p>
+<p>（*****）</p>
+<p>（- - -）</p>
+<p>（———-）</p>
+<p>效果如下</p>
+<p>下划线<br>使用html标签实现</p>
+<p><u></u></p>
+<p><u>下划线</u></p>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>在当前行的结尾加 2 个空格<br>这行就会新起一行</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表使用* + - ，三者效果一致（注意写完字符后需要打一个空格才能使其成为列表符号）</p>
+<ul>
+<li>无序列表<br>有序列表使用数字加上.表示如：1.有序列表（也需要空格）</li>
+</ul>
+<ol>
+<li>有序列表</li>
+</ol>
+<h3 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h3><p>使用&gt;加上一个空格</p>
+<blockquote>
+<p>区</p>
+</blockquote>
+<blockquote>
+<p>块</p>
+</blockquote>
+<blockquote>
+<p>引</p>
+</blockquote>
+<blockquote>
+<p>用</p>
+</blockquote>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>可以用 &#96;&#96;&#96; 包裹一段代码，并指定一种语言（也可以不指定）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a=1;</span><br><span class="line">int b=2;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>链接使用方法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[链接名称](链接地址)</span><br><span class="line">或者&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>比如<a target="_blank" rel="noopener" href="https://www.bilibili.com/">https://www.bilibili.com/</a></p>
+<p>或者<a target="_blank" rel="noopener" href="https://www.bilibili.com/">哔哩哔哩</a></p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>Markdown 图片语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![alt 属性文本](图片地址)</span><br><span class="line">![alt 属性文本](图片地址 &quot;可选标题&quot;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>开头一个感叹号 !<br>接着一个方括号，里面放上图片的替代文字<br>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 属性的文字。</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 表头 | 表头 |</span><br><span class="line">| ---- | ---- |</span><br><span class="line">| 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<p>转义字符<br>使用\加上符号来使得符号正常显示。</p>
+
     </div>
     
     
