@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>使用php实现登录注册等功能 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>使用php实现登录注册等功能</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/15
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>简单的登录界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115202153127.png" alt="image-20231115202153127"></p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;my web&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        body &#123;</span><br><span class="line">            background-color: #f2f2f2;</span><br><span class="line">            font-family: Arial, sans-serif;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        form &#123;</span><br><span class="line">            max-width: 400px;</span><br><span class="line">            margin: 50px auto;</span><br><span class="line">            background-color: #fff;</span><br><span class="line">            padding: 20px;</span><br><span class="line">            border-radius: 5px;</span><br><span class="line">            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        h2 &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin-bottom: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        label &#123;</span><br><span class="line">            display: block;</span><br><span class="line">            margin-bottom: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;text&quot;],</span><br><span class="line">        input[type=&quot;password&quot;] &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            border: 1px solid #ccc;</span><br><span class="line">            border-radius: 3px;</span><br><span class="line">            box-sizing: border-box;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;checkbox&quot;] &#123;</span><br><span class="line">            margin-top: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;submit&quot;],</span><br><span class="line">        input[type=&quot;reset&quot;] &#123;</span><br><span class="line">            display: block;</span><br><span class="line">            width: 100%;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            margin-top: 20px;</span><br><span class="line">            border: none;</span><br><span class="line">            background-color: #87CEFA ;</span><br><span class="line">            color: #fff;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            border-radius: 3px;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;submit&quot;]:hover,</span><br><span class="line">        input[type=&quot;reset&quot;]:hover &#123;</span><br><span class="line">            background-color: #AFEEEE;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form method=&quot;post&quot; action=&quot;link.php&quot;&gt;</span><br><span class="line">        &lt;h2&gt;登录&lt;/h2&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">            用户名：</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;username&quot; &gt;</span><br><span class="line">        &lt;/label&gt;&lt;br&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">            密码：</span><br><span class="line">            &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">            &lt;input type=&quot;checkbox&quot; name=&quot;remember&quot; value=&quot;yes&quot;&gt;&lt;br&gt;提交密码</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;&lt;br&gt;</span><br><span class="line">        &lt;input type=&quot;reset&quot; value=&quot;重置&quot;&gt;&lt;br&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; name=&quot;zhuce&quot; value=&quot;注册&quot;&gt;&lt;br&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>下面是登录功能代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">session_start();</span><br><span class="line">header(&#x27;content-type:text/html; charset= utf-8&#x27;);</span><br><span class="line">$u=trim($_POST[&#x27;username&#x27;]);</span><br><span class="line">$p=trim($_POST[&#x27;password&#x27;]);</span><br><span class="line"></span><br><span class="line">if(isset($_POST[&#x27;zhuce&#x27;]))&#123;</span><br><span class="line">    header(&quot;Location:s2.php&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">        if($u!=null || $p!=null)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        $link=new mysqli(&#x27;localhost&#x27;,&#x27;root&#x27;,&#x27;root&#x27;,&#x27;security&#x27;);</span><br><span class="line">            if($link-&gt;connect_error)&#123;</span><br><span class="line">            echo&#x27;数据库连接失败&lt;br&gt;&#x27;;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                echo&#x27;数据库连接成功&lt;br&gt;&#x27;;</span><br><span class="line">                &#125;</span><br><span class="line">                mysqli_query($link,&quot;set names utf8&quot;);</span><br><span class="line">                $select =&quot;select * from users where username=&#x27;$u&#x27; and password=&#x27;$p&#x27; &quot;;</span><br><span class="line">                echo $select ;</span><br><span class="line"></span><br><span class="line">                $result = $link-&gt;query($select) ;</span><br><span class="line">                    </span><br><span class="line">            if(mysqli_num_rows($result) &gt;= 1)</span><br><span class="line">            &#123;</span><br><span class="line">            $_SESSION[&#x27;user&#x27;]=$u;</span><br><span class="line">            setcookie(&#x27;user&#x27;,$u,time()+ 7*12*60*60);</span><br><span class="line">            header(&quot;Location: zhuye.php&quot;);</span><br><span class="line">            exit;</span><br><span class="line">            &#125; else&#123;</span><br><span class="line">            echo &quot;用户名或密码错误，请重新输入&quot;;</span><br><span class="line">            // header(&quot;Location:s1.php&quot;);</span><br><span class="line">            exit;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#125;else&#123;</span><br><span class="line">            echo &quot;用户名或密码不能为空！！&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">// header(&quot;Location:s1.php&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>主页面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115202804582.png" alt="image-20231115202804582"></p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&#x27;content-type:text/html; charset= utf-8&#x27;);</span><br><span class="line">session_start();</span><br><span class="line">if(isset($_COOKIE[user]))&#123;</span><br><span class="line">echo &quot;登陆成功&lt;br&gt;&quot;;</span><br><span class="line">echo &quot;用户名为：&quot;.$_SESSION[user].&quot; &lt;br&gt;&quot;;</span><br><span class="line">echo &quot;登录时设置的user cookie:&quot;.$_COOKIE[user];</span><br><span class="line">&#125;else&#123;</span><br><span class="line">echo &quot;登陆失败&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo&quot;&lt;br&quot;;</span><br><span class="line"></span><br><span class="line">echo&quot;&lt;br&gt; &lt;h2&gt;这是一个文件上传&lt;h2&gt;</span><br><span class="line">&lt;form action=&#x27;&#x27; method=&#x27;post&#x27; enctype=&#x27;multipart/form-data&#x27;&gt;</span><br><span class="line">上传文件：&lt;input type=&#x27;file&#x27; name=&#x27;file&#x27;&gt; &lt;br&gt;</span><br><span class="line">提交：&lt;input type=&#x27;submit&#x27; name=&#x27;sumit&#x27; value=&#x27;点击上传&#x27;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;h2&gt;下面是接收到的文件&lt;/h2&gt;&quot;;</span><br><span class="line"></span><br><span class="line">header(&#x27;content-type:text/html; charset= utf-8&#x27;);</span><br><span class="line">if(isset($_FILES[&#x27;file&#x27;])) &#123;</span><br><span class="line">    // 设置上传路径（需提前建好文件夹）</span><br><span class="line">    $uoload=&quot;upload&quot;;</span><br><span class="line">    $file_name = $_FILES[&quot;file&quot;][&quot;name&quot;];</span><br><span class="line">    $file_size = $_FILES[&quot;file&quot;][&quot;size&quot;];</span><br><span class="line">    $file_type = $_FILES[&quot;file&quot;][&quot;type&quot;];</span><br><span class="line">    $file_temp = $_FILES[&quot;file&quot;][&quot;tmp_name&quot;];</span><br><span class="line"></span><br><span class="line">    $path=$uoload.&quot;\\&quot;.$file_name;</span><br><span class="line">    if(move_uploaded_file($file_temp , $path))&#123;</span><br><span class="line">        echo &quot;文件名称：&quot; . $file_name .&quot;&lt;br&gt;&quot;;</span><br><span class="line">        echo &quot;文件大小：&quot; . ($file_size/1024) . &quot; kb &lt;br&gt;&quot;;</span><br><span class="line">        echo &quot;文件类型：&quot; . $file_type . &quot;&lt;br&gt;&quot;;</span><br><span class="line">        echo &quot;文件存储路径：&quot; . $path . &quot;&lt;br&gt;&quot;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        echo&quot;上传失败&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo&#x27;</span><br><span class="line">&lt;!-- 评论表单 --&gt;</span><br><span class="line">&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;</span><br><span class="line">&lt;h2&gt;评论表单&lt;h2&gt;</span><br><span class="line">    &lt;label for=&quot;comment&quot;&gt;发表评论：&lt;/label&gt;&lt;br&gt;</span><br><span class="line">    &lt;textarea name=&quot;comment&quot; id=&quot;comment&quot; rows=&quot;4&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交评论&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;h1&gt;评论框&lt;/h1&gt;&#x27;;</span><br><span class="line"></span><br><span class="line">// 处理提交的评论</span><br><span class="line">if ($_SERVER[&#x27;REQUEST_METHOD&#x27;] === &#x27;POST&#x27;) &#123;</span><br><span class="line">    // 检查是否提交了评论内容</span><br><span class="line">    if (isset($_POST[&#x27;comment&#x27;]) &amp;&amp; !empty($_POST[&#x27;comment&#x27;])) &#123;</span><br><span class="line">        // 处理评论</span><br><span class="line">        $comment = ($_POST[&#x27;comment&#x27;]); // 防止 XSS 攻击</span><br><span class="line"></span><br><span class="line">        // 存储评论到数据库</span><br><span class="line">        $link = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;root&quot;, &quot;security&quot;) ;</span><br><span class="line"></span><br><span class="line">        if($link-&gt;connect_error)&#123;</span><br><span class="line">            echo&#x27;数据库连接失败&lt;br&gt;&#x27;;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                echo&#x27;数据库连接成功&lt;br&gt;&#x27;;</span><br><span class="line">                &#125;</span><br><span class="line">        mysqli_query($link, &quot;set names utf8&quot;);</span><br><span class="line"></span><br><span class="line">        // 检查表是否存在，如果不存在则创建表</span><br><span class="line">        $table_name = &#x27;comments&#x27;;</span><br><span class="line">        $check_table_query = &quot;SHOW TABLES LIKE &#x27;$table_name&#x27;&quot;;</span><br><span class="line">        $result = mysqli_query($link, $check_table_query);</span><br><span class="line"></span><br><span class="line">        if (mysqli_num_rows($result) == 0) &#123;</span><br><span class="line">            $create_table_query = &quot;CREATE TABLE $table_name (</span><br><span class="line">                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,</span><br><span class="line">                comment TEXT NOT NULL</span><br><span class="line">            )&quot;;</span><br><span class="line">            echo&quot;s111&quot;;</span><br><span class="line">            mysqli_query($link, $create_table_query);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //$comment = mysqli_real_escape_string($link, $comment); // 转义评论，防止 SQL 注入</span><br><span class="line"></span><br><span class="line">        $query = &quot;INSERT INTO comments (comment) VALUES (&#x27;$comment&#x27;)&quot;;</span><br><span class="line">        echo &quot;你输入的评论是：&quot;.$comment;</span><br><span class="line">        if (mysqli_query($link, $query)) &#123;</span><br><span class="line">            echo &quot;&lt;p&gt;评论已保存到数据库。&lt;/p&gt;&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            echo &quot;&lt;p style=&#x27;color: red;&#x27;&gt;保存评论时出错。&lt;/p&gt;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        mysqli_close($link);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        echo &quot;&lt;p style=&#x27;color: red;&#x27;&gt;请填写评论内容。&lt;/p&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 显示最近的30条评论</span><br><span class="line">$link = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;root&quot;, &quot;security&quot;);</span><br><span class="line">        if($link-&gt;connect_error)&#123;</span><br><span class="line">            echo&#x27;数据库连接失败&lt;br&gt;&#x27;;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                echo&#x27;数据库连接成功&lt;br&gt;&#x27;;</span><br><span class="line">                &#125;</span><br><span class="line">mysqli_query($link, &quot;set names utf8&quot;);</span><br><span class="line"></span><br><span class="line">$query = &quot;SELECT * FROM comments ORDER BY id DESC LIMIT 30&quot;;</span><br><span class="line">$result = mysqli_query($link, $query);</span><br><span class="line"></span><br><span class="line">if ($result) &#123;</span><br><span class="line">    echo &quot;&lt;h2&gt;最近的评论&lt;/h2&gt;&lt;br&gt;&quot;;</span><br><span class="line">    echo &quot;最多显示30条评论&quot;;</span><br><span class="line">    while ($row = mysqli_fetch_assoc($result)) &#123;</span><br><span class="line">        echo &quot;&lt;p&gt;&#123;$row[&#x27;comment&#x27;]&#125;&lt;/p&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    echo &quot;&lt;p style=&#x27;color: red;&#x27;&gt;获取评论时出错。&lt;/p&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mysqli_close($link);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注册页面：</p>
+<p>(与登录界面几乎一样)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115202953856.png" alt="image-20231115202953856"></p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;my web&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        body &#123;</span><br><span class="line">            background-color: #f2f2f2;</span><br><span class="line">            font-family: Arial, sans-serif;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        form &#123;</span><br><span class="line">            max-width: 400px;</span><br><span class="line">            margin: 50px auto;</span><br><span class="line">            background-color: #fff;</span><br><span class="line">            padding: 20px;</span><br><span class="line">            border-radius: 5px;</span><br><span class="line">            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        h2 &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">            margin-bottom: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        label &#123;</span><br><span class="line">            display: block;</span><br><span class="line">            margin-bottom: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;text&quot;],</span><br><span class="line">        input[type=&quot;password&quot;] &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            border: 1px solid #ccc;</span><br><span class="line">            border-radius: 3px;</span><br><span class="line">            box-sizing: border-box;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;checkbox&quot;] &#123;</span><br><span class="line">            margin-top: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;submit&quot;],</span><br><span class="line">        input[type=&quot;reset&quot;] &#123;</span><br><span class="line">            display: block;</span><br><span class="line">            width: 100%;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            margin-top: 20px;</span><br><span class="line">            border: none;</span><br><span class="line">            background-color: #87CEFA ;</span><br><span class="line">            color: #fff;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            border-radius: 3px;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        input[type=&quot;submit&quot;]:hover,</span><br><span class="line">        input[type=&quot;reset&quot;]:hover &#123;</span><br><span class="line">            background-color: #AFEEEE;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form method=&quot;post&quot; action=&quot;link1.php&quot;&gt;</span><br><span class="line">        &lt;center&gt;&lt;h1&gt;注册页面&lt;/h1&gt;&lt;/center&gt;  </span><br><span class="line">        &lt;label&gt;</span><br><span class="line">            用户名：</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;username&quot; &gt;</span><br><span class="line">        &lt;/label&gt;&lt;br&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">            密码：</span><br><span class="line">            &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;注册&quot;&gt;&lt;br&gt;</span><br><span class="line">        &lt;input type=&quot;reset&quot; value=&quot;重置&quot;&gt;&lt;br&gt;</span><br><span class="line">     </span><br><span class="line">        </span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注册功能实现代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&#x27;content-type:text/html; charset= utf-8&#x27;);</span><br><span class="line">$u=trim($_POST[&#x27;username&#x27;]);</span><br><span class="line">$p=trim($_POST[&#x27;password&#x27;]);</span><br><span class="line">if(isset($_POST[&#x27;submit&#x27;]))&#123;</span><br><span class="line"></span><br><span class="line">    if($u!=null || $p!=null)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">    $link=new mysqli(&#x27;localhost&#x27;,&#x27;root&#x27;,&#x27;root&#x27;,&#x27;security&#x27;);</span><br><span class="line">        if($link-&gt;connect_error)&#123;</span><br><span class="line">        echo&#x27;&lt;h2&gt;数据库连接失败&lt;h2&gt;&lt;br&gt;&#x27;;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            mysqli_query($link,&quot;set names utf8&quot;);</span><br><span class="line">            $insert= &quot;INSERT INTO users (username, password) VALUES(&#x27;$u&#x27;, &#x27;$p&#x27;); &quot;;</span><br><span class="line">            $result = $link-&gt;query($insert) ;</span><br><span class="line">            // echo $result;</span><br><span class="line">            if($result &gt;=1)&#123;</span><br><span class="line"></span><br><span class="line">                echo&#x27;&lt;center&gt;&lt;h2&gt;用户创建成功&lt;h2&gt;</span><br><span class="line">                &lt;form method=&quot;post&quot; action=&quot;s1.php&quot;&gt;</span><br><span class="line">                &lt;input type=&quot;submit&quot; name=&quot;login&quot; value=&quot;返回登陆&quot;&gt;&lt;/center&gt;&lt;br&gt;&#x27;;</span><br><span class="line">                // header(&#x27;Location:s1.php&#x27;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                echo &#x27;用户创建失败&#x27;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
