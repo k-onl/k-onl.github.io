@@ -159,7 +159,7 @@
         <h3 id="一，docker简介："><a href="#一，docker简介：" class="headerlink" title="一，docker简介："></a>一，docker简介：</h3><p>​		Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。它可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
 <p>​		容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
 <p>​		Docker将工程及此工程依赖的所有软件打包到一个容器中统一部署，可以解决在开发环境、测试环境以及生产环境等等。多种环境去部署同一份代码，由于环境原因往往会出现软件跨环境迁移的问题！</p>
-<img src="https://cdn.jsdelivr.net/gh/baiQstar/picgo@main/img/202311211919902.png" alt="image-20231121191848479" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/202311211919902.png" alt="image-20231121191848479" style="zoom:50%;" />
 
 <h3 id="二，介绍Docker中的三个概念"><a href="#二，介绍Docker中的三个概念" class="headerlink" title="二，介绍Docker中的三个概念"></a>二，介绍Docker中的三个概念</h3><p>镜像image</p>
 <p>​		Docker 镜像（Image），就相当于是一个文件系统，是用于创建 Docker 容器的模板。也可以将镜像当作容器的“源代码”。镜像体积很小，非常“便携”，易于分享、存储和更新。</p>
@@ -205,7 +205,7 @@
 <p>5，列出本地主机上有的镜像</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker images [OPTIONS]</span><br><span class="line">常用参数：</span><br><span class="line">-a ：列出所有的镜像 （含历史映像层）</span><br><span class="line">-q ：只显示镜像ID</span><br><span class="line">example：</span><br><span class="line">docker images -a</span><br><span class="line">docker images -q</span><br><span class="line">docker images -aq</span><br><span class="line">docker images redis   #查找镜像名为redis的镜像</span><br><span class="line">docker images redis:6.0.8   #查找镜像名:版本号(REPOSITORY：TAG)对应的镜像</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/baiQstar/picgo@main/img/202311211935011.png" alt="image-20231121193502304"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/202311211935011.png" alt="image-20231121193502304"></p>
 <p>字段解析：</p>
 <ul>
 <li>REPOSITORY：表示镜像的仓库源</li>
@@ -249,7 +249,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> docker inspect mysql57</span><br><span class="line">docker run --name mysql57 -v mysql57:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7</span><br><span class="line"></span><br><span class="line">docker exec -it mysql57 bash</span><br><span class="line">docker run --name phpmyadmin --link mysql57:db -p 9998:80 -d phpmyadmin/phpmyadmin</span><br></pre></td></tr></table></figure>
 
 <p>打开网址：192.168.0.44：9998进入phpmyadmin管理网站</p>
-<img src="https://cdn.jsdelivr.net/gh/baiQstar/picgo@main/img/202311212011788.png" alt="image-20231121201110643" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/202311212011788.png" alt="image-20231121201110643" style="zoom:67%;" />
 
 
 
