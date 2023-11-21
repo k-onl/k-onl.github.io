@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CentOS安装docker并使用 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>CentOS安装docker并使用</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/21
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="一，docker简介："><a href="#一，docker简介：" class="headerlink" title="一，docker简介："></a>一，docker简介：</h3><p>​		Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。它可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>​		容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
+<p>​		Docker将工程及此工程依赖的所有软件打包到一个容器中统一部署，可以解决在开发环境、测试环境以及生产环境等等。多种环境去部署同一份代码，由于环境原因往往会出现软件跨环境迁移的问题！</p>
+<img src="https://cdn.jsdelivr.net/gh/baiQstar/picgo@main/img/202311211919902.png" alt="image-20231121191848479" style="zoom:50%;" />
+
+<h3 id="二，介绍Docker中的三个概念"><a href="#二，介绍Docker中的三个概念" class="headerlink" title="二，介绍Docker中的三个概念"></a>二，介绍Docker中的三个概念</h3><p>镜像image</p>
+<p>​		Docker 镜像（Image），就相当于是一个文件系统，是用于创建 Docker 容器的模板。也可以将镜像当作容器的“源代码”。镜像体积很小，非常“便携”，易于分享、存储和更新。</p>
+<p>容器container</p>
+<p>​		容器是独立运行的一个或一组应用，是镜像运行时的实体。</p>
+<p>注册中心(仓库)registry</p>
+<p>​		Docker 仓库用来保存镜像，有点类似于Maven的远程仓库。Registry 分为公共和私有两种。Docker 公司运营公共的 Registry 叫做 Docker Hub。用户可以在 Docker Hub 注册账号，分享并保存自己的镜像（说明：在 Docker Hub 下载镜像巨慢，可以自己构建私有的 Registry）。</p>
+<h3 id="三，安装docker"><a href="#三，安装docker" class="headerlink" title="三，安装docker"></a>三，安装docker</h3><p>在安装docker之前，可以先做如下准备工作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#1. 关闭防火墙，并禁止防火墙开机自启</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br><span class="line">#2. 关闭MySQL，并禁止MySQL开机自启（你的CentOS里之前安装过MySql，为防止端口冲突，需要做这一步）</span><br><span class="line">systemctl stop mysqld</span><br><span class="line">systemctl disable mysqld</span><br></pre></td></tr></table></figure>
+
+<p>在联网环境下依次执行以下操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 更新系统，如果需要确认，全部选 y (yes)。根据网络状况，此操作可能要花几分钟或者十几分钟时间</span><br><span class="line">yum update</span><br><span class="line"># 安装yum-utils工具和两个驱动依赖</span><br><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line"># 设置使用阿里云的yum源，稍后会从阿里云下载docker软件</span><br><span class="line">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo </span><br><span class="line"># 安装docker</span><br><span class="line">yum install docker-ce</span><br><span class="line"># 查看docker版本</span><br><span class="line">docker -v</span><br></pre></td></tr></table></figure>
+
+<p>设置注册中心(仓库)</p>
+<p>如果不设置注册中心，将从默认的docker hub里下载镜像，速度非常慢。</p>
+<p>USTC（中科大的镜像服务）是老牌的Linux镜像服务提供者（注册中心Registry），从Ubuntu5.04版本就在使用。USTC的docker镜像速度加载很快，它的优势之一是不需要注册，是真正的公共服务。</p>
+<p>设置步骤：</p>
+<p>创建文件夹：mkdir &#x2F;etc&#x2F;docker</p>
+<p>编辑文件daemon.json： vi &#x2F;etc&#x2F;docker&#x2F;daemon.json</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;,&quot;https://pee6w651.mirror.aliyuncs.com&quot;],</span><br><span class="line">    &quot;live-restore&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>保存并退出vi：按ESC，输:wq 回车</p>
+<p>重新加载daemon文件，然后重启docker服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="四，应用场景"><a href="#四，应用场景" class="headerlink" title="四，应用场景"></a>四，应用场景</h3><ul>
+<li>docker镜像一旦构建，就已经一次性完成了应用自动打包、集成。docker镜像可以进行版本管理、复制、分享、修改，就像管理代码一样。</li>
+<li>通过统一的docker环境封装（比如镜像中封装了同一版本的JDK、同样的环境变量等等），保证应用服务运行环境的一致性。避免出现在测试环境上好用，挪到生产环境下运行失败的问题。</li>
+<li>docker可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。<br>因为镜像可下载、可复用，docker容器可快速启动等特性，结合容器编排服务(k8s)可以实现大型分布式部署的弹性伸缩，快速扩展。</li>
+</ul>
+<h3 id="五，Docker常用命令"><a href="#五，Docker常用命令" class="headerlink" title="五，Docker常用命令"></a>五，Docker常用命令</h3><p>1，docker的启动，停止和重启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br><span class="line">systemctl stop docker</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p>2，查看docker的状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure>
+
+<p>3，设置docker开机自启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
+
+<p>4查看docker的概要信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure>
+
+<p>5，列出本地主机上有的镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker images [OPTIONS]</span><br><span class="line">常用参数：</span><br><span class="line">-a ：列出所有的镜像 （含历史映像层）</span><br><span class="line">-q ：只显示镜像ID</span><br><span class="line">example：</span><br><span class="line">docker images -a</span><br><span class="line">docker images -q</span><br><span class="line">docker images -aq</span><br><span class="line">docker images redis   #查找镜像名为redis的镜像</span><br><span class="line">docker images redis:6.0.8   #查找镜像名:版本号(REPOSITORY：TAG)对应的镜像</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/baiQstar/picgo@main/img/202311211935011.png" alt="image-20231121193502304"></p>
+<p>字段解析：</p>
+<ul>
+<li>REPOSITORY：表示镜像的仓库源</li>
+<li>TAG：镜像的标签版本号</li>
+<li>IMAGE ID：镜像ID</li>
+<li>CREATED：镜像创建时间</li>
+<li>SIZE：镜像大小</li>
+</ul>
+<p>6，从远程库拉取镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker pull 镜像名字[:TAG]</span><br><span class="line">example：</span><br><span class="line">docker pull redis:6.0.8</span><br><span class="line">docker pull ubuntu  # 没有指定版本即拉取最新版 即默认为 ubuntu:latest</span><br></pre></td></tr></table></figure>
+
+<p>7，删除本地有的镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#删除单个</span><br><span class="line">docker rmi 镜像ID  #删除镜像，如果此时镜像上面有容器正在运行，会报错无法删除</span><br><span class="line">docker rmi  -f 镜像ID   #强制(forced)删除镜像</span><br><span class="line">#删除多个</span><br><span class="line">docker rmi -f 镜像名1:TAG 镜像名2:TAG </span><br><span class="line">#删除全部（慎用）</span><br><span class="line">docker rmi -f $(docker images -qa)  </span><br><span class="line">#首先docker images -qa会列举本地所有的镜像的ID，然后作为一个集合送入rmi一个个删除</span><br></pre></td></tr></table></figure>
+
+<p>8，新建启动容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br><span class="line">常用参数：</span><br><span class="line">--name=NAME   #为容器指定名字为NAME，不使用的话系统自动为容器命名</span><br><span class="line">-d: 后台运行容器并返回容器ID，也即启动守护式容器(后台运行)；</span><br><span class="line">-i：以交互模式运行容器，通常与 -t 同时使用；</span><br><span class="line">-t：为容器重新分配一个伪输入终端，通常与 -i 同时使用；</span><br><span class="line">也即启动交互式容器(前台有伪终端，等待交互，一般连用，即-it)；</span><br><span class="line">-P: 随机端口映射，大写P</span><br><span class="line">-p: 指定端口映射，小写p </span><br><span class="line">example：</span><br><span class="line">以ubuntu为例，启动后要交互先声明交互模式，其次交互得需要一个终端，因此参数为-it</span><br><span class="line">docker run -it ubuntu /bin/bash</span><br><span class="line">指定名称</span><br><span class="line">docker run -it --name=myubuntu ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>9，启动守护式容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d 容器名</span><br><span class="line"> </span><br><span class="line">example：</span><br><span class="line">docker run -d redis:6.0.8</span><br><span class="line">docker run -d ubuntu</span><br></pre></td></tr></table></figure>
+
+<p>10，列出正在运行的容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker ps [OPTIONS]</span><br><span class="line">常用参数：</span><br><span class="line">-a :列出当前所有正在运行的容器+历史上运行过的</span><br><span class="line">-l :显示最近创建的容器。</span><br><span class="line">-n nu：显示最近nu个创建的容器。</span><br><span class="line">-q :静默模式，只显示容器编号。</span><br><span class="line">example：</span><br><span class="line">docker ps -aq</span><br><span class="line">docker ps -n 3</span><br><span class="line">docker ps -l</span><br></pre></td></tr></table></figure>
+
+<p>11，进入正在运行的容器并以命令行交互</p>
+<p>（1）docker exec -it 容器ID&#x2F;容器名称 bashShell</p>
+<p>（2）docker attach 容器ID</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">example：</span><br><span class="line">#容器ID</span><br><span class="line">docker exec -it c32f612cc218 /bin/bash</span><br><span class="line">docker attach c32f612cc218</span><br><span class="line">#容器名称</span><br><span class="line">docker exec -it wizardly_booth /bin/bash</span><br><span class="line">docker attach wizardly_booth</span><br></pre></td></tr></table></figure>
+
+<p>区别 ：</p>
+<p>​		exec 是在容器中打开新的终端，并且可以启动新的进程。用exit退出，不会导致容器的停止，attach 直接进入容器启动命令的终端，不会启动新的进程。用exit退出，会导致容器的停止。推荐大家使用 docker exec 命令，因为退出容器终端，不会导致容器的停止。</p>
+<p>12，启动，重启和停止容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器ID或者容器名</span><br><span class="line">docker restart 容器ID或者容器名</span><br><span class="line">docker stop 容器ID或者容器名</span><br><span class="line">docker kill 容器ID或容器名  # 强制停止容器</span><br></pre></td></tr></table></figure>
+
+<p>13，删除已停止的容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#删除一个</span><br><span class="line">docker rm 容器ID  </span><br><span class="line">docker rm -f 容器ID  #强制删除</span><br><span class="line">#删除多个</span><br><span class="line">docker rm -f $(docker ps -a -q)</span><br><span class="line">或</span><br><span class="line">docker ps -a -q | xargs docker rm</span><br></pre></td></tr></table></figure>
+
+<h3 id="六，安装并启动phpmyadmin"><a href="#六，安装并启动phpmyadmin" class="headerlink" title="六，安装并启动phpmyadmin"></a>六，安装并启动phpmyadmin</h3><p>安装phpmyadmin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull phpmyadmin/phpmyadmin</span><br></pre></td></tr></table></figure>
+
+<p>启动MySQL和phpmyadmin服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> docker inspect mysql57</span><br><span class="line">docker run --name mysql57 -v mysql57:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7</span><br><span class="line"></span><br><span class="line">docker exec -it mysql57 bash</span><br><span class="line">docker run --name phpmyadmin --link mysql57:db -p 9998:80 -d phpmyadmin/phpmyadmin</span><br></pre></td></tr></table></figure>
+
+<p>打开网址：192.168.0.44：9998进入phpmyadmin管理网站</p>
+<img src="https://cdn.jsdelivr.net/gh/baiQstar/picgo@main/img/202311212011788.png" alt="image-20231121201110643" style="zoom:67%;" />
+
+
+
+<hr>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
