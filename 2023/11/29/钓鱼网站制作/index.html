@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>钓鱼网站制作 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>钓鱼网站制作</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/29
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="制作一个简单的木马程序"><a href="#制作一个简单的木马程序" class="headerlink" title="制作一个简单的木马程序"></a>制作一个简单的木马程序</h1><p>在小皮的根目录（WWW）下创建一个简单的html界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129210216773.png" alt="image-20231129210216773"></p>
+<p>效果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129210237582.png" alt="image-20231129210237582"></p>
+<p>将flash.js拖拽到WWW目录下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129210531677.png" alt="image-20231129210531677"></p>
+<p>并在1.html界面里调用flash.js</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129210648938.png" alt="image-20231129210648938"></p>
+<p>在WWW目录下新建一个flash目录，将flash.exe拖拽到flash目录下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129210858289.png" alt="image-20231129210858289"></p>
+<p>在vscode里面打开flash.js文件 更改配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129211307444.png" alt="image-20231129211307444"></p>
+<p>访问1.html界面效果如下</p>
+<p>点击立即升级下载准备好的flash.exe文件（木马）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129211412062.png" alt="image-20231129211412062"></p>
+<h1 id="将真正的flash文件与木马文件打包"><a href="#将真正的flash文件与木马文件打包" class="headerlink" title="将真正的flash文件与木马文件打包"></a>将真正的flash文件与木马文件打包</h1><p>打开winrar</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129212214199.png" alt="image-20231129212214199"></p>
+<p>选中多个文件，点击添加</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129212508811.png" alt="image-20231129212508811"></p>
+<ol>
+<li>填写压缩的文件名</li>
+<li>压缩选项选择第二个</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129212607704.png" alt="image-20231129212607704"></p>
+<ol start="3">
+<li>⾼级-&gt;⾼级⾃解压选项，路径设置 C:\windows\temp</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129212740629.png" alt="image-20231129212740629"></p>
+<ol start="4">
+<li>设置添加</li>
+</ol>
+<p>C:\windows\temp\flashcenter_pp_ax_install_cn.exe<br>C:\windows\temp\flash.exe</p>
+<p><strong>\temp后放的是你要打包的文件名，我这里打包的是flash和flashcenter_pp_ax_install_cn.exe两个文件</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129212823005.png" alt="image-20231129212823005"></p>
+<ol start="5">
+<li>模式设置全部隐藏</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129213109735.png" alt="image-20231129213109735"></p>
+<ol start="6">
+<li>更新设置</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129213133756.png" alt="image-20231129213133756"></p>
+<p>最后点击生成</p>
+<p>这样在运行该打包文件时就能同时运行flash与木马</p>
+<p>效果展示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129215515852.png" alt="image-20231129215515852"></p>
+<h1 id="修改文件图标"><a href="#修改文件图标" class="headerlink" title="修改文件图标"></a>修改文件图标</h1><p>打开Restorato更改文件图标</p>
+<p>将文件拖拽至左方</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129211927689.png" alt="image-20231129211927689"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129213326157.png" alt="image-20231129213326157"></p>
+<ul>
+<li>将需要修改的文件图标右键删除</li>
+<li>然后将想添加的图标复制粘贴</li>
+</ul>
+<p>修改之前</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129213518564.png" alt="image-20231129213518564"></p>
+<p>修改之后</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129213603548.png" alt="image-20231129213603548"></p>
+<p>然后点击保存</p>
+<p>保存后会出现一个备份，这个是被修改图标的文件备份</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129213850519.png" alt="image-20231129213850519"></p>
+<p>然后就能看到图标已被修改</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129213950204.png" alt="image-20231129213950204"></p>
+<ul>
+<li>​	<strong>如果依旧显示以前的图标，重命名一下即可</strong></li>
+</ul>
+<p><strong>到了这一步就可以将flash.js里面的文件替换为打包好并且更换好图标的文件。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129215145864.png" alt="image-20231129215145864"></p>
+<h1 id="制作一个很像的钓鱼网站"><a href="#制作一个很像的钓鱼网站" class="headerlink" title="制作一个很像的钓鱼网站"></a>制作一个很像的钓鱼网站</h1><p>使用kali linux制作一个钓鱼网站（详情可查看上一篇博客 	钓鱼网站的使用、远控：<a target="_blank" rel="noopener" href="https://k-onl.github.io)/">https://k-onl.github.io）</a></p>
+<p>将生成的steam钓鱼网站下载下来得到这两个文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129215005396.png" alt="image-20231129215005396"></p>
+<p>将这两个文件拖拽到小皮的WWW目录下</p>
+<p>并将html文件重命名为index.html</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129215655878.png" alt="image-20231129215655878"></p>
+<p>通过vscode打开index.html</p>
+<p>编辑install Steam（安装） 中超链接的地址，将其换为与真正的Steam安装包打包好的木马程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129215819106.png" alt="image-20231129215819106"></p>
+<p>登录钓鱼网页点击下载</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129220032792.png" alt="image-20231129220032792"></p>
+<p>运行结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231129220122221.png" alt="image-20231129220122221"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
