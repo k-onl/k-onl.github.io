@@ -187,7 +187,7 @@
 <p>如果提示：No such file or directory 说明你是第一次使用git。</p>
 <blockquote>
 <p>ssh-keygen -t rsa -C “邮件地址”</p>
-<p>这里的邮寄地址最好与注册github的的一样</p>
+<p>这里的邮寄地址是你注册github的邮箱</p>
 <p>（不要关闭界面，后面还要用到）</p>
 </blockquote>
 <ul>
@@ -205,7 +205,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115191423428.png" alt="image-20231115191423428"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115191434008.png" alt="image-20231115191434008"></p>
 <p>尝试ssh连接,测试是否成功</p>
-<p>ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;</a> </p>
+<p>ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;</a> </p>
 <p>如果提示Are you sure you want to continue connecting (yes&#x2F;no)?，输入yes，然后会看到下面这个successfully，就算成功：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115191515919.png" alt="image-20231115191515919"></p>
 <p>在blog目录下打开cmd(以管理员身份)</p>
@@ -214,11 +214,11 @@
 <p>如：cd C:\git\boke\blog</p>
 <p><strong>输入npm install hexo-deployer-git –save</strong></p>
 <p>在上一个Git Bash Here还需要继续配置</p>
-<p>git config –global user.name “k-onl”&#x2F;&#x2F; 你的github用户名，非昵称<br>git config –global user.email “<a href="mailto:&#x78;&#120;&#x78;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;">&#x78;&#120;&#x78;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;</a>“&#x2F;&#x2F; 填写你的github注册邮箱</p>
+<p>git config –global user.name “k-onl”&#x2F;&#x2F; 你的github用户名，非昵称<br>git config –global user.email “<a href="mailto:&#x78;&#120;&#120;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;">&#x78;&#120;&#120;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;</a>“&#x2F;&#x2F; 填写你的github注册邮箱</p>
 <p>6.准备上传代码</p>
 <p>在github上新建一个存储库，命名为：github的用户名.github.io（必须与自己github注册用户名一致，因为Github 仅能使用一个同名仓库的代码托管一个静态站点）</p>
 <p>编辑_config.yml文件</p>
-<p>deploy:<br>type: git<br>repository: <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a>:xxx&#x2F;xxx.github.io.git（xxx记得改成自己的用户名）<br>branch: main</p>
+<p>deploy:<br>type: git<br>repository: <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;</a>:xxx&#x2F;xxx.github.io.git（xxx记得改成自己的用户名）<br>branch: main</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115191711530.png" alt="image-20231115191711530"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115191722307.png" alt="image-20231115191722307"></p>
 <p><strong>（在页面最后）</strong></p>
