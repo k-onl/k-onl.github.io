@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>VMawre的三种模式 | k-onlの狗窝</title>
+    <title>VMawre的三种模式及网络ip | k-onlの狗窝</title>
     <meta name="author" content="k-onl" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -142,7 +142,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>VMawre的三种模式</h1>
+        <h1>VMawre的三种模式及网络ip</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -157,7 +157,6 @@
     
     <div class="content" v-pre>
         <p>+ </p>
-<p>私有地址范围：<br>10.0.0.0<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255</p>
 <p>安装完成vmware以后<br>进入虚拟机—&gt;&gt;设置—&gt;&gt;网络适配器</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231115193203346.png" alt="image-20231115193203346"></p>
 <p>在网络适配器中可以发现vmware为我们提供了三种网络工作模式，它们分别是：</p>
@@ -196,8 +195,12 @@
 <h2 id="Host-Only（仅主机模式）"><a href="#Host-Only（仅主机模式）" class="headerlink" title="Host-Only（仅主机模式）"></a>Host-Only（仅主机模式）</h2><p><strong>描述</strong><br>Host-Only（仅主机模式）其实就是NAT模式去除了虚拟NAT设备，然后使用VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开。使得虚拟机成为一个独立的系统，只与主机相互通讯。</p>
 <p>简单来说就是主机模式下连同主机下的虚拟机之间也无法相互访问</p>
 <p><strong>实现</strong><br>实现与net模式类似</p>
-<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>IPv4的IP地址范围：</p>
-<p>10.0.0.0.-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255</p>
+<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>三大运营商提供光纤，将网络传输到光猫<br>    光猫（进行公网私网ip的转换）传输到路由器，然后手机连接wifi</p>
+<p>公网ip：由三大运营商提供，任何人都能访问公网ip，如百度，京东，学校官网这些<br>私网ip：由路由器分配，手机、电脑连接wifi就是为私网ip</p>
+<p>公网的IP地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231204190801359.png" alt="image-20231204190801359"></p>
+<p>私网的IP地址范围：</p>
+<p>10.0.0.0.-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.<strong>255</strong>（0为网卡地址，255为广播地址，这两个无法进行分配）</p>
 <p>如现在有一个IP地址 192.168.0.3<br>192&#x3D;128+64+0+0+0+0+0+0 &#x3D; 1100 0000<br>168&#x3D;128+0+32+0+8+0+0+0 &#x3D; 1010 1000</p>
 <p>子网掩码：<br>192.168.0.3&#x2F;24 &#x3D;&#x3D;&#x3D;255.255.255.0</p>
 <p>192.168.1.0&#x2F;24<br>192.168.0.1&#x2F;24<br>24表示占用了前24个即前24个为子网掩码</p>
