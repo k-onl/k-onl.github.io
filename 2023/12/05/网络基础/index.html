@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>网络基础 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>网络基础</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/5
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>+ </p>
+<p><strong>网络线路：内网——》路由器——》路由器云（很多个路由器）——》光猫——》公网ip</strong></p>
+<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>三大运营商提供光纤，将网络传输到光猫<br>    光猫（进行公网私网ip的转换）传输到路由器，然后手机连接wifi</p>
+<p>公网ip：由三大运营商提供，任何人都能访问公网ip，如百度，京东，学校官网这些<br>私网（内网）ip：由路由器分配，手机、电脑连接wifi就是为私网ip</p>
+<p>公网的IP地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231204190801359.png" alt="image-20231204190801359"></p>
+<p>私网（内网）的IP地址范围：</p>
+<p>10.0.0.0.-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.<strong>255</strong>（0为网卡地址，255为广播地址，这两个无法进行分配）</p>
+<p>内网：<br>静态ip：手动配置；不变<br>动态ip：由路由器分配地址；变化</p>
+<p>如果静态配置的ip已经被动态分配了：可能都上不了网，也可能一个能上网（静态优先）<br>先静态，动态肯定无法上网；先动态静态可能可以，可能不可以</p>
+<p>如现在有一个IP地址 192.168.0.3<br>192&#x3D;128+64+0+0+0+0+0+0 &#x3D; 1100 0000<br>168&#x3D;128+0+32+0+8+0+0+0 &#x3D; 1010 1000</p>
+<p>子网掩码：<br>192.168.0.3&#x2F;24 &#x3D;&#x3D;&#x3D;255.255.255.0</p>
+<p>192.168.1.0&#x2F;24<br>192.168.0.1&#x2F;24<br>24表示占用了前24个即前24个为子网掩码</p>
+<p>192.168.0.1&#x2F;24的子网掩码为255.255.255.0<br>这个是占用了25个</p>
+<p>192.168.0.3&#x2F;25&#x3D;255.255.255.128&#x3D;1111 1111 .1111 1111 .1111 1111 .1000 0011</p>
+<h2 id="tcp-ip协议"><a href="#tcp-ip协议" class="headerlink" title="tcp&#x2F;ip协议"></a>tcp&#x2F;ip协议</h2><p>根据OSI模型（开放系统互联模型），计算机网络被划分为七个不同的层级。这些层级按照功能和协议的不同进行划分，从底层到顶层分别为：</p>
+<p>物理层（Physical Layer）：负责传输比特流，并管理物理连接、电压等物理特性。<br>数据链路层（Data Link Layer）：在相邻节点之间传输数据帧，并提供错误检测和纠正的功能。<br>网络层（Network Layer）：负责在网络中选择路由并转发数据包，例如IP协议。<br>传输层（Transport Layer）：提供端到端的数据传输服务，并确保数据的可靠性和完整性，例如TCP协议。<br>会话层（Session Layer）：管理通信会话的建立、维护和终止。<br>表示层（Presentation Layer）：负责数据的格式化、加密和解密，以确保不同系统之间的数据交换。<br>应用层（Application Layer）：提供特定应用程序的服务，例如HTTP、FTP、SMTP等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205215939948.png" alt="image-20231205215939948"></p>
+<p>代理：</p>
+<p>代理是提供一个虚假的IP地址套在你原有的ip上，然后通过代理ip去访问你原有ip访问不到或者难以访问的网站</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205220529782.png" alt="image-20231205220529782"></p>
+<p>通过配置端口与socks5，达到影响传输层及以下层级</p>
+<h2 id="路由器与交换机"><a href="#路由器与交换机" class="headerlink" title="路由器与交换机"></a>路由器与交换机</h2><h3 id="路由器："><a href="#路由器：" class="headerlink" title="路由器："></a>路由器：</h3><p>dhcp：分配ip地址；	由路由表发出路由找寻、接收地址如：接收内网用户请求找到百度的ip<br>路由器之间不互通，除法人为配置<br>路由表：存放源ip、Mac地址；目的ip、Mac地址</p>
+<p>静态路由：固定地址<br>动态路由：自动找寻最近的服务器</p>
+<p>处于不同路由器之下的内网ip无法互相访问</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205221153305.png" alt="image-20231205221153305"></p>
+<p>除非人为配置路由器，将路由器1里面的路由表1放入路由器2的源ip、Mac地址；目的ip、Mac地址</p>
+<p>只有这样，路由器1的内网ip才能访问路由器2的内网</p>
+<h2 id="交换机："><a href="#交换机：" class="headerlink" title="交换机："></a>交换机：</h2><p>连接路由器与内网，反面连接网线，正面连接路由器</p>
+<h2 id="网卡"><a href="#网卡" class="headerlink" title="网卡"></a>网卡</h2><p>网卡也被称为网络适配器或网络接口控制器，是计算机中用于与网络通信的硬件设备。（就是用来联网的）</p>
+<p>网卡通常是一个扩展插槽上的可插拔设备，或者是集成在计算机主板上的芯片。它的主要功能是将计算机内部的数据转换为网络可以识别和传输的格式，并通过物理连接（如以太网电缆）与网络进行通信。</p>
+<p>下面是一些网卡</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205221507002.png" alt="image-20231205221507002"></p>
+<p>VMware的三种模式具体在博客<a target="_blank" rel="noopener" href="https://k-onl.github.io/2023/11/15/VMawre%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F/">https://k-onl.github.io/2023/11/15/VMawre%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F/</a></p>
+<p>这里解释一下两种模式下网卡的区别</p>
+<p>桥接模式：该模式下是在虚拟机里面模拟了一个虚拟的网卡用于连接主机的真实的网卡</p>
+<p>NAT模式：该模式下是在虚拟机里面设置了一个与物理机一样的网卡</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205221314178.png" alt="image-20231205221314178"></p>
+<p>桥接模式下的虚拟机可以访问NAT</p>
+<p>NAT下的虚拟机无法访问桥接</p>
+<h2 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h2><p>驱动是用来连接操作系统与硬件，使得操作系统可以通过驱动来对硬件进行操作</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
