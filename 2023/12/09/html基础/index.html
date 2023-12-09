@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>k-onlの狗窝</title>
+    <title>html基础 | k-onlの狗窝</title>
     <meta name="author" content="k-onl" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -28,7 +28,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -138,32 +140,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/amiya.jpg,/images/1.jpg,/images/3.jpg,/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>k-onlの狗窝</h1>
-                <h3>邪王真眼是最强的</h3>
-                <h5></h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>html基础</h1>
     </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/12/09/html%E5%9F%BA%E7%A1%80/">
-        <h2 class="post-title">html基础</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -173,10 +154,9 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>+ </p>
+    
+    <div class="content" v-pre>
+        <p>+ </p>
 <p>s</p>
 <p>web基础的语法</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;      </span><br><span class="line"></span><br><span class="line">&lt;title&gt;web基础&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;&lt;font color=&quot;red&quot;&gt;标题1&lt;/font&gt;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2&gt;&lt;font color=&quot;green&quot;&gt;标题2&lt;/font&gt;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- &lt;foot&gt;  定义文字字体，大小，颜色 --&gt;</span><br><span class="line">&lt;font color=&quot;pink&quot; size=&quot;10&quot; face=&quot;华文行楷&quot;&gt;第一个web&lt;/font&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- &lt;br&gt;换行 --&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">   &lt;!-- 表示颜色</span><br><span class="line"></span><br><span class="line">    1.直接书写单词red....</span><br><span class="line">    2.使用rgb（x，x，x）范围：0~255  r：红  g：绿  b：蓝 如：rgb （255,0,0） 为红色</span><br><span class="line">    3. #xxx  十六进制表示  范围 00~FF   如 ：#FF0000  为红色    </span><br><span class="line"> --&gt;</span><br><span class="line">          &lt;font color=&quot;pink&quot; size=&quot;10&quot; &gt;&lt;b&gt;粗体&lt;/b&gt;  &lt;/font&gt;   </span><br><span class="line">          &lt;font color=&quot;pink&quot; size=&quot;10&quot; &gt;  细体 &lt;/font&gt;  </span><br><span class="line">          &lt;font color=&quot;pink&quot; size=&quot;10&quot; &gt;&lt;i&gt;斜体&lt;/i&gt;  &lt;/font&gt;  </span><br><span class="line">          &lt;font color=&quot;pink&quot; size=&quot;10&quot; &gt;&lt;u&gt;下划线&lt;/u&gt;  &lt;/font&gt;  </span><br><span class="line">          &lt;br&gt;</span><br><span class="line">          &lt;center&gt; &lt;font color=&quot;pink&quot; size=&quot;10&quot; face=&quot;宋体&quot; &gt;文本居中  &lt;/font&gt; &lt;/center&gt;</span><br><span class="line">           &lt;hr&gt;  </span><br><span class="line"></span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                你所热爱的，就是你的生活</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                &lt;font color=&quot;pink&quot; size=&quot;6&quot; face=&quot;华文行楷&quot;&gt;  柠檬什么时候&amp;nbsp熟啊  &lt;/font&gt;</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- hr 水平分割线 --&gt;</span><br><span class="line">    &lt;hr&gt; </span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
@@ -211,347 +191,13 @@
 
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209222652501.png" alt="image-20231209222652501"></p>
 
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/09/html%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/09/python%E7%88%AC%E8%99%AB/">
-        <h2 class="post-title">python爬虫基础</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/9
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>python爬虫，包含文件读写、urllib、ajax、xpath、jsonpath、requests与selenium</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/09/python%E7%88%AC%E8%99%AB/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/09/python%E5%9F%BA%E7%A1%80/">
-        <h2 class="post-title">python基础</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/9
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>python靠后的基础，只有字符串、列表、元组、字典与异常的相关知识</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/09/python%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/06/%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7Proxifier%E4%B8%8EWireShark%E7%9A%84%E4%BD%BF%E7%94%A8/">
-        <h2 class="post-title">代理工具Proxifier与WireShark的使用</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/6
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>使用代理工具配置Proxifier，使用WireShark查看传输</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/06/%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7Proxifier%E4%B8%8EWireShark%E7%9A%84%E4%BD%BF%E7%94%A8/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-        <h2 class="post-title">网络基础</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>网络基础知识，包括ip、路由器、交换机等</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/01/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
-        <h2 class="post-title">linux基础命令</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>linux基础命令的使用</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/01/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/29/%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C/">
-        <h2 class="post-title">钓鱼网站制作</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>简单的钓鱼网站制作过程，包括多文件打包、文件图标替换</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/29/%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/28/%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E8%BF%9C%E6%8E%A7/">
-        <h2 class="post-title">钓鱼网站的使用、远控</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>使用钓鱼网站获取信息、使用远控操控其他系统</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/28/%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E8%BF%9C%E6%8E%A7/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/28/%E4%BD%BF%E7%94%A8kali%E5%AE%9E%E7%8E%B0%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">
-        <h2 class="post-title">使用kali实现永恒之黑</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>永恒之黑实现</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/28/%E4%BD%BF%E7%94%A8kali%E5%AE%9E%E7%8E%B0%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/11/22/%E4%BD%BF%E7%94%A8%E2%80%9Ccmd%E5%91%BD%E4%BB%A4%E2%80%9D%E6%9C%A8%E9%A9%AC%E4%B8%8E%E8%9A%81%E5%89%91%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99%E7%9B%AE%E5%BD%95/">
-        <h2 class="post-title">使用“cmd命令”木马与蚁剑获取网站目录</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/22
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>使用小皮部署phpMyAdmin，使用“cmd”木马与蚁剑获取网站目录</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/11/22/%E4%BD%BF%E7%94%A8%E2%80%9Ccmd%E5%91%BD%E4%BB%A4%E2%80%9D%E6%9C%A8%E9%A9%AC%E4%B8%8E%E8%9A%81%E5%89%91%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99%E7%9B%AE%E5%BD%95/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
-    
-    <a class="page-num" href="/page/2">2</a>
     
     
     
     
-    <a class="page-num" href="/page/2/">
-        <i class="fa-solid fa-caret-right fa-fw"></i>
-    </a>
     
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/fufu1.jpg" alt="avatar" />
-        </div>
-        <div class="name">k-onl</div>
-        <div class="description">
-            <p>新手一名，又菜又烂，轻喷</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://k-onl.github.io">k-onl的博客主页</a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://space.bilibili.com/434897229?spm_id_from=333.337.0.0">k-onl的B站主页</a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://github.com/k-onl">k-onl的GtiHub主页</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
     
 </div>
 
@@ -583,6 +229,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
