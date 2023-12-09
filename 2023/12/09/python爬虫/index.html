@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>python爬虫基础 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>python爬虫基础</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/9
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>+ </p>
+<p>s</p>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"># fp=open(&#x27;text&#x27;,&#x27;r&#x27;) #读取text文件</span><br><span class="line"></span><br><span class="line"># # s1= fp.read()   #按字节读取，效率慢并且是直接将文件的内容取出来再显示在命令行</span><br><span class="line"># # print(s1)</span><br><span class="line"></span><br><span class="line"># s1= fp.readline()   #一行一行读取，也只读取一行</span><br><span class="line"># print(s1)</span><br><span class="line"></span><br><span class="line"># s1= fp1.readlines()   #一行一行读取，全部读取</span><br><span class="line"># print(s1)</span><br><span class="line"># 关闭文件</span><br><span class="line"># fp1.close()</span><br><span class="line"></span><br><span class="line"># fp=open(&#x27;text&#x27;,&#x27;w&#x27;) #w为覆盖写入</span><br><span class="line"></span><br><span class="line"># fp.write(&#x27;4542&#x27;)	#写入1542</span><br><span class="line"></span><br><span class="line">fp=open(&#x27;text1.txt&#x27;,&#x27;a&#x27;) #a为追加写入</span><br><span class="line"></span><br><span class="line">fp.write(&#x27;4542\n&#x27;)</span><br><span class="line">fp.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="文件序列化与json模块"><a href="#文件序列化与json模块" class="headerlink" title="文件序列化与json模块"></a>文件序列化与json模块</h3><ul>
+<li>序列化和反序列化都是将文件转换成python能够读取的编码<br>序列化：文件写入时的转码<br>反序列化：文件读取时进行转码</li>
+<li>导入json模块，可以使用其中的函数来解析JSON数据、序列化为JSON字符串、以及对JSON数据进行操作和处理。<br>  json.dumps()：将Python对象转换为JSON格式的字符串。<br>  json.loads()：将JSON格式的字符串解析为Python对象。<br>  json.dump()：将Python对象写入JSON文件。<br>  json.load()：从JSON文件中读取数据并解析为Python对象。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list=[&#x27;12&#x27;,&#x27;32&#x27;]</span><br><span class="line"></span><br><span class="line">fp=open(&#x27;text.txt&#x27;,&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line"> #导入json模块，可以使用其中的函数来解析JSON数据、序列化为JSON字符串、以及对JSON数据进行操作和处理。</span><br><span class="line"> #写入</span><br><span class="line">#json.dump()：将Python对象写入JSON文件。</span><br><span class="line">#json.dumps()：将Python对象转换为JSON格式的字符串。</span><br><span class="line"></span><br><span class="line">#读取</span><br><span class="line">#json.load()：从JSON文件中读取数据并解析为Python对象。</span><br><span class="line">#json.loads()：将JSON格式的字符串解析为Python对象。</span><br><span class="line"></span><br><span class="line">dump()和load()适用于文件对象，用于读写JSON数据。</span><br><span class="line">dumps()和loads()适用于字符串，用于将JSON数据与Python对象之间进行转换。</span><br><span class="line"></span><br><span class="line">#引入json模块</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> #dumps 有返回值</span><br><span class="line"></span><br><span class="line">re= json.dumps(list) #通过json.dumps将获取到的list列表中的内容赋予re</span><br><span class="line">fp.write(re)  #将re的内容写入 到文件中</span><br><span class="line">print(re)</span><br><span class="line">fp.close()</span><br><span class="line"></span><br><span class="line">#dump,更加简化,  但无返回值</span><br><span class="line"># re= json.dump(list,fp)</span><br><span class="line"># print(re)</span><br><span class="line"># fp.close()</span><br><span class="line"></span><br><span class="line"># 反序列化</span><br><span class="line"></span><br><span class="line"># loads </span><br><span class="line"># fp1=open(&#x27;text.txt&#x27;,&#x27;r&#x27;)</span><br><span class="line"># # shuju=fp1.read()</span><br><span class="line"># # re1= json.loads(shuju)</span><br><span class="line"></span><br><span class="line"># # print(f&#x27;反序列化：&#123;re1&#125;&#x27;)</span><br><span class="line"></span><br><span class="line"># # load</span><br><span class="line"># shuju1=json.load(fp1)</span><br><span class="line"># print(shuju1)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="urllib"><a href="#urllib" class="headerlink" title="urllib"></a>urllib</h2><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">import urllib.request  #导入urllib模块</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url=&#x27;https://home.firefoxchina.cn/&#x27;  #设置需要爬取的页面地址</span><br><span class="line"></span><br><span class="line">resp=urllib.request.urlopen(url)   #向页面发送请求并将  所有数据并返回给resp</span><br><span class="line">shuju=resp.read().decode(&#x27;utf-8&#x27;)       #通过read函数只获取源码（过滤其他数据）</span><br><span class="line"># read是返回的是字节形式的二进制数据，需要将其转换为字符串数据（解码过程）</span><br><span class="line"></span><br><span class="line">print(shuju)</span><br></pre></td></tr></table></figure>
+
+<p>效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209205308394.png" alt="image-20231209205308394"></p>
+<h2 id="urllib方法"><a href="#urllib方法" class="headerlink" title="urllib方法"></a>urllib方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">import urllib.request  #导入urllib模块</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url=&#x27;https://home.firefoxchina.cn/&#x27;  #设置需要爬取的页面地址</span><br><span class="line"></span><br><span class="line">resp=urllib.request.urlopen(url)   #向页面发送请求并将数据并返回给resp</span><br><span class="line"># shuju=resp.read()       #)读取出来的是字节码数据</span><br><span class="line"># shuju=resp.readline()       #只读一行</span><br><span class="line"># shuju=resp.readlines()     #一行一行读</span><br><span class="line"></span><br><span class="line">print(resp.geturl())    #返回的是url地址</span><br><span class="line"></span><br><span class="line"># print(shuju)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url2=&#x27;https://img.zcool.cn/community/0189c159004572a801214550774134.png@2o.png&#x27; #将网页，图片，视频等下载地址路径放入url</span><br><span class="line">#下载图片并重命名</span><br><span class="line">urllib.request.urlretrieve(url2,&#x27;御坂妹妹.jpg&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>resp.read()读取出来的是字节码数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209205558203.png" alt="image-20231209205558203"></p>
+<p>shuju&#x3D;resp.readline()       #只读一行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209205634222.png" alt="image-20231209205634222"></p>
+<h2 id="urllib请求对象定制"><a href="#urllib请求对象定制" class="headerlink" title="urllib请求对象定制"></a>urllib请求对象定制</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line">#https 中的s代表ssl加密，需要提供请求设备的信息才能进行访问</span><br><span class="line">url=&#x27;https://home.firefoxchina.cn/&#x27; </span><br><span class="line"></span><br><span class="line">#  Mozilla/5.0：浏览器版本  Windows：操作系统类型与版本     Firefox：使用的浏览器</span><br><span class="line">#请求头中可能要放一些其他信息如cookie，token等</span><br><span class="line">header=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;&#125;</span><br><span class="line"></span><br><span class="line"> #   将url与请求信息User-Agent的数据同时交给request</span><br><span class="line">request=urllib.request.Request(url=url,headers=header) </span><br><span class="line"></span><br><span class="line">  #向域名发送请求</span><br><span class="line">response=urllib.request.urlopen(request)  </span><br><span class="line">shuju=response.read().decode(&#x27;utf8&#x27;)</span><br><span class="line">print(shuju) </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="get请求unicode编码"><a href="#get请求unicode编码" class="headerlink" title="get请求unicode编码"></a>get请求unicode编码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line"># unicode编码（%E5%BE%A1%E5%9D%82%E7%BE%8E%E7%90%B4=&quot;御坂美琴&quot;），将各种语言以一串编码来表示</span><br><span class="line"># url = &#x27;http://www.baidu.com/s?wd=%E5%BE%A1%E5%9D%82%E7%BE%8E%E7%90%B4&#x27;</span><br><span class="line"></span><br><span class="line">url = &#x27;https://www.baidu.com/s?wd=&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 将’御坂美琴‘转换为unicode编码</span><br><span class="line">name=urllib.parse.quote(&#x27;御坂美琴&#x27;)</span><br><span class="line"></span><br><span class="line"># 拼接</span><br><span class="line">url=url+name</span><br><span class="line"></span><br><span class="line">header=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;,</span><br><span class="line">        &#x27;Accept&#x27;:&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&#x27;</span><br><span class="line">        </span><br><span class="line">       &#125;</span><br><span class="line">  #请求对象定制</span><br><span class="line">request=urllib.request.Request(url=url,headers=header)</span><br><span class="line"></span><br><span class="line">response=urllib.request.urlopen(request)</span><br><span class="line"></span><br><span class="line">shuju=response.read().decode(&#x27;utf8&#x27;)</span><br><span class="line">print(shuju)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209205748631.png" alt="image-20231209205748631"></p>
+<h2 id="get请求urlencode多个参数传递"><a href="#get请求urlencode多个参数传递" class="headerlink" title="get请求urlencode多个参数传递"></a>get请求urlencode多个参数传递</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#当搜索的参数不止一个的时候，就需要urlencode进行一个转码拼接</span><br><span class="line"></span><br><span class="line">import urllib.request</span><br><span class="line">#导入parse模块</span><br><span class="line">import urllib.parse</span><br><span class="line"># https://cn.bing.com/search?q=%E5%91%A8%E6%9D%B0%E4%BC%A6&amp;sex=%E7%94%B7</span><br><span class="line"></span><br><span class="line">url=(&#x27;https://cn.bing.com/search?&#x27;)</span><br><span class="line"># 一分为二将网址与参数分离</span><br><span class="line">data=&#123;</span><br><span class="line">    &#x27;q&#x27;:&#x27;周杰伦&#x27;,</span><br><span class="line">    &#x27;sex&#x27;:&#x27;男&#x27;</span><br><span class="line">&#125;</span><br><span class="line"># 由于data方法无法识别字符串、byte等类型，需要urlencode(data)转换为字节流</span><br><span class="line">new_data=urllib.parse.urlencode(data)</span><br><span class="line"></span><br><span class="line"># 重新拼接</span><br><span class="line">url=url+new_data</span><br><span class="line"></span><br><span class="line">header=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;,</span><br><span class="line">        &#x27;Accept&#x27;:&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&#x27;</span><br><span class="line">        </span><br><span class="line">       &#125;</span><br><span class="line">request=urllib.request.Request(url=url,headers=header)</span><br><span class="line"></span><br><span class="line">response=urllib.request.urlopen(request)</span><br><span class="line"></span><br><span class="line">shuju=response.read().decode(&#x27;utf8&#x27;)</span><br><span class="line">print(shuju)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="post请求百度翻译"><a href="#post请求百度翻译" class="headerlink" title="post请求百度翻译"></a>post请求百度翻译</h2><p>打开百度翻译，英文输入法输入spider（蜘蛛）</p>
+<p>右键检查选择网络</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209210227105.png" alt="image-20231209210227105"></p>
+<p>找到最后一个sug，然后找到对应输入的单词</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209210502657.png" alt="image-20231209210502657"></p>
+<p>然后返回标头找到url：<a target="_blank" rel="noopener" href="https://fanyi.baidu.com/sug">https://fanyi.baidu.com/sug</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209210637812.png" alt="image-20231209210637812"></p>
+<p>代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import urllib.request</span><br><span class="line"># import urllib.parse</span><br><span class="line"></span><br><span class="line"># 找json，然后在负载找表单数据 火狐在请求找表单数据</span><br><span class="line">url=&#x27;https://fanyi.baidu.com/sug&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data=&#123;</span><br><span class="line"></span><br><span class="line">    &#x27;kw&#x27;:&#x27;spider&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># urlencode(data)转换为unicode编码  encode(&#x27;utf-8&#x27;)将data数据转换为字节流</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">header=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;,</span><br><span class="line">        &#x27;Accept&#x27;:&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&#x27;</span><br><span class="line">        </span><br><span class="line">       &#125;</span><br><span class="line"># 由于data方法无法识别字符串、byte等类型，需要urlencode(data)转换为字节流</span><br><span class="line">data=urllib.parse.urlencode(data).encode(&#x27;utf-8&#x27;)</span><br><span class="line"></span><br><span class="line">request=urllib.request.Request(url=url,data=data,headers=header)</span><br><span class="line"></span><br><span class="line">response=urllib.request.urlopen(request)</span><br><span class="line"></span><br><span class="line">shuju=response.read().decode(&#x27;utf-8&#x27;)</span><br><span class="line">import json</span><br><span class="line">shuju=json.loads(shuju)</span><br><span class="line"></span><br><span class="line">print(shuju)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209205834217.png" alt="image-20231209205834217"></p>
+<h2 id="post请求详细百度翻译"><a href="#post请求详细百度翻译" class="headerlink" title="post请求详细百度翻译"></a>post请求详细百度翻译</h2><p>这个是找到翻译的详细信息。</p>
+<p>找v2transapi?from&#x3D;en&amp;to&#x3D;zh 然后在负载找表单数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209211038551.png" alt="image-20231209211038551"></p>
+<p>然后找到url</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209211212476.png" alt="image-20231209211212476"></p>
+<p>这里需要将cookie值写入headers</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209211456692.png" alt="image-20231209211456692"></p>
+<p>然后代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 找v2transapi?from=en&amp;to=zh 然后在负载找表单数据</span><br><span class="line"></span><br><span class="line">url=&#x27;https://fanyi.baidu.com/v2transapi?from=en&amp;to=zh&#x27;</span><br><span class="line"></span><br><span class="line">data=&#123;  </span><br><span class="line">    &#x27;from&#x27;:	&quot;en&quot;,</span><br><span class="line">    &#x27;to&#x27;    :	&quot;zh&quot;,</span><br><span class="line">    &#x27;query&#x27;:	&quot;spider&quot;,</span><br><span class="line">    &#x27;transtype&#x27;	:&quot;realtime&quot;,</span><br><span class="line">    &#x27;simple_means_flag&#x27;:	&quot;3&quot;,</span><br><span class="line">    &#x27;sign&#x27;:	&quot;63766.268839&quot;,</span><br><span class="line">    &#x27;token&#x27;:	&quot;a4a1ae46a8abd1ba9a98350c307b01f7&quot;,</span><br><span class="line">    &#x27;domain&#x27;:	&quot;common&quot;,</span><br><span class="line">    &#x27;ts&#x27;:	&quot;1701310333198&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">header=&#123;</span><br><span class="line">        &#x27;Cookie&#x27;:</span><br><span class="line">	&#x27;BIDUPSID=56FD53420660E168FAAA7706A9EF3ECE; PSTM=1651909191; ZFY=oP:Aa4qo3aEnmphfluJ0dIZlweiCT:BlljBHZc8gPYnhQ:C; BAIDUID=E877C2F6CD4F4F67AF41790B05BE13D8:FG=1; BAIDUID_BFESS=E877C2F6CD4F4F67AF41790B05BE13D8:FG=1; H_PS_PSSID=39634_39664_39676_39713_39739_39750_39762_39789_39788_39703_39684_39661_39679_39817_39837_39782_39842; H_WISE_SIDS=110085_265881_263619_277157_259642_256739_274948_280810_280898_281190_280650_280977_281804_281810_281866_281893_281829_275098_278414_282572_282633_281835_282058_280272_28223…SWITCH=1; FANYI_WORD_SWITCH=1; HISTORY_SWITCH=1; SOUND_SPD_SWITCH=1; SOUND_PREFER_SWITCH=1; BDRCVFR[gZhL2P1o08b]=mk3SLVN4HKm; delPer=0; PSINO=6; BA_HECTOR=8585a00lal852hal802521041imfpe51q; BDORZ=FFFB88E999055A3F8A630C64834BD6D0; Hm_lpvt_64ecd82404c51e03dc91cb9e8c025574=1701310311; ab_sr=1.0.1_NTU2OWUwZjY3N2RkMGRjMzVjZmMyYjQ1YTk2OGE4YjM3ZWU4YzRlYjI2YmUxMDBlMTUxMWM3ZTc5ZTA5OGNlOTI1NTc4MDVhMjEyYTFiYTc3ZDA1MDNlMjRlYWVlNmMxZTlkM2MyMWMxZGU2MjZjNjk4MjBjYzg1YWM4NmQxZjc1OWYwYmNiNjE4ZDZlYjY5NTZlMTNhOGU4OTEwM2ZhYg==&#x27;,</span><br><span class="line">        </span><br><span class="line">    #     &#x27;Acs-Token&#x27;:</span><br><span class="line">	# &#x27;1701226841164_1701310333215_t8q+IaMEIs1/dq8odj6wNhOowXMBSFWDdmOuCX9EEw5wFttPzWQZaxgi20UyDAwUY024ZKRNcuPwN6dXLriJ2l2QdkQMTmnb5UEa6SgM9EIqbR0eaTG8sMl6L63p27btlmFVl8JqWqgyyVjkI+728+j63EdRgQ4MLA27qdJxRvVAYYdz6lDB0vo71hMz3vVQ9xmv54E/pxtx/28BGl2uhdbKqlkHRRKo0SuNtOsya0R+y+y+4HmUmFpQ+O+jZweibQ3ksdrkLJ+4xIXJ+PFOEt0a7RFWAogaXf2ykUAwz99J8w2HKgCL/HSH8FHWSVmz7aGipiOUui/dohap7TXJjO5eBY/HeF1W6HnWoTd/zxNJbhkZnBwVJh8dE0BNUfWvSvBluRNZm8RR6mFy+KN8pmsMHIr7yPeWoblgb92EaE5B/tL59LuTIhqESSTk/NsX&#x27;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 将整个字典 data 转换成 URL 参数的形式（&#x27;from&#x27;:&quot;en&quot;--》 from&amp;en），并编码成 utf-8 格式，以便能够作为请求的 data 参数或者查询参数使用。</span><br><span class="line"></span><br><span class="line">data=urllib.parse.urlencode(data).encode(&#x27;utf-8&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 将字典 header 中每个键对应的值编码成 utf-8 格式，这样可以确保发送请求时的数据格式是符合要求的。</span><br><span class="line">for key in header:</span><br><span class="line">    header[key] = header[key].encode(&#x27;utf-8&#x27;)</span><br><span class="line"></span><br><span class="line">    # 请求信息拼接</span><br><span class="line">request=urllib.request.Request(url=url,data=data,headers=header)</span><br><span class="line"></span><br><span class="line">response=urllib.request.urlopen(request)</span><br><span class="line"></span><br><span class="line">shuju=response.read().decode(&#x27;utf-8&#x27;)</span><br><span class="line">import json</span><br><span class="line">shuju=json.loads(shuju)</span><br><span class="line"></span><br><span class="line">print(shuju)</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209211423952.png" alt="image-20231209211423952"></p>
+<h2 id="ajax-get请求豆瓣电影"><a href="#ajax-get请求豆瓣电影" class="headerlink" title="ajax_get请求豆瓣电影"></a>ajax_get请求豆瓣电影</h2><p><strong>这种方式适合那些下滑无限加载的网页，不适合点击下一页的</strong></p>
+<p>打开豆瓣电影，点击排行榜，点击动画</p>
+<p>然后右键检查——》网络</p>
+<p>然后下滑主页面，可以找到top_list?type&#x3D;25&amp;interval_id&#x3D;100%3A90&amp;action&#x3D;&amp;start&#x3D;0&amp;limit&#x3D;20</p>
+<p>与top_list?type&#x3D;25&amp;interval_id&#x3D;100%3A90&amp;action&#x3D;&amp;start&#x3D;20&amp;limit&#x3D;20</p>
+<p>说明是start&#x3D;20为一次刷新下一个</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209212219770.png" alt="image-20231209212219770"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209212234965.png" alt="image-20231209212234965"></p>
+<p>url为：<a target="_blank" rel="noopener" href="https://movie.douban.com/j/chart/top_list?type=25&interval_id=100:90&action=&start=0&limit=20">https://movie.douban.com/j/chart/top_list?type=25&amp;interval_id=100%3A90&amp;action=&amp;start=0&amp;limit=20</a></p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">import urllib.request</span><br><span class="line">import urllib.parse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># https://movie.douban.com/j/chart/top_list?type=25&amp;interval_id=100:90&amp;action=https://home.firefoxchina.cn&amp;</span><br><span class="line"># start=0&amp;limit=20</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#请求对象定制</span><br><span class="line">def dingzhi(page):</span><br><span class="line">    first_url=&#x27;https://movie.douban.com/j/chart/top_list?type=25&amp;interval_id=100:90&amp;action=https://home.firefoxchina.cn&amp;&#x27;</span><br><span class="line">    data=&#123;</span><br><span class="line">        &#x27;start&#x27;:(page-1)*2,</span><br><span class="line">        &#x27;limit&#x27;:20</span><br><span class="line">    &#125;</span><br><span class="line">    # 将&#x27;start&#x27;:(page-1)*2 ---》 start&amp;(page-1)*2</span><br><span class="line">    data=urllib.parse.urlencode(data)</span><br><span class="line">    # 拼接</span><br><span class="line">    url=first_url+data</span><br><span class="line">    </span><br><span class="line">    header=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;</span><br><span class="line">        </span><br><span class="line">       &#125;</span><br><span class="line">    # 请求定制</span><br><span class="line">    request=urllib.request.Request(url=url,headers=header)</span><br><span class="line">    return request</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 获取响应数据</span><br><span class="line">def xiangying(r):</span><br><span class="line"></span><br><span class="line">    response=urllib.request.urlopen(r)</span><br><span class="line">    shuju=response.read().decode(&#x27;utf-8&#x27;)</span><br><span class="line">    return shuju</span><br><span class="line"></span><br><span class="line"># 下载数据到文件里</span><br><span class="line">def down_load(page,shuju):</span><br><span class="line"></span><br><span class="line">    with open(f&#x27;豆瓣的json/douban&#123;str(page)&#125;.json&#x27;,&#x27;w&#x27;,encoding=&#x27;utf-8&#x27;) as fp:</span><br><span class="line">        fp.write(shuju)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    start_1=int(input(&quot;请输入起始页码&quot;))</span><br><span class="line">    end_1  =int(input(&quot;请终止起始页码&quot;))</span><br><span class="line">for page in range(start_1,end_1+1):</span><br><span class="line">    r= dingzhi(page)</span><br><span class="line">    shuju=xiangying(r)</span><br><span class="line">    down_load(page,shuju)</span><br><span class="line">    print(f&#x27;第&#123;str(page)&#125;页下载完成&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>效果展示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209212635975.png" alt="image-20231209212635975"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209212703542.png" alt="image-20231209212703542"></p>
+<h2 id="ajax-post请求肯德基餐厅信息页面"><a href="#ajax-post请求肯德基餐厅信息页面" class="headerlink" title="ajax_post请求肯德基餐厅信息页面"></a>ajax_post请求肯德基餐厅信息页面</h2><p>打开肯德基官方网站，找到餐厅查询</p>
+<p>​	<img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209213658923.png" alt="image-20231209213658923"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209213707542.png" alt="image-20231209213707542"></p>
+<p>点击城市选择一个餐厅</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209213850306.png" alt="image-20231209213850306"></p>
+<p>餐厅具体信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209213913786.png" alt="image-20231209213913786"></p>
+<p>餐厅第1.2.3页的表单数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">cname: 北京</span><br><span class="line">pid: </span><br><span class="line">pageIndex: 1</span><br><span class="line">pageSize: 10</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cname: 北京</span><br><span class="line">pid: </span><br><span class="line">pageIndex: 2</span><br><span class="line">pageSize: 10</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cname: 北京</span><br><span class="line">pid: </span><br><span class="line">pageIndex: 3</span><br><span class="line">pageSize: 10</span><br></pre></td></tr></table></figure>
+
+<p>由此可以看出是pageIndex在变化</p>
+<p>url为	<a target="_blank" rel="noopener" href="http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=cname">http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=cname</a></p>
+<p>所以，代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line">import urllib.parse</span><br><span class="line"></span><br><span class="line"># 肯德基官方网站</span><br><span class="line">&#x27;http://www.kfc.com.cn/kfccda/index.aspx&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x27;http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=cname&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># n为for循环的接收参数</span><br><span class="line">def dingzhi(n):</span><br><span class="line"></span><br><span class="line">    url=&#x27;http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=cname&#x27;</span><br><span class="line"></span><br><span class="line">    data=&#123;</span><br><span class="line"></span><br><span class="line">        &#x27;cname&#x27;: &#x27;北京&#x27;,</span><br><span class="line">        &#x27;pid&#x27;: &#x27;&#x27;,</span><br><span class="line">        &#x27;pageIndex&#x27; :n,</span><br><span class="line">        &#x27;pageSize&#x27;: 10</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    header=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;,</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    # 转码</span><br><span class="line">    data=urllib.parse.urlencode(data).encode(&#x27;utf-8&#x27;)</span><br><span class="line">    request=urllib.request.Request(url=url,data=data,headers=header)</span><br><span class="line">    return request</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def xiangying(r):</span><br><span class="line"></span><br><span class="line">    response=urllib.request.urlopen(r)</span><br><span class="line">    shuju=response.read().decode(&#x27;utf-8&#x27;)</span><br><span class="line">    return shuju</span><br><span class="line"></span><br><span class="line">def down_load(shuju,n):</span><br><span class="line"></span><br><span class="line">    with open(f&#x27;kfc的json/kfc&#123;str(n)&#125;.json&#x27;,&#x27;w&#x27;,encoding=&#x27;utf-8&#x27;)as fp:</span><br><span class="line">        fp.write(shuju)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    start_1=int(input(&#x27;请输入起始页面&#x27;))</span><br><span class="line">    end_1   =int(input(&#x27;请输入终止页面&#x27;))</span><br><span class="line"></span><br><span class="line">    for n in range(start_1,end_1+1):</span><br><span class="line">        r=dingzhi(n)</span><br><span class="line">        shuju=xiangying(r)</span><br><span class="line">        down_load(shuju,n)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209214457762.png" alt="image-20231209214457762"></p>
+<h2 id="lxml的安装使用"><a href="#lxml的安装使用" class="headerlink" title="lxml的安装使用"></a>lxml的安装使用</h2><p>安装xpath插件（网上随便搜一下）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209215342507.png" alt="image-20231209215342507"></p>
+<p>打开谷歌拓展</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209215532223.png" alt="image-20231209215532223"></p>
+<p>打开开发者模式，解压然后拖入谷歌拓展中</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209215656388.png" alt="image-20231209215656388"></p>
+<p>使用ctrl+shfit+x键打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209215825870.png" alt="image-20231209215825870"></p>
+<p>Microsoft Edge添加也类似</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209220019111.png" alt="image-20231209220019111"></p>
+<h3 id="xpath基本使用"><a href="#xpath基本使用" class="headerlink" title="xpath基本使用"></a>xpath基本使用</h3><p>在黑框框中使用xpath语法找到对应的数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209220711179.png" alt="image-20231209220711179"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#引入lxml模块</span><br><span class="line">from lxml import etree</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 解析本地文件</span><br><span class="line">tree = etree.parse(&#x27;1.html&#x27;)</span><br><span class="line">print(tree)</span><br><span class="line"></span><br><span class="line"># # 发起请求获取服务器文件内容</span><br><span class="line">response = requests.get(&#x27;http://www.baidu.com/&#x27;)</span><br><span class="line">content = response.text</span><br><span class="line"></span><br><span class="line"># 解析 HTML 内容</span><br><span class="line">tree = etree.HTML(content)</span><br><span class="line">print(tree)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># # //表示查找所有子孙节点        /表示查找字节点</span><br><span class="line"># # //body/ul/li   与//ul/li    与//li    效果一样</span><br><span class="line"># tree_list=tree.xpath(&#x27;//body/ul/li&#x27;)  </span><br><span class="line"># tree_list=tree.xpath(&#x27;//ul/li&#x27;)</span><br><span class="line"># print(tree_list,len(tree_list))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># # 查找所有有id属性的li标签</span><br><span class="line"># # text() 获取标签中的内容</span><br><span class="line"># tree_list1=tree.xpath(&#x27;//ul/li[@id]/text()&#x27;)</span><br><span class="line"># print(tree_list1,len(tree_list1))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># # 查找id为“l1”的属性的li标签</span><br><span class="line"># tree_list2=tree.xpath(&#x27;//ul/li[@id=&quot;l1&quot;]/text()&#x27;)</span><br><span class="line"># print(tree_list2,len(tree_list2))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># # /@class  表示查看li标签下id为l1的          class的值</span><br><span class="line"># tree_list3=tree.xpath(&#x27;//ul/li[@id=&quot;l1&quot;]/@class&#x27;)</span><br><span class="line"># print(tree_list3,len(tree_list3))</span><br><span class="line"></span><br><span class="line"># # [@class] 表示查看li标签下id为l1的         并存在class属性的li的值</span><br><span class="line"># tree_list4=tree.xpath(&#x27;//ul/li[@id=&quot;l1&quot;][@class]/text()&#x27;)</span><br><span class="line"># print(tree_list4,len(tree_list4))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="xpath解析百度一下"><a href="#xpath解析百度一下" class="headerlink" title="xpath解析百度一下"></a>xpath解析百度一下</h3><p>使用xpath配合源码找到想要的数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209221330750.png" alt="image-20231209221330750"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209220711179.png" alt="image-20231209220711179"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209221244495.png" alt="image-20231209221244495"></p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line">#https 中的s代表ssl加密，需要提供请求设备的信息才能进行访问</span><br><span class="line">url=&#x27;https://www.baidu.com/&#x27; </span><br><span class="line">#  Mozilla/5.0：浏览器版本  Windows：操作系统类型与版本     Firefox：使用的浏览器</span><br><span class="line">header=&#123;&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;&#125;</span><br><span class="line"></span><br><span class="line"> #   将url与请求信息User-Agent的数据同时交给request</span><br><span class="line">request=urllib.request.Request(url=url,headers=header) </span><br><span class="line"></span><br><span class="line">  #向域名发送请求</span><br><span class="line">response=urllib.request.urlopen(request)  </span><br><span class="line">shuju=response.read().decode(&#x27;utf8&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from lxml import etree</span><br><span class="line">tree=etree.HTML(shuju)</span><br><span class="line"># 查找class=&quot;toindex&quot;   的a标签里的数据</span><br><span class="line">result=tree.xpath(&#x27;//a[@class=&quot;toindex&quot;]/text()&#x27;)[0]</span><br><span class="line"></span><br><span class="line"># 模糊查询contains(@class,&quot;t&quot;) class含有“t”的xpath</span><br><span class="line">result=tree.xpath(&#x27;//a[contains(@class,&quot;t&quot;)]/text()&#x27;)</span><br><span class="line">result1=tree.xpath(&#x27;//input[@id=&quot;su&quot;]/@value&#x27;)[0]</span><br><span class="line">print(result)</span><br><span class="line">print(result1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>效果展示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231209221424269.png" alt="image-20231209221424269"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
