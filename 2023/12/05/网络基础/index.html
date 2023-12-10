@@ -171,17 +171,22 @@
 <p>192.168.1.0&#x2F;24<br>192.168.0.1&#x2F;24<br>24表示占用了前24个即前24个为子网掩码</p>
 <p>192.168.0.1&#x2F;24的子网掩码为255.255.255.0<br>这个是占用了25个</p>
 <p>192.168.0.3&#x2F;25&#x3D;255.255.255.128&#x3D;1111 1111 .1111 1111 .1111 1111 .1000 0011</p>
+<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>shell可以理解成一个交互程序，有了shell才能对计算机进行操控，如简单的右键刷新，打开文件都是通过shell进行的</p>
+<h3 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h3><p>反弹shell就是将控制方（s）生成的马放入被控制方（d），然后d执行马后将电脑控制权交予s</p>
+<p><strong>8888是s的端口号</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231210154724462.png" alt="image-20231210154724462"></p>
+<h3 id="正向shell"><a href="#正向shell" class="headerlink" title="正向shell"></a>正向shell</h3><p>正向shell就是在被控制端放入一个谁都能进行匹配连接的马，然后监听被控制端去主动连接他，或者等待被控制端连接控制端</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231210155627242.png" alt="image-20231210155627242"></p>
 <h2 id="tcp-ip协议"><a href="#tcp-ip协议" class="headerlink" title="tcp&#x2F;ip协议"></a>tcp&#x2F;ip协议</h2><p>根据OSI模型（开放系统互联模型），计算机网络被划分为七个不同的层级。这些层级按照功能和协议的不同进行划分，从底层到顶层分别为：</p>
 <p>物理层（Physical Layer）：负责传输比特流，并管理物理连接、电压等物理特性。<br>数据链路层（Data Link Layer）：在相邻节点之间传输数据帧，并提供错误检测和纠正的功能。<br>网络层（Network Layer）：负责在网络中选择路由并转发数据包，例如IP协议。<br>传输层（Transport Layer）：提供端到端的数据传输服务，并确保数据的可靠性和完整性，例如TCP协议。<br>会话层（Session Layer）：管理通信会话的建立、维护和终止。<br>表示层（Presentation Layer）：负责数据的格式化、加密和解密，以确保不同系统之间的数据交换。<br>应用层（Application Layer）：提供特定应用程序的服务，例如HTTP、FTP、SMTP等。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205215939948.png" alt="image-20231205215939948"></p>
-<p>代理：</p>
-<p>代理是提供一个虚假的IP地址套在你原有的ip上，然后通过代理ip去访问你原有ip访问不到或者难以访问的网站</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231210162742636.png" alt="image-20231210162742636"></p>
+<h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p>代理是提供一个虚假的IP地址套在你原有的ip上，然后通过代理ip去访问你原有ip访问不到或者难以访问的网站</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205220529782.png" alt="image-20231205220529782"></p>
 <p>通过配置端口与socks5，达到影响传输层及以下层级</p>
 <h2 id="路由器与交换机"><a href="#路由器与交换机" class="headerlink" title="路由器与交换机"></a>路由器与交换机</h2><h3 id="路由器："><a href="#路由器：" class="headerlink" title="路由器："></a>路由器：</h3><p>dhcp：分配ip地址；	由路由表发出路由找寻、接收地址如：接收内网用户请求找到百度的ip<br>路由器之间不互通，除法人为配置<br>路由表：存放源ip、Mac地址；目的ip、Mac地址</p>
 <p>静态路由：固定地址<br>动态路由：自动找寻最近的服务器</p>
 <p>处于不同路由器之下的内网ip无法互相访问</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205221153305.png" alt="image-20231205221153305"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231210160535359.png" alt="image-20231210160535359"></p>
 <p>除非人为配置路由器，将路由器1里面的路由表1放入路由器2的源ip、Mac地址；目的ip、Mac地址</p>
 <p>只有这样，路由器1的内网ip才能访问路由器2的内网</p>
 <h2 id="交换机："><a href="#交换机：" class="headerlink" title="交换机："></a>交换机：</h2><p>连接路由器与内网，反面连接网线，正面连接路由器</p>
@@ -192,11 +197,14 @@
 <p>VMware的三种模式具体在博客<a target="_blank" rel="noopener" href="https://k-onl.github.io/2023/11/15/VMawre%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F/">https://k-onl.github.io/2023/11/15/VMawre%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F/</a></p>
 <p>这里解释一下两种模式下网卡的区别</p>
 <p>桥接模式：该模式下是在虚拟机里面模拟了一个虚拟的网卡用于连接主机的真实的网卡</p>
-<p>NAT模式：该模式下是在虚拟机里面设置了一个与物理机一样的网卡</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231205221314178.png" alt="image-20231205221314178"></p>
+<p>NAT模式：该模式下是在虚拟机里面设置了物理机映射的网卡</p>
+<p>区别：桥接相当于一个独立的系统可以访问任何人也能被任何人访问，而nat不能被主机以外的人访问</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231210161615043.png" alt="image-20231210161615043"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231210162013874.png" alt="image-20231210162013874"></p>
 <p>桥接模式下的虚拟机可以访问NAT</p>
 <p>NAT下的虚拟机无法访问桥接</p>
 <h2 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h2><p>驱动是用来连接操作系统与硬件，使得操作系统可以通过驱动来对硬件进行操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231210160728927.png" alt="image-20231210160728927"></p>
 
     </div>
     
