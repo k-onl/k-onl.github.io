@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>vue基础 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>vue基础</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/11
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>+ </p>
+<p>ss</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>提前安装好(node.js)[<a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en]</a> 左边的那个</p>
+<h3 id="vue创建"><a href="#vue创建" class="headerlink" title="vue创建"></a>vue创建</h3><p>使用cmd或者vscode终端切换到想创建的目录下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211201951276.png" alt="image-20231211201951276"></p>
+<p>输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm create vue@latest</span><br></pre></td></tr></table></figure>
+
+<p>输入完项目名称后一直回车</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211202208569.png" alt="image-20231211202208569"></p>
+<p>依次输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  cd &lt;项目名字&gt;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  #下载依赖</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">#运行项目</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>进行下载之前可以将源换一下，后续所有下载都会在这个源里寻找</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211202549710.png" alt="image-20231211202549710"></p>
+<p>访问链接地址打开，看到这个页面表示创建成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211202701580.png" alt="image-20231211202701580"></p>
+<h3 id="element使用"><a href="#element使用" class="headerlink" title="element使用"></a>element使用</h3><p>地址	<a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/">https://element-plus.org/zh-CN/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211202842949.png" alt="image-20231211202842949"></p>
+<p>element组件安装</p>
+<p>依次输入名命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install element-plus --save</span><br><span class="line">npm install -D unplugin-vue-components </span><br><span class="line">unplugin-auto-import</span><br></pre></td></tr></table></figure>
+
+<p>下载安装完成后使用vscode打开项目</p>
+<p>将main.js和vite.config.js的内容进行替换</p>
+<p>main.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createApp &#125; from &#x27;vue&#x27;</span><br><span class="line">import App from &#x27;./App.vue&#x27;</span><br><span class="line">import ElementPlus from &#x27;element-plus&#x27;;</span><br><span class="line">import &#x27;element-plus/dist/index.css&#x27;</span><br><span class="line"></span><br><span class="line">createApp(App).mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>import ‘.&#x2F;assets&#x2F;main.css’一定要删除，不然无法手动定义css</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211203829765.png" alt="image-20231211203829765"></p>
+<p>替换后</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211204003439.png" alt="image-20231211204003439"></p>
+<p>vite.config.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import &#123; fileURLToPath, URL &#125; from &#x27;node:url&#x27;</span><br><span class="line"></span><br><span class="line">import &#123; defineConfig &#125; from &#x27;vite&#x27;</span><br><span class="line">import vue from &#x27;@vitejs/plugin-vue&#x27;</span><br><span class="line">import AutoImport from &#x27;unplugin-auto-import/vite&#x27;</span><br><span class="line">import Components from &#x27;unplugin-vue-components/vite&#x27;</span><br><span class="line">import &#123; ElementPlusResolver &#125; from &#x27;unplugin-vue-components/resolvers&#x27;</span><br><span class="line"></span><br><span class="line">	// https://vitejs.dev/config/</span><br><span class="line"> export default defineConfig(&#123;</span><br><span class="line">	 plugins: [</span><br><span class="line">  	 vue(),</span><br><span class="line">   	// ...</span><br><span class="line">   	AutoImport(&#123;</span><br><span class="line">    	 resolvers: [ElementPlusResolver()],</span><br><span class="line">   	&#125;),</span><br><span class="line">   	Components(&#123;</span><br><span class="line">    	 resolvers: [ElementPlusResolver()],</span><br><span class="line">   	&#125;),</span><br><span class="line"> 	],</span><br><span class="line"> 	resolve: &#123;</span><br><span class="line">  	 alias: &#123;</span><br><span class="line">    	 &#x27;@&#x27;: fileURLToPath(new URL(&#x27;./src&#x27;, import.meta.url))</span><br><span class="line">   	&#125;</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>替换后</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211204038448.png" alt="image-20231211204038448"></p>
+<p>在App.vue中引入element模块</p>
+<p>import ElementPlus from ‘element-plus’;<br>import ‘element-plus&#x2F;dist&#x2F;index.css’;</p>
+<p>然后删除多余的东西，最后变成这样</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211204643833.png" alt="image-20231211204643833"></p>
+<p>之后在element上找到想要引用的复制粘贴对应代码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211205017598.png" alt="image-20231211205017598"></p>
+<p>效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211205339982.png" alt="image-20231211205339982"></p>
+<h2 id="Vue编程"><a href="#Vue编程" class="headerlink" title="Vue编程"></a>Vue编程</h2><p>我这里将网页的三块包分别放入三个vue文件里，侧边、头部、主体，分别在App、Main1、header1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211205913813.png" alt="image-20231211205913813"></p>
+<p>然后在App里通过import引入main1和header1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211210018010.png" alt="image-20231211210018010"></p>
+<h3 id="头部设置"><a href="#头部设置" class="headerlink" title="头部设置"></a>头部设置</h3><p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211210200354.png" alt="image-20231211210200354"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-page-header :icon=&quot;null&quot;&gt;</span><br><span class="line">    &lt;template #content&gt;</span><br><span class="line">      &lt;div class=&quot;flex items-center&quot;&gt;</span><br><span class="line">        &lt;el-avatar</span><br><span class="line">          :size=&quot;50&quot;</span><br><span class="line">          class=&quot;mr-3&quot;</span><br><span class="line">          src=&quot;image\2.jpg&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;span class=&quot;text-large font-600 mr-3&quot;&gt; Title &lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;text-sm mr-2&quot; style=&quot;color: var(--el-text-color-regular)&quot;&gt;</span><br><span class="line">          用户列表</span><br><span class="line">        &lt;/span&gt;</span><br><span class="line">        &lt;el-tag&gt;Default&lt;/el-tag&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">    &lt;template #extra&gt;</span><br><span class="line">      &lt;div class=&quot;flex items-center&quot;&gt;</span><br><span class="line">        &lt;el-button&gt;Print&lt;/el-button&gt;</span><br><span class="line">        &lt;el-button type=&quot;primary&quot; class=&quot;ml-2&quot;&gt;Edit&lt;/el-button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">  &lt;/el-page-header&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>效果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211210319908.png" alt="image-20231211210319908"></p>
+<h3 id="侧边设置"><a href="#侧边设置" class="headerlink" title="侧边设置"></a>侧边设置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br></pre></td><td class="code"><pre><span class="line">&lt;script  setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; defineProps&#125; from &#x27;vue&#x27;;</span><br><span class="line">import ElementPlus from &#x27;element-plus&#x27;;</span><br><span class="line">import &#x27;element-plus/dist/index.css&#x27;;</span><br><span class="line">import two from &#x27;./vue/Main1.vue&#x27;</span><br><span class="line">import one from &#x27;./vue/header1.vue&#x27;</span><br><span class="line">import &#123;</span><br><span class="line">  Document,</span><br><span class="line">  Menu as IconMenu,</span><br><span class="line">  Location,</span><br><span class="line">  MagicStick,</span><br><span class="line">  Ship,</span><br><span class="line">  VideoCameraFilled,</span><br><span class="line">  Key,</span><br><span class="line">  IceTea,</span><br><span class="line">  Setting,</span><br><span class="line">&#125; from &#x27;@element-plus/icons-vue&#x27;</span><br><span class="line">const handleOpen = (key: string, keyPath: string[]) =&gt; &#123;</span><br><span class="line">  console.log(key, keyPath)</span><br><span class="line">&#125;</span><br><span class="line">const handleClose = (key: string, keyPath: string[]) =&gt; &#123;</span><br><span class="line">  console.log(key, keyPath)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 数组</span><br><span class="line">const me=[</span><br><span class="line">  &#123;</span><br><span class="line">    name:&#x27;用户管理&#x27;,</span><br><span class="line">    childern:[</span><br><span class="line">        &#x27;用户列表1&#x27;,</span><br><span class="line">        &#x27;用户列表2&#x27;,</span><br><span class="line">        &#x27;用户列表3&#x27;,</span><br><span class="line">      ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:&#x27;权限管理&#x27;,</span><br><span class="line">    childern:[</span><br><span class="line">        &#x27;普通用户权限&#x27;,</span><br><span class="line">        &#x27;超级用户权限&#x27;,</span><br><span class="line">      ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:&#x27;商品管理&#x27;,</span><br><span class="line">    childern:[</span><br><span class="line">        &#x27;普通商品&#x27;,</span><br><span class="line">        &#x27;vip商品&#x27;,</span><br><span class="line">      ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name:&#x27;订单管理&#x27;,</span><br><span class="line">    childern:[</span><br><span class="line">        &#x27;个体订单&#x27;,</span><br><span class="line">        &#x27;企业订单&#x27;,</span><br><span class="line">      ]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;!-- &lt;one&gt;&lt;/one&gt; --&gt;</span><br><span class="line">&lt;!-- 菜单栏 --&gt;</span><br><span class="line">&lt;div class=&quot;common-layout&quot;&gt;</span><br><span class="line">    &lt;el-container&gt;</span><br><span class="line">      &lt;el-aside class=&quot;ce&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;el-row class=&quot;tac&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;el-col :span=&quot;24&quot;&gt;</span><br><span class="line">      &lt;h5 class=&quot;mb-2&quot; &gt;管理系统&lt;/h5&gt;</span><br><span class="line">      &lt;el-menu</span><br><span class="line">        active-text-color=&quot;#ffd04b&quot;</span><br><span class="line">        background-color=&quot;#545c64&quot;</span><br><span class="line">        class=&quot;el-menu-vertical-demo&quot;</span><br><span class="line">        default-active=&quot;2&quot;</span><br><span class="line">        text-color=&quot;#fff&quot;</span><br><span class="line">        @open=&quot;handleOpen&quot;</span><br><span class="line">        @close=&quot;handleClose&quot;</span><br><span class="line">      &gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &lt;!-- 第一行 --&gt;</span><br><span class="line">        &lt;el-sub-menu index=&quot;1&quot;&gt;</span><br><span class="line">          &lt;template #title&gt;</span><br><span class="line">            &lt;el-icon&gt;&lt;MagicStick /&gt;&lt;/el-icon&gt;</span><br><span class="line">            &lt;span&gt;&#123;&#123;me[0].name&#125;&#125;&lt;/span&gt;</span><br><span class="line">          &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">          &lt;el-menu-item-group&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;1-1&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[0].childern[0]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-menu-item-group&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          &lt;el-menu-item-group&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;1-2&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[0].childern[1]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-menu-item-group&gt;</span><br><span class="line">          &lt;el-menu-item-group&gt;</span><br><span class="line"></span><br><span class="line">            &lt;el-menu-item index=&quot;1-3&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[0].childern[2]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-menu-item-group&gt;</span><br><span class="line"></span><br><span class="line">          &lt;!-- &lt;el-sub-menu index=&quot;1-4&quot;&gt;</span><br><span class="line">            &lt;template #title&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                item four</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;1-4-1&quot;&gt;item one&lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-sub-menu&gt; --&gt;</span><br><span class="line">        &lt;/el-sub-menu&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &lt;!-- 第二行 --&gt;</span><br><span class="line">        &lt;el-sub-menu index=&quot;2&quot;&gt;</span><br><span class="line">            &lt;template #title&gt;</span><br><span class="line">          &lt;el-icon&gt;&lt;Ship /&gt;&lt;/el-icon&gt;</span><br><span class="line">          &lt;span&gt;&#123;&#123;me[1].name&#125;&#125;&lt;/span&gt;</span><br><span class="line">          &lt;/template&gt;</span><br><span class="line">          &lt;el-menu-item-group&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;2-1&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[1].childern[0]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;2-2&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[1].childern[1]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-menu-item-group&gt;</span><br><span class="line">        &lt;/el-sub-menu&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;!-- 第三行 --&gt;</span><br><span class="line">        &lt;el-sub-menu index=&quot;3&quot; &gt;</span><br><span class="line">            &lt;template #title&gt;</span><br><span class="line">          &lt;el-icon&gt;&lt;VideoCameraFilled /&gt;&lt;/el-icon&gt;</span><br><span class="line">          &lt;span&gt;&#123;&#123;me[2].name&#125;&#125;&lt;/span&gt;</span><br><span class="line">          &lt;/template&gt;</span><br><span class="line">          &lt;el-menu-item-group&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;3-1&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[2].childern[0]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;3-2&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[2].childern[1]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-menu-item-group&gt;</span><br><span class="line">        &lt;/el-sub-menu&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;!-- 第四行 --&gt;</span><br><span class="line">        &lt;el-sub-menu index=&quot;4&quot;&gt;</span><br><span class="line">            &lt;template #title&gt;</span><br><span class="line">          &lt;el-icon&gt;&lt;Key /&gt;&lt;/el-icon&gt;</span><br><span class="line">          &lt;span&gt;&#123;&#123;me[3].childern[0]&#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line">          &lt;el-menu-item-group&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;4-1&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[3].childern[0]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">            &lt;el-menu-item index=&quot;4-2&quot;&gt;</span><br><span class="line">                &lt;el-icon&gt;&lt;IceTea /&gt;&lt;/el-icon&gt;</span><br><span class="line">                &#123;&#123;me[3].childern[1]&#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-menu-item-group&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/el-sub-menu&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &lt;/el-menu&gt;</span><br><span class="line">    &lt;/el-col&gt;</span><br><span class="line">  &lt;/el-row&gt;</span><br><span class="line"></span><br><span class="line">      &lt;/el-aside&gt;</span><br><span class="line">      &lt;el-container&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;el-header&gt;</span><br><span class="line">          &lt;one&gt;&lt;/one&gt;</span><br><span class="line">        &lt;/el-header&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 添加分割线 --&gt;</span><br><span class="line">      &lt;el-divider class=&quot;my-divider&quot;&gt;</span><br><span class="line">      &lt;el-icon&gt;&lt;star-filled /&gt;&lt;/el-icon&gt;</span><br><span class="line">    &lt;/el-divider&gt;</span><br><span class="line">  </span><br><span class="line">        &lt;el-main&gt;</span><br><span class="line">          &lt;two&gt;&lt;/two&gt;</span><br><span class="line">        &lt;/el-main&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &lt;/el-container&gt;</span><br><span class="line">    &lt;/el-container&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.ce&#123;</span><br><span class="line">    width: 15vw;</span><br><span class="line">    background: #545c64;</span><br><span class="line">    height: 100vh;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.mb-2&#123;</span><br><span class="line">    font-size: 20px;</span><br><span class="line">    color: white;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center; /* 水平居中 */</span><br><span class="line">  align-items: center; /* 垂直居中 */</span><br><span class="line">  margin-top: 20px; /* 上间距 */</span><br><span class="line">  margin-bottom: 20px; /* 下间距 */</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.my-divider&#123;</span><br><span class="line"></span><br><span class="line">    border-top-width: 4px; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>效果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211210722710.png" alt="image-20231211210722710"></p>
+<h3 id="主体设置"><a href="#主体设置" class="headerlink" title="主体设置"></a>主体设置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div class=&quot;demo-input-size smaller-size&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;el-input</span><br><span class="line">      v-model=&quot;input1&quot;</span><br><span class="line">      class=&quot;w-5 m-2&quot;</span><br><span class="line">      size=&quot;large&quot;</span><br><span class="line">      placeholder=&quot;Please Input&quot;</span><br><span class="line">    /&gt;</span><br><span class="line">    &lt;!-- 按钮 --&gt;</span><br><span class="line">    &lt;el-button type=&quot;danger&quot; class=&quot;custom-button&quot;&gt;搜索&lt;/el-button&gt;</span><br><span class="line">    &lt;el-button type=&quot;danger&quot; class=&quot;custom-button&quot;&gt;添加用户&lt;/el-button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;div class=&quot;table1&quot;&gt;</span><br><span class="line">  &lt;el-table :data=&quot;tableData&quot; border style=&quot;width: 100%&quot;&gt;</span><br><span class="line">    &lt;el-table-column prop=&quot;date&quot; label=&quot;Date&quot; width=&quot;150&quot; /&gt;</span><br><span class="line">    &lt;el-table-column prop=&quot;name&quot; label=&quot;Name&quot; width=&quot;100&quot; /&gt;</span><br><span class="line">    &lt;el-table-column prop=&quot;address&quot; label=&quot;Address&quot; width=&quot;280&quot; /&gt;</span><br><span class="line">    &lt;el-table-column prop=&quot;手机号&quot; label=&quot;手机号&quot; width=&quot;150&quot; /&gt;</span><br><span class="line"></span><br><span class="line">      &lt;!-- 将开关放入表格中 --&gt;</span><br><span class="line">    &lt;el-table-column label=&quot;Value2&quot; width=&quot;100&quot;&gt;</span><br><span class="line">      &lt;template v-slot=&quot;&#123; row &#125;&quot;&gt;</span><br><span class="line">         &lt;el-switch</span><br><span class="line">            v-model=&quot;row.value2&quot;</span><br><span class="line">            class=&quot;mt-2&quot;</span><br><span class="line">            style=&quot;margin-left: 24px&quot;</span><br><span class="line">            inline-prompt</span><br><span class="line">            :active-icon=&quot;Check&quot;</span><br><span class="line">            :inactive-icon=&quot;Close&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">      &lt;/template&gt;</span><br><span class="line">    &lt;/el-table-column&gt;</span><br><span class="line">        &lt;!-- 将按钮放入表格中 --&gt;</span><br><span class="line">          &lt;el-table-column label=&quot;操作&quot;&gt;</span><br><span class="line">        &lt;template v-slot=&quot;&#123; row &#125;&quot;&gt;</span><br><span class="line">              &lt;el-button type=&quot;primary&quot; :icon=&quot;Edit&quot; circle @click=&quot;handleEdit(row)&quot; /&gt;</span><br><span class="line">              &lt;el-button type=&quot;danger&quot; :icon=&quot;Delete&quot; circle @click=&quot;handleDelete(row)&quot; /&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">      &lt;/el-table-column&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/el-table&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">    &lt;el-pagination background layout=&quot;prev, pager, next&quot; :total=&quot;1000&quot; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang=&quot;ts&quot; setup&gt;</span><br><span class="line">const tableData = [</span><br><span class="line">  &#123;</span><br><span class="line">    date: &#x27;2016-05-03&#x27;,</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    address: &#x27;No. 189, Grove St, Los Angeles&#x27;,</span><br><span class="line">    手机号:&#x27;15678956265&#x27;,</span><br><span class="line">    // 设置第一个开关初始值为开</span><br><span class="line">    value2:true</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    date: &#x27;2016-05-02&#x27;,</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    address: &#x27;No. 189, Grove St, Los Angeles&#x27;,</span><br><span class="line">    手机号:&#x27;13546545855&#x27;,</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    date: &#x27;2016-05-04&#x27;,</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    address: &#x27;No. 189, Grove St, Los Angeles&#x27;,</span><br><span class="line">    手机号:&#x27;18922452245&#x27;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    date: &#x27;2016-05-01&#x27;,</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    address: &#x27;No. 189, Grove St, Los Angeles&#x27;,</span><br><span class="line">    手机号:&#x27;18956214955&#x27;,</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line">import &#123; Search &#125; from &#x27;@element-plus/icons-vue&#x27;</span><br><span class="line">const input1 = ref(&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">import &#123; Check, Close &#125; from &#x27;@element-plus/icons-vue&#x27;</span><br><span class="line">import &#123;</span><br><span class="line"></span><br><span class="line">  Delete,</span><br><span class="line">  Edit,</span><br><span class="line">  Message,</span><br><span class="line"></span><br><span class="line">  Star,</span><br><span class="line">&#125; from &#x27;@element-plus/icons-vue&#x27;</span><br><span class="line">const value2 = ref(true)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line"></span><br><span class="line">.smaller-size .el-input &#123;</span><br><span class="line">width: 25%;</span><br><span class="line">&#125;</span><br><span class="line">.custom-button&#123;</span><br><span class="line">  margin-left: 20px;</span><br><span class="line">   width: 100px;</span><br><span class="line">  height: 40px;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">&#125;</span><br><span class="line">.table1&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    margin-bottom: 20px; /* 下间距 */</span><br><span class="line">    margin-top: 20px; /* 上间距 */</span><br><span class="line">    width: 75%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>整体效果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211210841304.png" alt="image-20231211210841304"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
