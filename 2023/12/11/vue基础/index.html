@@ -156,10 +156,8 @@
     </div>
     
     <div class="content" v-pre>
-        <p>+ </p>
-<p>ss</p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>提前安装好(node.js)[<a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en]</a> 左边的那个</p>
-<h3 id="vue创建"><a href="#vue创建" class="headerlink" title="vue创建"></a>vue创建</h3><p>使用cmd或者vscode终端切换到想创建的目录下</p>
+        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>提前安装好(node.js)[<a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en]</a> 左边的那个</p>
+<h3 id="vue3创建"><a href="#vue3创建" class="headerlink" title="vue3创建"></a>vue3创建</h3><p>使用cmd或者vscode终端切换到想创建的目录下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211201951276.png" alt="image-20231211201951276"></p>
 <p>输入命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm create vue@latest</span><br></pre></td></tr></table></figure>
@@ -228,6 +226,79 @@
 
 <p>整体效果：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231211210841304.png" alt="image-20231211210841304"></p>
+<h2 id="Vue2的使用"><a href="#Vue2的使用" class="headerlink" title="Vue2的使用"></a>Vue2的使用</h2><h3 id="html引用Vue"><a href="#html引用Vue" class="headerlink" title="html引用Vue"></a>html引用Vue</h3><p>打开element组件网站</p>
+<p>右上方显示2.x版本的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217092405788.png" alt="image-20231217092405788"></p>
+<p>引入vue2的js文件和css文件以及后面需要用到的axios</p>
+<p>引用方法一：直接引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://unpkg.com/element-ui/lib/index.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/element-ui/lib/theme-chalk/index.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217093242283.png" alt="image-20231217093242283"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217093331748.png" alt="image-20231217093331748"></p>
+<p>引用方法二：下载后引用</p>
+<p>网页打开上方4个链接然后下载内容到本地，放入当前项目文件夹中，方便引用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217093704504.png" alt="image-20231217093704504"></p>
+<p>这样就可以用vue2的的组件了。</p>
+<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>在buju.php内绑定admin.php</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217094051648.png" alt="image-20231217094051648"></p>
+<p>首先选择需要引入其他php文件的页面布局，我这里选择el-main主体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe :src=&quot;iframeSrc&quot; frameborder=&quot;false&quot;</span><br><span class="line">                        style=&quot;top:80px;left: 120px;width: 100%;height: 500px&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217094301726.png" alt="image-20231217094301726"></p>
+<p>然后在new Vue里面使用methods进行绑定</p>
+<p>当我点击用户列表1的时候，就会展示admin.php的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">router() &#123;</span><br><span class="line">			//绑定其他php文件</span><br><span class="line">             this.iframeSrc = &quot;admin.php&quot;,</span><br><span class="line">             //绑定当前页的点击事件</span><br><span class="line">            this.headerContent = &quot;用户列表1&quot;;</span><br><span class="line">             &#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217094525743.png" alt="image-20231217094525743"></p>
+<p>最后在侧边的菜单栏里设置绑定router()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">设置绑定的点击事件</span><br><span class="line">@click=&quot;router3()&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217094820312.png" alt="image-20231217094820312"></p>
+<p>效果展示：</p>
+<p>这是刚进来的页面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217094925751.png" alt="image-20231217094925751"></p>
+<p>当我点击普通用户管理的，用户列表1时</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217095342972.png" alt="image-20231217095342972"></p>
+<p>数据绑定成功</p>
+<h3 id="使用axjos交互数据"><a href="#使用axjos交互数据" class="headerlink" title="使用axjos交互数据"></a>使用axjos交互数据</h3><ul>
+<li>在前端设置一个请求后端数据的axjos</li>
+</ul>
+<p>使用element建立一个表单</p>
+<p>表单整体为一个表格，编辑和删除按钮，以及搜索栏</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//设置搜索功能</span><br><span class="line">&lt;el-table :data=&quot;tableData.filter(data =&gt; !search || data.username.toLowerCase().includes(search.toLowerCase())</span><br><span class="line">      || data.id.toLowerCase().includes(search.toLowerCase())</span><br><span class="line">      || data.password.toLowerCase().includes(search.toLowerCase())</span><br><span class="line">      || data.gender.toLowerCase().includes(search.toLowerCase())</span><br><span class="line">      || data.age.toLowerCase().includes(search.toLowerCase())</span><br><span class="line">      || data.occupation.toLowerCase().includes(search.toLowerCase())</span><br><span class="line">    )&quot; style=&quot;width: 100%&quot;&gt;</span><br><span class="line">    //设置表单头部</span><br><span class="line">      &lt;el-table-column prop=&quot;id&quot; label=&quot;id&quot; width=&quot;100&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">      &lt;el-table-column prop=&quot;username&quot; label=&quot;用户名&quot; width=&quot;100&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">      &lt;el-table-column prop=&quot;password&quot; label=&quot;密码&quot; width=&quot;200&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">      &lt;el-table-column prop=&quot;gender&quot; label=&quot;性别&quot; width=&quot;100&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">      &lt;el-table-column prop=&quot;age&quot; label=&quot;年龄&quot; width=&quot;100&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">      &lt;el-table-column prop=&quot;occupation&quot; label=&quot;工作&quot; width=&quot;100&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">      </span><br><span class="line">      //搜索栏</span><br><span class="line">      &lt;el-table-column align=&quot;right&quot;&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;template slot=&quot;header&quot; slot-scope=&quot;scope&quot; &gt;</span><br><span class="line">          &lt;el-input v-model=&quot;search&quot; size=&quot;medium&quot; placeholder=&quot;输入任意信息进行搜索&quot;&gt;&lt;/el-input&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">        &lt;template slot-scope=&quot;scope&quot;&gt;</span><br><span class="line">        </span><br><span class="line">        //编辑和删除按钮</span><br><span class="line">          &lt;el-button size=&quot;mini&quot; @click=&quot;handleEdit(scope.$index, scope.row)&quot;&gt;编辑数据&lt;/el-button&gt;</span><br><span class="line">          &lt;el-button size=&quot;mini&quot; type=&quot;danger&quot; @click=&quot;handleDelete(scope.$index, scope.row)&quot;&gt;删除&lt;/el-button&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">      &lt;/el-table-column&gt;</span><br><span class="line">    &lt;/el-table&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后通过tableData存放表格数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217104537997.png" alt="image-20231217104537997"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217104552525.png" alt="image-20231217104552525"></p>
+<p>发送get请求到后端</p>
+<p>在new vue中写入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//发送get请求到后端</span><br><span class="line">fetchData: function () &#123;</span><br><span class="line">		//请求php后端页面</span><br><span class="line">         axios.get(&#x27;http://192.168.43.190/phpmuma.php&#x27;)</span><br><span class="line">           .then((response) =&gt; &#123;</span><br><span class="line">           //接收后端数据到tableData</span><br><span class="line">             this.tableData = response.data;</span><br><span class="line">           &#125;)</span><br><span class="line">           .catch((error) =&gt; &#123;</span><br><span class="line">             console.log(error);</span><br><span class="line">           &#125;);</span><br><span class="line">       &#125;,</span><br><span class="line">       </span><br><span class="line">       //调用fetchData方法来初始化数据。</span><br><span class="line">        mounted() &#123;</span><br><span class="line">       this.fetchData();</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在后端php里连接数据库并将返回值存入数组</p>
+<p>允许任何http访问该页面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">header(&quot;Access-Control-Allow-Origin: *&quot;);</span><br><span class="line">header(&quot;Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE&quot;);</span><br><span class="line">header(&quot;Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>数据库连接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$link = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;root&quot;, &quot;security&quot;) or exit(json_encode([&#x27;error&#x27; =&gt; &#x27;数据库连接失败！&#x27;]));</span><br><span class="line">mysqli_query($link, &quot;set names utf8&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>获取请求路径和请求方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$requestPath = $_SERVER[&#x27;REQUEST_URI&#x27;];</span><br><span class="line">$requestMethod = $_SERVER[&#x27;REQUEST_METHOD&#x27;];</span><br></pre></td></tr></table></figure>
+
+<p>通过判断请求路径和方法执行sql语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">if ($requestMethod === &#x27;GET&#x27; &amp;&amp; $requestPath === &#x27;/phpmuma.php&#x27;) &#123;</span><br><span class="line">//查询所有</span><br><span class="line">    $sql = &quot;SELECT * FROM users &quot;;</span><br><span class="line">$result = mysqli_query($link, $sql);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$tableData = []; // 初始化数组来收集数据</span><br><span class="line">while ($row = mysqli_fetch_assoc($result)) &#123; // 遍历结果集</span><br><span class="line">    $tableData[] = [</span><br><span class="line">        &#x27;id&#x27; =&gt; $row[&#x27;id&#x27;], // 假设&#x27;id&#x27;是数据表中的字段</span><br><span class="line">        &#x27;username&#x27; =&gt; $row[&#x27;username&#x27;], // 将每行的&#x27;username&#x27;放进数组</span><br><span class="line">        &#x27;password&#x27; =&gt; $row[&#x27;password&#x27;],// 这里的地址是硬编码的，你可能想要将其替换为每行对应的数据</span><br><span class="line">         &#x27;gender&#x27;=&gt;$row[&#x27;gender&#x27;],</span><br><span class="line">         &#x27;age&#x27;=&gt;$row[&#x27;age&#x27;],</span><br><span class="line">         &#x27;occupation&#x27;=&gt;$row[&#x27;occupation&#x27;]</span><br><span class="line"></span><br><span class="line">    ];</span><br><span class="line">&#125;</span><br><span class="line">    header(&#x27;Content-Type: application/json&#x27;);</span><br><span class="line">    echo json_encode($tableData); // 输出所有用户数据的JSON表示</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    // 请求不匹配时的错误处理应当用合适的HTTP状态码来标示出错</span><br><span class="line">    header(&#x27;HTTP/1.0 404 Not Found&#x27;);</span><br><span class="line">    echo json_encode([&#x27;error&#x27; =&gt; &#x27;Not Found&#x27;]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以将后端数据展示到前端页面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231217110059190.png" alt="image-20231217110059190"></p>
 
     </div>
     
