@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>pythonp爬虫基础2 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>pythonp爬虫基础2</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/18
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>+ </p>
+<p>s</p>
+<h2 id="xpath应用"><a href="#xpath应用" class="headerlink" title="xpath应用"></a>xpath应用</h2><ul>
+<li>爬取多页图片</li>
+</ul>
+<p>打开站长素材选择想要爬取图片的网页</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219205343349.png" alt="image-20231219205343349"></p>
+<p>右键检查选择网络，刷新网页找到该网页的url</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219205457509.png" alt="image-20231219205457509"></p>
+<p>可以看到当前网页的url为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://sc.chinaz.com/tupian/dongman.html</span><br></pre></td></tr></table></figure>
+
+<p>然后点击第二页找到url</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219205639261.png" alt="image-20231219205639261"></p>
+<p>可以看出这两页的url有些许不同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一页：https://sc.chinaz.com/tupian/dongman.html</span><br><span class="line">第二页：https://sc.chinaz.com/tupian/dongman_2.html</span><br></pre></td></tr></table></figure>
+
+<p>所以在请求url时需要将url进行一些修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">def dingzhi(page):</span><br><span class="line"></span><br><span class="line">    if page==1:</span><br><span class="line">        </span><br><span class="line">        url=&#x27;https://sc.chinaz.com/tupian/dongman.html&#x27;</span><br><span class="line">        </span><br><span class="line">    else:</span><br><span class="line">        url = f&#x27;https://sc.chinaz.com/tupian/dongman_&#123;str(page)&#125;.html&#x27;</span><br><span class="line"></span><br><span class="line">    header=&#123;</span><br><span class="line"></span><br><span class="line">    &#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0&#x27;,</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    request=urllib.request.Request(url=url,headers=header)</span><br><span class="line">    return request </span><br></pre></td></tr></table></figure>
+
+<p>然后请求响应</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def xiangying(r):</span><br><span class="line"></span><br><span class="line">    response=urllib.request.urlopen(r)</span><br><span class="line">    shuju=response.read().decode(&#x27;utf-8&#x27;)</span><br><span class="line">    # print(&#x27;1&#x27;)</span><br><span class="line">    return shuju</span><br><span class="line"></span><br><span class="line">&#x27;缩略图//scpic2.chinaz.net/files/default/imgs/2023-09-15/17945b096803bd1d_s.jpg&#x27;</span><br><span class="line">&#x27;标清图 //scpic.chinaz.net/files/default/imgs/2023-09-15/17945b096803bd1d.jpg&#x27;</span><br><span class="line">&#x27;超清图 //tppic.chinaz.net/files/default/imgs/2023-09-15/17945b096803bd1d_big.jpg&#x27;</span><br><span class="line">directory = &#x27;站长素材的jpg&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后找到图片地址会发现不同页数的图片地址也会有些不同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一页图片地址：https://scpic.chinaz.net/files/default/imgs/2023-12-15/765db3680c93388c_s.jpg</span><br><span class="line"></span><br><span class="line">第二页图片地址：https://scpic.chinaz.net/files/default/imgs/2023-02-15/c7a6a1c6481d8d12_s.jpg</span><br><span class="line"></span><br><span class="line">第三页：https://scpic2.chinaz.net/files/default/imgs/2023-02-15/1ee3bdc3d6623133_s.jpg</span><br></pre></td></tr></table></figure>
+
+<p>可以看出scpic部分略有不同需要进行替换</p>
+<p>这种下载下来的是缩略图，可以点击图片进入</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219210720729.png" alt="image-20231219210720729"></p>
+<p>将缩略图和标清图的图片地址进行对比</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">缩略图：https://scpic2.chinaz.net/files/default/imgs/2023-02-15/1ee3bdc3d6623133_s.jpg</span><br><span class="line"></span><br><span class="line">标清图：https://scpic.chinaz.net/files/default/imgs/2023-02-15/1ee3bdc3d6623133.jpg</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>与url相似的替换部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def dowm_load1(shuju):</span><br><span class="line"></span><br><span class="line">    tree=etree.HTML(shuju)</span><br><span class="line">    # 图片下载路径&#x27;//body//div[@class=&quot;item&quot;]/img/@data-original&#x27;</span><br><span class="line">    # 图片名字路径&#x27;//body//div[@class=&quot;item&quot;]/img/@alt&#x27;</span><br><span class="line">    name=tree.xpath(&#x27;//img[@class=&quot;lazy&quot;]/@alt&#x27;)</span><br><span class="line">    load=tree.xpath(&#x27;//img[@class=&quot;lazy&quot;]/@data-original&#x27;)</span><br><span class="line"></span><br><span class="line">    for i in range(len(load)):</span><br><span class="line">        name1=name[i] </span><br><span class="line">        load1=load[i] </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">		#判断目录directory是否存在</span><br><span class="line">        if not os.path.exists(directory):</span><br><span class="line">            # 如果不在创建目录</span><br><span class="line">            os.makedirs(directory)</span><br><span class="line">        load1=load1.replace(&quot;scpic2&quot;, &quot;scpic&quot;).replace(&quot;_s&quot;, &quot;&quot;)#标清</span><br><span class="line">        #有的返回值可能不带http，所以看情况进行拼接</span><br><span class="line">        path=&#x27;Http:&#x27;+load1</span><br><span class="line">        # print(path)</span><br><span class="line">        urllib.request.urlretrieve(path,filename=&#x27;./站长素材的jpg/&#x27;+f&#x27;&#123;name1&#125;.jpg&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>想要下载超清图片方法类似：找不同</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219211050513.png" alt="image-20231219211050513"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219211112359.png" alt="image-20231219211112359"></p>
+<p>效果展示:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219211352079.png" alt="image-20231219211352079"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219211417015.png" alt="image-20231219211417015"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
