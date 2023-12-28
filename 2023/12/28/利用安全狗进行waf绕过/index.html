@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>利用安全狗进行waf绕过 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>利用安全狗进行waf绕过</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/28
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="安全狗下载安装"><a href="#安全狗下载安装" class="headerlink" title="安全狗下载安装"></a>安全狗下载安装</h2><p>安全狗官网：<a target="_blank" rel="noopener" href="https://www.safedog.cn/">https://www.safedog.cn/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228205312033.png" alt="image-20231228205312033"></p>
+<p>选择阿帕奇版</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228205359514.png" alt="image-20231228205359514"></p>
+<p>打开小皮将阿帕奇和mysql关闭</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228205923323.png" alt="image-20231228205923323"></p>
+<p>将安装包拖入虚拟机后在小皮的阿帕奇的bin目录下打开cmd</p>
+<p>使用管理员身份运行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228205656511.png" alt="image-20231228205656511"></p>
+<p>cd 到bin目录下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228205808993.png" alt="image-20231228205808993"></p>
+<p>使用命令安装阿帕奇</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd.exe -k install -n apache2.4</span><br></pre></td></tr></table></figure>
+
+<p>随后在管理——》服务里启动阿帕奇</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228211043448.png" alt="image-20231228211043448"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228211212572.png" alt="image-20231228211212572"></p>
+<p>然后就可以安装安全狗了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228211234802.png" alt="image-20231228211234802"></p>
+<p>可能会出现的问题</p>
+<ul>
+<li><p>安全狗的版本<br>会提示缺少一个apache插件，所以装一个插件，加上一个安全狗。</p>
+</li>
+<li><p>容易出现的问题<br>之前一直装不上，使用了旧版本的phpstudy，安全狗需要使用新版本的phpstudy</p>
+</li>
+</ul>
+<p>安装完成后启动安全狗</p>
+<p>然后对sqli注入会出现这种情况</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228211448340.png" alt="image-20231228211448340"></p>
+<h2 id="Waf绕过"><a href="#Waf绕过" class="headerlink" title="Waf绕过"></a>Waf绕过</h2><p>首先来一遍注入过程看看哪些会被拦截</p>
+<h3 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h3><p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228211924970.png" alt="image-20231228211924970"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228211939492.png" alt="image-20231228211939492"></p>
+<p>可以看出order 加上by后会被拦截</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228212257452.png" alt="image-20231228212257452"></p>
+<p>尝试绕过无果。</p>
+<h3 id="select-1-2-3-4——"><a href="#select-1-2-3-4——" class="headerlink" title="select 1,2,3,4——-"></a>select 1,2,3,4——-</h3><p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228212415136.png" alt="image-20231228212415136"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228212433627.png" alt="image-20231228212433627"></p>
+<p>可以看出union加上select会被拦截</p>
+<p>尝试使用强制执行与空格绕过</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228212655161.png" alt="image-20231228212655161"></p>
+<p>依旧失败</p>
+<p>那我们考虑一下，拦截是因为union和select一起执行，且空格符合无法绕过</p>
+<p>那试试在它们之间加点上版本号，&#x2F;*   ! *&#x2F;只会执行相应版本的sql代码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228212911985.png" alt="image-20231228212911985"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228213202376.png" alt="image-20231228213202376"></p>
+<p>可以看出使用5个数字的版本号就能成功绕过拦截</p>
+<h3 id="利用Yakit抓包"><a href="#利用Yakit抓包" class="headerlink" title="利用Yakit抓包"></a>利用Yakit抓包</h3><p>抓包之后选择插入标签</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228213308945.png" alt="image-20231228213308945"></p>
+<p>选择6位int类型数据，因为5位数字能绕过所以将其改为5位</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228213444259.png" alt="image-20231228213444259"></p>
+<p>使用这个后Yakit就能进行枚举发包，从0到99999</p>
+<p>可以看到成功，所有801都是成功的，所使用的5位数字都可以进行绕过</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228213659908.png" alt="image-20231228213659908"></p>
+<p>接下来我们进行数据库的注入</p>
+<p>可以看出依旧被绕过</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228213823570.png" alt="image-20231228213823570"></p>
+<p>再次依葫芦画瓢使用注释、空格的gbk编码的方式进行绕过</p>
+<p>选择一个成功的5位数字</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228214055799.png" alt="image-20231228214055799"></p>
+<p>依旧被拦截</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228214316513.png" alt="image-20231228214316513"></p>
+<p>再次尝试，将（）也进行分离</p>
+<p>依旧失败</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228214451089.png" alt="image-20231228214451089"></p>
+<p>尝试在注释那多加点东西</p>
+<p>爆数据库成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228214546152.png" alt="image-20231228214546152"></p>
+<p>使用这种方法也可以，因为单独的database不会被拦截，所以只需要在（）里选择版本号强制执行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228215516936.png" alt="image-20231228215516936"></p>
+<p>或者这样更好理解，分别强制执行左括号和右括号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231228220051951.png" alt="image-20231228220051951"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
