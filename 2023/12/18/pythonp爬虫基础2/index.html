@@ -199,6 +199,30 @@
 <p>效果展示:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219211352079.png" alt="image-20231219211352079"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231219211417015.png" alt="image-20231219211417015"></p>
+<h2 id="selenium-的使用"><a href="#selenium-的使用" class="headerlink" title="selenium 的使用"></a>selenium 的使用</h2><h3 id="什么是selenium-？"><a href="#什么是selenium-？" class="headerlink" title="什么是selenium ？"></a>什么是selenium ？</h3><p>Selenium 是一个用于<strong>自动化浏览器</strong>操作的开源框架。它允许开发者使用各种编程语言（如Python、Java、C#等）编写测试脚本，以模拟用户在网页上的操作，比如点击链接、填写表单、提交数据等。Selenium主要用于Web应用程序的<strong>自动化测试</strong>，但它也可以用于履行一些浏览器自动化的其他任务。</p>
+<p>Selenium 提供了一系列的工具和类库，其中最常用的是 Selenium WebDriver。WebDriver 提供了一种用于与不同浏览器进行交互的统一接口。用户可以通过 WebDriver 发送各种指令来控制浏览器，以执行自动化测试或执行一些浏览器自动化的任务。</p>
+<h3 id="selenium的安装使用"><a href="#selenium的安装使用" class="headerlink" title="selenium的安装使用"></a>selenium的安装使用</h3><ol>
+<li>下载与谷歌浏览器对应版本的驱动</li>
+</ol>
+<p>谷歌浏览器驱动安装地址114以上：<a target="_blank" rel="noopener" href="https://googlechromelabs.github.io/chrome-for-testing/">https://googlechromelabs.github.io/chrome-for-testing/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240102014348332.png" alt="image-20240102014348332"></p>
+<p>下载完成后解压，然后放到python程序的目录下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240102014541641.png" alt="image-20240102014541641"></p>
+<ol start="2">
+<li>安装selenium</li>
+</ol>
+<p>找到py文件的Scripts目录，cmd打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240102015223710.png" alt="image-20240102015223710"></p>
+<p>通过命令安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium -i https://mirrors.huaweicloud.com/repository/pypi/simple/</span><br></pre></td></tr></table></figure>
+
+<p>由于selenium版本问题可能会导致程序运行时闪退</p>
+<p>所以安装低版本，通过命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium==4.1.1-i https://mirrors.huaweicloud.com/repository/pypi/simple/</span><br></pre></td></tr></table></figure>
+
+<p>我这里安装4.1.1版本</p>
+<p>安装完成后通过命令pip show selenium查看当前版本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240102015317602.png" alt="image-20240102015317602"></p>
 
     </div>
     
