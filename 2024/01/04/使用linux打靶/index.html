@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>使用linux打靶1 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>使用linux打靶1</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/4
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li>s</li>
+</ul>
+<p>下载、配置Oracle虚拟机与MoneyBox靶机</p>
+<p>Oracle虚拟机下载链接<a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">Downloads – Oracle VM VirtualBox</a></p>
+<p>MoneyBox靶机下载地址<strong><a target="_blank" rel="noopener" href="http://www.vulnhub.com/entry/moneybox-1,653/#download">http://www.vulnhub.com/entry/moneybox-1,653/#download</a></strong></p>
+<p>下载完成后打开Oracle虚拟机</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104171836047.png" alt="image-20240104171836047"></p>
+<p>选择管理——&gt;导入虚拟电脑</p>
+<p>导入MoneyBox靶机</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104172545550.png" alt="image-20240104172545550"></p>
+<p>导入成功后多了一个</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104172730282.png" alt="image-20240104172730282"></p>
+<p>然后右键设置，找到usb选择1.1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104172824094.png" alt="image-20240104172824094"></p>
+<p>然后选择网络，选择仅主机，<strong>这里注意一下Mac地址是ff86</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104172931592.png" alt="image-20240104172931592"></p>
+<p>点击ok后右键启动就可以了。</p>
+<h2 id="使用linux打靶"><a href="#使用linux打靶" class="headerlink" title="使用linux打靶"></a>使用linux打靶</h2><p>使用root身份登录linux打开终端</p>
+<p>左上角点击编辑打开虚拟网络编辑器，将桥接模式更改为VartualBox</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104171836047.png" alt="image-20240104171836047"></p>
+<p>查看虚拟机网卡，网络适配器1,2分别对应eth0和eth1，我的桥接模式是eth1</p>
+<p>查看当前ip地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104192355949.png" alt="image-20240104192355949"></p>
+<p>我的桥接模式地址变为了56网段</p>
+<p>如果ip没有变化可以使用ifdowm eth1关闭网络，再使用ifup eth1打开网络</p>
+<p>然后扫描一下这个56网段下的ip</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp-scan -l -I eth1</span><br></pre></td></tr></table></figure>
+
+<p>找到与靶机对应Mac地址的ip：ff86</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104192832149.png" alt="image-20240104192832149"></p>
+<p>打开该ip</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104193416488.png" alt="image-20240104193416488"></p>
+<p>发现这个网页什么都没有，查看源代码试一下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104193500679.png" alt="image-20240104193500679"></p>
+<p>也是什么都没有，</p>
+<p>那么我们直接下一步：目录扫描</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirsearch -u &quot;http://192.168.56.101&quot; -x 403,404</span><br></pre></td></tr></table></figure>
+
+<p>可以看到有两个目录，其中index就是刚刚看到的哪个网页，那我们试一下blogs</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104195857554.png" alt="image-20240104195857554"></p>
+<p>出来了一个页面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104200037334.png" alt="image-20240104200037334"></p>
+<p>好像什么也没有，查看一下源代码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104200213395.png" alt="image-20240104200213395"></p>
+<p>发现藏了一个东西，上面写着有一个秘密目录</p>
+<p>我们试着打开一下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104200358912.png" alt="image-20240104200358912"></p>
+<p>出来了一个网页，再次查看源代码</p>
+<p>在最底下发现一个密钥，但是不知道是干嘛的，先放着。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104200440437.png" alt="image-20240104200440437"></p>
+<p>那么接下来扫描这个ip的端口</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104193729466.png" alt="image-20240104193729466"></p>
+<p>发现一共只有三个端口</p>
+<p>使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nmap -p1-500 -v -sC 192.168.56.101</span><br><span class="line"></span><br><span class="line">//这个是指定端口扫描</span><br><span class="line">nmap -p 21,22,80 -sC 192.168.0.129</span><br></pre></td></tr></table></figure>
+
+<p>来扫描所有端口可能存在的文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104194751104.png" alt="image-20240104194751104"></p>
+<p>发现在21端口下存在一个图片文件，并且存在一个ftp，Anonymous可以允许登录</p>
+<p>先登录ftp,账号密码皆为Anonymous</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp 192.168.56.101</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104195032484.png" alt="image-20240104195032484"></p>
+<p>结合刚刚找到的图片文件与登录后可使用的命令来看，是需要下载图片</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104195256068.png" alt="image-20240104195256068"></p>
+<p>查看图片发现什么都没有</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104195342957.png" alt="image-20240104195342957"></p>
+<p>但是不会平白无故放个图片在这里，我们使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings trytofind.jpg</span><br></pre></td></tr></table></figure>
+
+<p>使用二进制打开图片，然后对比一下两张二进制图片，</p>
+<p>正常图片：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104195656821.png" alt="image-20240104195656821"></p>
+<p>猫猫图片：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104195717598.png" alt="image-20240104195717598"></p>
+<p>可以明显看出多了两段超长的16进制数字</p>
+<p>使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">steghide info trytofind.jpg</span><br><span class="line"></span><br><span class="line">//如果没下载可以使用命令下载</span><br><span class="line">apt install steghide</span><br></pre></td></tr></table></figure>
+
+<p>来查看这个图片是否被嵌入了一些文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104200606500.png" alt="image-20240104200606500"></p>
+<p>发现需要我们输入密钥</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104201009351.png" alt="image-20240104201009351"></p>
+<p>所以刚刚网页的密钥不就用上了吗：3xtr4ctd4t4 </p>
+<p>输入密钥后发现确实有一个txt文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104201126810.png" alt="image-20240104201126810"></p>
+<p>使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">steghide  extract -sf trytofind.jpg</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>来分离提取图片中的文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104201245851.png" alt="image-20240104201245851"></p>
+<p>cat查看该data.txt文件时它提示一个叫renu的用户的密码太弱了</p>
+<p>所以我们爆破一下renu用户的密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -L renu -P 1.txt </span><br></pre></td></tr></table></figure>
+
+<p>这里的1.txt是一个自己写的弱密码集合</p>
+<p>爆破出来密码是987654321</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104202132409.png" alt="image-20240104202132409"></p>
+<p>然后使用ssh和renu用户远程连接该ip</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh renu@192.168.56.101  </span><br></pre></td></tr></table></figure>
+
+<p>输入密码后成功登录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104202339559.png" alt="image-20240104202339559"></p>
+<p>接着使用ls查看当前目录下的文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104202502373.png" alt="image-20240104202502373"></p>
+<p>找到第二个flag</p>
+<p>然后使用history查看该用户的历史命令</p>
+<p>发现一个叫lily的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104202616647.png" alt="image-20240104202616647"></p>
+<p>那我们试一下使用lily进行登录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104202847870.png" alt="image-20240104202847870"></p>
+<p>成功登录，找到第三个文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104202948647.png" alt="image-20240104202948647"></p>
+<p>获得flag</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104203009061.png" alt="image-20240104203009061"></p>
+<p>最后使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo l</span><br></pre></td></tr></table></figure>
+
+<p>​	查看当前用户是否可以以管理员身份权限执行某些命令</p>
+<p>表示用户有权利以管理员身份执行在MoneyBox主机下的&#x2F;user&#x2F;bin&#x2F;prel命令的权限</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104203359073.png" alt="image-20240104203359073"></p>
+<p>然后使用prel目录下的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo perl -e &#x27;exec &quot;/bin/sh&quot;;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>来切换到管理员身份</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104203703175.png" alt="image-20240104203703175"></p>
+<p>然后使用cd ~命令来切换目录到root的加目录下</p>
+<p>拿到最后一个flag</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240104203749173.png" alt="image-20240104203749173"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
