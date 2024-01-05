@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>信息收集 | k-onlの狗窝</title>
+    <title>Drupal Site | k-onlの狗窝</title>
     <meta name="author" content="k-onl" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -142,7 +142,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>信息收集</h1>
+        <h1>Drupal Site</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -157,7 +157,7 @@
     
     <div class="content" v-pre>
         <h2 id="1，获得IP地址"><a href="#1，获得IP地址" class="headerlink" title="1，获得IP地址"></a>1，获得IP地址</h2><p>靶机与Kali在同一VMware中，可先查看靶机的MAC地址，可点击设置—&gt;网络适配器—&gt;高级，找到MAC地址为:00:0C:29:60:07:93</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101215856651.png" alt="image-20240101215856651"><img src="/../../../../../Users/mio/AppData/Roaming/Typora/typora-user-images/image-20240101215856651.png" alt="image-20240101215856651"><br>先查看当前Kali的IP为：192.168.2.100</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101215856651.png" alt="image-20240101215856651"><br>先查看当前Kali的IP为：192.168.2.100</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101215903726.png" alt="image-20240101215903726"><br>在Kali中ping</p>
 <p>该网段中的所有存在的地址，并对比MAC地址，找到靶机的IP为：192.168.2.119</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sn 192.168.2.100/24</span><br></pre></td></tr></table></figure>
