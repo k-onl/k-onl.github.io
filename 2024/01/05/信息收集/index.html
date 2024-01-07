@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>信息收集及谷歌语法 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>信息收集及谷歌语法</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/5
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="谷歌语法"><a href="#谷歌语法" class="headerlink" title="谷歌语法"></a>谷歌语法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">intext： 寻找正文中含有关键字的网页，例如：intext：后台登陆 将只返回正文中包含后台登陆的wang网页。</span><br><span class="line"></span><br><span class="line">intitle： 寻找标题中含有关键字的网页，例如：intitle：后台登陆 密码 将返回标题中包含黑客而正文中包含中国的网页。</span><br><span class="line"></span><br><span class="line">allintitle： 用法和intitle类似，只不过可以指定多个词，例如：alltitle：后台登陆 管理员 将返回标题中包含后台登陆和管理员的网页。</span><br><span class="line"></span><br><span class="line">cache: 网页快照，谷歌将返回给你他存储下来的历史页面，如果你同时制定了其他查询词，将在搜索结果里以高亮显示，例如：cache:www.hackingspirits.com guest ，将返回指定网站的缓存，并且正文中含有guest</span><br><span class="line"></span><br><span class="line">inurl： 将返回url中含有关键词的网页,例如：inurl：Login 将返回url中含有Login的网页。</span><br><span class="line"></span><br><span class="line">inininurl：//admin/login.php 查找管理员登陆页面</span><br><span class="line"></span><br><span class="line">nurl:/phpmyadmin/index.php 查找后台数据库管理页面</span><br><span class="line"></span><br><span class="line">allinurl 用法和inurl类似，只不过可以指定多个词，例如：inrul:Login admin 将返回url中含有Login和admin的网页。</span><br><span class="line"></span><br><span class="line">site 指定访问的站点，例如：site:baidu.com inurl:Login 将只在baidu.com中查找url中含有Login的网页。</span><br><span class="line"></span><br><span class="line">filetype 指定访问的文件类型，例如:site:baidu.com filetype:pdf 将只fan返回baidu.com站点上文件类型为pdf的网页。</span><br><span class="line"></span><br><span class="line">link 指定链接的网页，例如：link:www.baidu.com 将返回所有包含指向www.baidu.com的网页。</span><br><span class="line"></span><br><span class="line">info 返回站点的指定信息，例如：info:www.baidu.com 将返回百度的一些信息。</span><br><span class="line"></span><br><span class="line">Index  of   可以帮助你寻找网络和FTP目录  例如：index  of mp3</span><br><span class="line"></span><br><span class="line">查找网站后台：</span><br><span class="line"></span><br><span class="line">site:xxx.com intext:管理</span><br><span class="line"></span><br><span class="line">site:xxx.com inurl:login</span><br><span class="line"></span><br><span class="line">site:xxx.com intitle:后台</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="根据域名查IP、图标等信息"><a href="#根据域名查IP、图标等信息" class="headerlink" title="根据域名查IP、图标等信息"></a>根据域名查IP、图标等信息</h2><ol>
+<li>微步在线</li>
+</ol>
+<p>gu<img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107194313744.png" alt="image-20240107194313744"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107194922347.png" alt="image-20240107194922347"></p>
+<p>通过域名来获取更多信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107194524568.png" alt="image-20240107194524568"></p>
+<ol start="2">
+<li>fofa</li>
+</ol>
+<p>可以查出该域名及其子域名、端口，数量更多更全</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107194712556.png" alt="image-20240107194712556"></p>
+<h2 id="根据IP反查域名、图标等信息"><a href="#根据IP反查域名、图标等信息" class="headerlink" title="根据IP反查域名、图标等信息"></a>根据IP反查域名、图标等信息</h2><p>同样可以使用微步在线与fofa</p>
+<p>微步</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107195030496.png" alt="image-20240107195030496"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107195137628.png" alt="image-20240107195137628"></p>
+<p>fofa</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107195503250.png" alt="image-20240107195503250"></p>
+<h2 id="已知域名查询子域名及ip"><a href="#已知域名查询子域名及ip" class="headerlink" title="已知域名查询子域名及ip"></a>已知域名查询子域名及ip</h2><p>收集子域名可以扩大测试范围，同一域名下的二级域名都属于目标范围。</p>
+<p>子域名在线爆破：<a target="_blank" rel="noopener" href="http://z.zcjun.com/">http://z.zcjun.com/</a></p>
+<p>Layer子域名挖掘机</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107195736849.png" alt="image-20240107195736849"></p>
+<p>fofa:<a target="_blank" rel="noopener" href="https://fofa.info/toLogin">https://fofa.info/toLogin</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107195913632.png" alt="image-20240107195913632"></p>
+<p>360:<a target="_blank" rel="noopener" href="https://quake.360.net/quake/#/index">https://quake.360.net/quake/#/index</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107195948407.png" alt="image-20240107195948407"></p>
+<p>奇安信：<a target="_blank" rel="noopener" href="https://hunter.qianxin.com/">https://hunter.qianxin.com/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107200042619.png" alt="image-20240107200042619"></p>
+<p>钟馗之眼：<a target="_blank" rel="noopener" href="https://www.zoomeye.org/business">https://www.zoomeye.org/business</a></p>
+<p>以及其他的子域名爆破网站</p>
+<p><a target="_blank" rel="noopener" href="https://www.dnsgrep.cn/subdomain">https://www.dnsgrep.cn/subdomain</a></p>
+<p><a target="_blank" rel="noopener" href="http://z.zcjun.com/?http=baidu.com">http://z.zcjun.com/?http=baidu.com</a></p>
+<h2 id="通过ping来查询ip"><a href="#通过ping来查询ip" class="headerlink" title="通过ping来查询ip"></a>通过ping来查询ip</h2><p>许多大型的网站都有CDN服务，要查询确认源站主机的IP，主要是通过全球ping和国外ping来实现，基本上国外大多数相同的地址就是主机的IP地址，确认IP后可以在最后一位进行10以内的加减来寻找临近IP资产</p>
+<p>但是小型网站不会有</p>
+<p>站长之家<a target="_blank" rel="noopener" href="https://ping.chinaz.com/">https://ping.chinaz.com/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107202830180.png" alt="image-20240107202830180"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107202904297.png" alt="image-20240107202904297"></p>
+<h2 id="已知ip进行端口扫描与目录扫描"><a href="#已知ip进行端口扫描与目录扫描" class="headerlink" title="已知ip进行端口扫描与目录扫描"></a>已知ip进行端口扫描与目录扫描</h2><p>（均在kali的环境下的命令）</p>
+<h3 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">这是四个不同的Nmap命令，针对IP地址为192.168.0.2和192.168.122.1的主机进行扫描。让我为您解释每个命令的含义：</span><br><span class="line"></span><br><span class="line">1. **`nmap -sV 192.168.0.2`：**</span><br><span class="line">   - `-sV`: 启用服务版本探测，用于识别目标主机上运行的具体服务及其版本。</span><br><span class="line">   - `192.168.0.2`: 目标主机的IP地址。</span><br><span class="line">   - 这个命令的目的是扫描目标主机的开放端口，并尝试确定每个端口上运行的服务及其版本信息。</span><br><span class="line"></span><br><span class="line">2. **`nmap -sT 92.168.0.2`：**</span><br><span class="line">   - `-sT`: 使用TCP连接扫描，通常称为全连接扫描。</span><br><span class="line">   - `92.168.0.2`: 目标主机的IP地址。</span><br><span class="line">   - 这个命令的目的是使用TCP连接扫描目标主机，以确定哪些TCP端口是开放的。</span><br><span class="line"></span><br><span class="line">3. **`nmap -Pn -A -sC 192.168.0.2`：**</span><br><span class="line">   - `-Pn`: 禁用主机发现，即使目标主机不响应ping请求也进行扫描。</span><br><span class="line">   - `-A`: 启用操作系统检测、服务版本检测、脚本扫描和Traceroute等信息收集。</span><br><span class="line">   - `-sC`: 启用默认脚本扫描，执行一些常见的脚本进行服务和漏洞检测。</span><br><span class="line">   - `192.168.0.2`: 目标主机的IP地址。</span><br><span class="line">   - 这个命令的目的是对目标主机进行全面的扫描，包括操作系统、服务版本、脚本扫描和漏洞检测等。</span><br><span class="line"></span><br><span class="line">4. **`nmap -sU -sT -p0-65535 192.168.122.1`：**</span><br><span class="line">   - `-sU`: 启用UDP扫描，用于扫描UDP端口。</span><br><span class="line">   - `-sT`: 使用TCP连接扫描，通常称为全连接扫描。</span><br><span class="line">   - `-p0-65535`: 指定要扫描的端口范围为0到65535。</span><br><span class="line">   - `192.168.122.1`: 目标主机的IP地址。</span><br><span class="line">   - 这个命令的目的是同时进行TCP和UDP扫描，尝试发现目标主机上开放的所有端口。</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107203816290.png" alt="image-20240107203816290"></p>
+<h3 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dirsearch -u &quot;http://192.168.56.101&quot; -x 403,404</span><br><span class="line"></span><br><span class="line">-u表示后面位地址</span><br><span class="line">-x表示排除状态码403与404的目录</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107203806857.png" alt="image-20240107203806857"></p>
+<h2 id="IP扫描"><a href="#IP扫描" class="headerlink" title="IP扫描"></a>IP扫描</h2><p>通过360，奇安信，fofa等网站查询出来的IP地址并不是所有都能访问，而且一个个访问又太过麻烦</p>
+<p>可以通过小米范进行多个ip连接</p>
+<h3 id="小米范的使用"><a href="#小米范的使用" class="headerlink" title="小米范的使用"></a>小米范的使用</h3><p>将下载好的jar文件（小米范）拖拽到jdk8的bin目录下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107205259027.png" alt="image-20240107205259027"></p>
+<p>然后在bin目录下打开cmd</p>
+<p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar &quot;web finder 2.9.jar&quot;</span><br></pre></td></tr></table></figure>
+
+<p>就能打开小米饭</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107205346024.png" alt="image-20240107205346024"></p>
+<p>然后新建扫描，将ip地址放入里面（一个ip一行）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107210202525.png" alt="image-20240107210202525"></p>
+<p>根据ssl、状态码以及下方的显示判断当前ip是否可以访问</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107210405516.png" alt="image-20240107210405516"></p>
+<h2 id="个人信息查询"><a href="#个人信息查询" class="headerlink" title="个人信息查询"></a>个人信息查询</h2><h3 id="域名whois"><a href="#域名whois" class="headerlink" title="域名whois"></a>域名whois</h3><p>根据域名查询域名信息：</p>
+<p>包括创建人（公司）、创建时间、邮箱、过期时间等</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107200502353.png" alt="image-20240107200502353"></p>
+<p>也可以根据创建人（公司）的信息进行反查域名，看其名下是否有其他域名</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107200552663.png" alt="image-20240107200552663"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107200610565.png" alt="image-20240107200610565"></p>
+<h3 id="域名备案"><a href="#域名备案" class="headerlink" title="域名备案"></a>域名备案</h3><p>通过网站的域名备案也可以查询到创建人的各个信息</p>
+<p>可以通过微步以及网站的最底下查看该网站的备案</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107200944491.png" alt="image-20240107200944491"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107200959033.png" alt="image-20240107200959033"></p>
+<p>知道备案号后可以通过爱企查<a target="_blank" rel="noopener" href="https://aiqicha.baidu.com/">https://aiqicha.baidu.com/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107201306343.png" alt="image-20240107201306343"></p>
+<p>企查查<a target="_blank" rel="noopener" href="https://www.qcc.com/">https://www.qcc.com/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107201411387.png" alt="image-20240107201411387"></p>
+<p>或者使用天眼查<a target="_blank" rel="noopener" href="https://www.tianyancha.com/">https://www.tianyancha.com/</a></p>
+<p>这样就能通过备案查找到创建人、邮箱等个人信息</p>
+<h3 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h3><p>可以通过支付宝转账获取姓名的前与后俩位</p>
+<h3 id="学信网"><a href="#学信网" class="headerlink" title="学信网"></a>学信网</h3><p>通过学信网查询信息</p>
+<h3 id="社工库"><a href="#社工库" class="headerlink" title="社工库"></a>社工库</h3><p>已知姓名，身份证，邮箱，学号，电话号码。都可以进行查询</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
