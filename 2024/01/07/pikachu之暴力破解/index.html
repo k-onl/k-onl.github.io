@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>pikachu之暴力破解 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>pikachu之暴力破解</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/7
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>1，PHPstudy创建一个新网站<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107212918237.png" alt="image-20240107212918237"></p>
+<p>2，下载靶场文件<br>在网站的根目录下载pikachu-master.zip并解压</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107212949023.png" alt="image-20240107212949023"></p>
+<p>3，修改配置文件<br>修改C:\phpStudy_64\pikachu\WWW1\pikachu-master\pikachu-master\inc下的config.inc.php文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213044655.png" alt="image-20240107213044655"></p>
+<p>修改为自己数据库的账号和密码</p>
+<p>4，打开网页并进行初始化<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213100072.png" alt="image-20240107213100072"></p>
+<p>5，靶场搭建成功<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213109090.png" alt="image-20240107213109090"></p>
+<h2 id="burp密码爆破"><a href="#burp密码爆破" class="headerlink" title="burp密码爆破"></a>burp密码爆破</h2><p>1，拦截靶场<br>打开burp—-&gt;代理—-&gt;打开内嵌浏览器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213119350.png" alt="image-20240107213119350"></p>
+<p>复制网址到内嵌浏览器中打开</p>
+<p>2，burp中开启拦截<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213127916.png" alt="image-20240107213127916"></p>
+<p>3，在网页中随便输入账号密码，并点击Login<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213159191.png" alt="image-20240107213159191"></p>
+<p>4，burp拦截发送的数据包，并右键发送到intruder中<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213216526.png" alt="image-20240107213216526"></p>
+<p>5，设置修改位置<br>先点击清除payload位置</p>
+<p>拉住输入的用户名并点击添加payload位置</p>
+<p>拉住输入的密码并点击添加payload位置</p>
+<p>攻击类型选择多个payload集合</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213239832.png" alt="image-20240107213239832"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213249139.png" alt="image-20240107213249139"></p>
+<p>6，设置payload<br>点击payload</p>
+<p>payload集选择1也就是我们添加的第一个—》用户名</p>
+<p>在清单中加入可用的用户名，也可以导入文件或使用burp自带的字典</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213301884.png" alt="image-20240107213301884"></p>
+<p>payload集选择2也就是我们添加的第二个—》密码</p>
+<p>在清单中加入可用的密码，也可以导入文件或使用burp自带的字典</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213336352.png" alt="image-20240107213336352"></p>
+<p>7，开始攻击<br>点击开始攻击等待到弹窗底部显示已完成即可</p>
+<p>点击长度找出响应包大小不同的数据包</p>
+<p>点击Response—-&gt;页面渲染可以看到Login success的字样显示登录成功</p>
+<p>在上方可以看到用户名为admin,密码为123456</p>
+<p>爆破成功！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213347540.png" alt="image-20240107213347540"></p>
+<h2 id="Yakit密码爆破"><a href="#Yakit密码爆破" class="headerlink" title="Yakit密码爆破"></a>Yakit密码爆破</h2><p>1，拦截靶场<br>点击MITM—-&gt;免配置启动—-&gt;免配置启动—-&gt;打开chrome浏览器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213423202.png" alt="image-20240107213423202"></p>
+<p>复制靶场的网址到chrome浏览器中打开,并点击手动劫持</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213433873.png" alt="image-20240107213433873"></p>
+<p>2，输入账号密码并输入正确的验证码，点击登录<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213511682.png" alt="image-20240107213511682"></p>
+<p>3，在Yakit中将劫持到的数据包右键发送到webfuzzer<br><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213532608.png" alt="image-20240107213532608"></p>
+<p>4，设置字典<br>在webfuzzer中将填入的账号密码删除并右键插入模糊测试字典标签，并设置对应的字典</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213541016.png" alt="image-20240107213541016"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213552089.png" alt="image-20240107213552089"></p>
+<p>5，发送请求<br>点击发送请求，等待至右侧的成功250完成</p>
+<p>点击响应大小找出响应包大小不同的数据包</p>
+<p>点击响应—-&gt;渲染可以看到Login success的字样显示登录成功</p>
+<p>在上方可以看到用户名为admin,密码为123456</p>
+<p>爆破成功！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240107213601463.png" alt="image-20240107213601463"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

